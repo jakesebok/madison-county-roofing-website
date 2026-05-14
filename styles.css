@@ -1301,10 +1301,12 @@ p { margin: 0; }
   .nav__cta { padding: 0.5rem 0.875rem; font-size: 0.6875rem; }
   .nav__drawer-links a { font-size: 1.5rem; }
 
-  .hero { min-height: clamp(560px, 80svh, 720px); }
-  .hero__inner { padding-block: clamp(5rem, 12vh, 6rem) clamp(2.5rem, 5vh, 4rem); gap: var(--space-4); }
+  .hero { min-height: clamp(620px, 88svh, 820px); }
+  /* More breathing room on mobile: looser stack + extra top space */
+  .hero__inner { padding-block: clamp(6.5rem, 16vh, 8rem) clamp(3rem, 6vh, 4.5rem); gap: var(--space-6); }
   .hero__title { font-size: clamp(2.25rem, 1.5rem + 4vw, 3.25rem); }
   .hero__sub { font-size: 0.9375rem; line-height: 1.6; }
+  .hero--with-quote .quick-quote { margin-top: var(--space-6); }
   .hero__cta.btn-row, .hero .btn-row { flex-direction: column; align-items: stretch; max-width: 320px; }
   .hero__cta .btn, .hero .btn { width: 100%; }
 
