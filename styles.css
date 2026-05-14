@@ -395,8 +395,14 @@ p { margin: 0; }
 }
 .service-card__desc {
   color: var(--text-muted); font-size: 0.9375rem; line-height: 1.55;
-  /* Reserve 5 lines so descriptions render at uniform height across cards */
-  min-height: calc(0.9375rem * 1.55 * 5);
+  /* Hard-lock all descriptions to exactly 4 lines: reserved minimum + clipped
+     maximum. Source copy is trimmed to fit, so no ellipsis should ever show. */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  line-clamp: 4;
+  overflow: hidden;
+  min-height: calc(0.9375rem * 1.55 * 4);
 }
 .service-card__tag {
   font-size: 0.6875rem; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 700;
