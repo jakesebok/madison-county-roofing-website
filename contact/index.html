@@ -254,5 +254,10 @@
   </div>
 </aside>
 
+<script>
+  // Sticky mobile CTA — hidden until user scrolls past ~half a viewport
+  (function(){var c=document.querySelector(".sticky-cta");if(!c)return;var u=function(){if(window.scrollY>window.innerHeight*0.5)c.classList.add("is-visible");else c.classList.remove("is-visible");};u();window.addEventListener("scroll",u,{passive:true});window.addEventListener("resize",u,{passive:true});})();
+</script>
+
 </body>
 </html>
