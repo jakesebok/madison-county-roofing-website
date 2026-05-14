@@ -19,7 +19,10 @@
 
 <header class="nav nav--solid" data-nav>
   <div class="container nav__inner">
-    <a href="/" class="nav__brand" aria-label="Madison County Roofing home"><img src="/assets/brand/logo.svg" alt="Madison County Roofing"><span class="nav__brand-text">Madison County Roofing<small>Collinsville · Since 1937</small></span></a>
+    <a href="/" class="nav__brand" aria-label="Madison County Roofing home">
+      <img src="/assets/brand/logo-light.svg" alt="Madison County Roofing" class="nav__brand-img nav__brand-img--light">
+      <img src="/assets/brand/logo-dark.svg" alt="" aria-hidden="true" class="nav__brand-img nav__brand-img--dark">
+    </a>
     <nav aria-label="Primary"><ul class="nav__links"><li><a href="/residential-roofing">Residential</a></li><li><a href="/commercial-roofing">Commercial</a></li><li><a href="/storm-damage">Storm Damage</a></li><li><a href="/siding-gutters">Siding &amp; Gutters</a></li><li><a href="/about" aria-current="page">About</a></li><li><a href="/contact">Contact</a></li></ul></nav>
     <div class="nav__actions"><a href="tel:+16188764309" class="nav__cta" aria-label="Call (618) 876-4309"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span class="nav__cta-label">(618) 876-4309</span></a><button class="nav__menu-btn" type="button" aria-label="Open menu" data-drawer-open><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" width="24" height="24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button></div>
   </div>
@@ -32,7 +35,7 @@
 </div>
 
 <div class="nav__drawer" data-drawer aria-hidden="true">
-  <div class="nav__drawer-head"><img src="/assets/brand/logo.svg" alt="Madison County Roofing"><button class="nav__menu-btn" type="button" aria-label="Close menu" data-drawer-close><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" width="24" height="24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
+  <div class="nav__drawer-head"><img src="/assets/brand/logo-light.svg" alt="Madison County Roofing"><button class="nav__menu-btn" type="button" aria-label="Close menu" data-drawer-close><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" width="24" height="24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
   <ul class="nav__drawer-links"><li><a href="/residential-roofing">Residential Roofing</a></li><li><a href="/commercial-roofing">Commercial Roofing</a></li><li><a href="/storm-damage">Storm Damage</a></li><li><a href="/siding-gutters">Siding &amp; Gutters</a></li><li><a href="/our-work">Our Work</a></li><li><a href="/about" aria-current="page">About</a></li><li><a href="/testimonials">Testimonials</a></li><li><a href="/service-area">Service Area</a></li><li><a href="/contact">Contact</a></li></ul>
   <div class="nav__drawer-foot"><span>5 Harmin Ln · Collinsville, IL 62234</span><a href="tel:+16188764309">(618) 876-4309</a><span>Mon–Fri 8a–4:30p</span></div>
 </div>
@@ -203,7 +206,17 @@
 <footer class="footer">
   <div class="container">
     <div class="footer__top">
-      <div class="footer__brand"><img src="/assets/brand/logo.svg" alt="Madison County Roofing"><span class="footer__tag">Roofing Madison County since 1937.</span><address class="footer__addr">5 Harmin Ln<br>Collinsville, IL 62234<br><a href="tel:+16188764309">(618) 876-4309</a><br><span style="color: rgba(247,244,237,0.5); font-size: 0.875rem;">Mon–Fri 8a–4:30p</span></address></div>
+      <div class="footer__brand">
+        <div class="footer__brand-mark">
+          <img src="/assets/brand/logo-light.svg" alt="Madison County Roofing & Home Improvements">
+          <div class="footer__brand-name">
+            <strong>Madison County Roofing</strong>
+            <span>&amp; Home Improvements, Inc.</span>
+          </div>
+        </div>
+        <p class="footer__tag">Roofing Madison County since 1937.</p>
+        <address class="footer__addr">5 Harmin Ln<br>Collinsville, IL 62234<br><a href="tel:+16188764309">(618) 876-4309</a><br><span style="color: rgba(247,244,237,0.5); font-size: 0.875rem;">Mon–Fri 8a–4:30p</span></address>
+      </div>
       <div class="footer__col"><h4>What we do</h4><ul><li><a href="/residential-roofing">Residential roofing</a></li><li><a href="/commercial-roofing">Commercial roofing</a></li><li><a href="/storm-damage">Storm damage</a></li><li><a href="/siding-gutters">Siding &amp; gutters</a></li></ul></div>
       <div class="footer__col"><h4>The shop</h4><ul><li><a href="/about">About us</a></li><li><a href="/our-work">Our work</a></li><li><a href="/testimonials">Testimonials</a></li><li><a href="/service-area">Service area</a></li></ul></div>
       <div class="footer__col"><h4>Get in touch</h4><ul><li><a href="/contact">Free estimate</a></li><li><a href="tel:+16188764309">(618) 876-4309</a></li><li><a href="https://www.facebook.com/p/Madison-County-Roofing-Home-Improvements-Inc-100089426243721/" target="_blank" rel="noopener">Facebook</a></li></ul></div>

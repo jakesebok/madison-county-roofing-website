@@ -144,15 +144,19 @@ p { margin: 0; }
   border-bottom: 1px solid var(--divider);
   box-shadow: 0 2px 12px rgba(26, 35, 50, 0.05);
 }
-.nav__inner { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); padding-block: 0.875rem; min-height: 72px; flex-wrap: nowrap; }
+.nav__inner { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); padding-block: 0.75rem; min-height: 72px; flex-wrap: nowrap; }
 .nav.is-scrolled .nav__inner, .nav--solid .nav__inner { min-height: 64px; }
 .nav__brand { display: flex; align-items: center; gap: 0.625rem; color: var(--paper); text-decoration: none; flex-shrink: 0; }
-.nav__brand img { height: 44px; width: auto; flex-shrink: 0; }
+.nav__brand img { height: 48px; width: auto; flex-shrink: 0; transition: opacity 250ms ease; }
+/* Light/dark logo swap based on nav state */
+.nav__brand-img--dark { display: none; }
+.nav.is-scrolled .nav__brand-img--light,
+.nav--solid .nav__brand-img--light { display: none; }
+.nav.is-scrolled .nav__brand-img--dark,
+.nav--solid .nav__brand-img--dark { display: block; }
 .nav.is-scrolled .nav__brand, .nav--solid .nav__brand { color: var(--ink); }
-.nav__brand-text { font-family: var(--font-display); font-weight: 700; font-size: 0.9375rem; letter-spacing: 0.04em; text-transform: uppercase; line-height: 1.1; display: none; white-space: nowrap; }
-.nav__brand-text small { display: block; font-family: var(--font-display); font-style: italic; font-weight: 500; font-size: 0.6875rem; letter-spacing: 0.1em; opacity: 0.75; margin-top: 2px; text-transform: none; white-space: nowrap; }
-/* Brand text only at wider sizes so it never wraps */
-@media (min-width: 1320px) { .nav__brand-text { display: block; } }
+/* Brand text removed from nav — logo's SVG already carries the wordmark */
+.nav__brand-text { display: none !important; }
 
 .nav__links { display: none; align-items: center; gap: clamp(0.875rem, 1.4vw, 1.5rem); list-style: none; padding: 0; margin: 0; flex-wrap: nowrap; white-space: nowrap; }
 .nav__links a {
@@ -258,10 +262,10 @@ p { margin: 0; }
   color: var(--paper);
 }
 .hero__bg { position: absolute; inset: 0; z-index: 0; }
-.hero__bg img { width: 100%; height: 100%; object-fit: cover; opacity: 0.5; }
+.hero__bg img { width: 100%; height: 100%; object-fit: cover; opacity: 0.85; }
 .hero__bg::after {
   content: ""; position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(26,35,50,0.4) 0%, rgba(26,35,50,0.55) 50%, rgba(26,35,50,0.92) 100%);
+  background: linear-gradient(180deg, rgba(26,45,68,0.25) 0%, rgba(26,45,68,0.35) 45%, rgba(26,45,68,0.78) 100%);
 }
 .hero__inner { position: relative; z-index: 2; padding-block: clamp(7rem, 14vh, 10rem) clamp(4rem, 8vh, 6rem); display: grid; gap: var(--space-5); max-width: 760px; }
 .hero__eyebrow { color: var(--brick-bright); }
@@ -446,14 +450,49 @@ p { margin: 0; }
 .prefooter__phone:hover { color: var(--brick-bright); }
 @media (min-width: 720px) { .prefooter__inner { flex-direction: row; justify-content: space-between; text-align: left; gap: var(--space-6); } }
 
-/* ---------- Footer ---------- */
-.footer { background: var(--ink); color: var(--paper); padding-block: var(--space-8) var(--space-6); }
-.footer__top { display: grid; gap: var(--space-7); grid-template-columns: 1fr; padding-bottom: var(--space-6); border-bottom: 1px solid rgba(247, 244, 237, 0.1); }
-@media (min-width: 720px) { .footer__top { grid-template-columns: 1.6fr 1fr 1fr 1fr; } }
-.footer__brand { display: grid; gap: var(--space-3); }
-.footer__brand img { width: min(140px, 60%); height: auto; color: var(--paper); }
-.footer__tag { font-family: var(--font-display); font-style: italic; font-size: 1.0625rem; color: var(--brick-bright); }
-.footer__addr { font-size: 0.9375rem; color: rgba(247, 244, 237, 0.7); line-height: 1.65; }
+/* ---------- Footer (premium polish) ---------- */
+.footer {
+  background: var(--ink);
+  color: var(--paper);
+  padding-block: clamp(4rem, 7vw, 6rem) var(--space-6);
+  position: relative;
+}
+.footer::before {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--brick-deep) 0%, var(--brick) 50%, var(--brick-deep) 100%);
+}
+.footer__top { display: grid; gap: clamp(2.5rem, 5vw, 4rem); grid-template-columns: 1fr; padding-bottom: clamp(2rem, 4vw, 3rem); border-bottom: 1px solid rgba(247, 244, 237, 0.12); }
+@media (min-width: 720px) { .footer__top { grid-template-columns: 1.8fr 1fr 1fr 1fr; } }
+.footer__brand { display: grid; gap: var(--space-4); align-content: start; }
+.footer__brand-mark {
+  display: flex; align-items: center; gap: 1rem;
+}
+.footer__brand-mark img {
+  width: 84px; height: 84px;
+  flex-shrink: 0;
+}
+.footer__brand-name {
+  display: grid; gap: 0.25rem;
+}
+.footer__brand-name strong {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.125rem, 1rem + 0.4vw, 1.375rem);
+  color: var(--paper);
+  letter-spacing: -0.015em;
+  line-height: 1.1;
+}
+.footer__brand-name span {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(0.875rem, 0.8rem + 0.2vw, 1rem);
+  color: var(--brick-bright);
+  letter-spacing: -0.005em;
+  line-height: 1.2;
+}
+.footer__tag { font-family: var(--font-display); font-style: italic; font-size: 1.0625rem; color: var(--brick-bright); margin-top: 0.25rem; }
+.footer__addr { font-size: 0.9375rem; color: rgba(247, 244, 237, 0.75); line-height: 1.65; font-style: normal; }
 .footer__addr a { color: var(--brick-bright); }
 .footer h4 { font-family: var(--font-body); font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--brick); margin-bottom: var(--space-3); }
 .footer__col ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.625rem; }
@@ -842,14 +881,15 @@ p { margin: 0; }
    CONVERSION INFRASTRUCTURE
    ============================================================ */
 
-/* ---------- Live shop-hours status pill (in nav strip) ---------- */
+/* ---------- Live shop-hours status pill — normal block, sits under nav ---------- */
 .shop-status {
-  position: fixed;
-  top: 72px; right: 0; left: 0;
-  z-index: 49;
+  position: relative;
+  z-index: 1;
   display: flex; justify-content: center; align-items: center;
+  flex-wrap: wrap;
   gap: var(--space-2);
-  padding: 0.375rem 1rem;
+  padding: 0.5rem 1rem;
+  margin-top: 72px; /* offset for fixed nav */
   background: var(--ink-deep);
   color: var(--paper);
   font-family: var(--font-body);
@@ -857,12 +897,11 @@ p { margin: 0; }
   letter-spacing: 0.12em;
   text-transform: uppercase;
   font-weight: 600;
-  transform: translateY(-100%);
-  transition: transform 500ms var(--ease) 300ms, top 300ms ease;
   border-bottom: 1px solid color-mix(in srgb, var(--brick) 30%, transparent);
+  opacity: 0;
+  transition: opacity 400ms ease 200ms;
 }
-.shop-status.is-visible { transform: translateY(0); }
-.nav.is-scrolled + .shop-status { top: 64px; }
+.shop-status.is-visible { opacity: 1; }
 .shop-status__dot {
   width: 7px; height: 7px; border-radius: 50%;
   background: var(--success);
