@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Service Area · Madison County Roofing · Metro East Illinois</title>
+<meta name="description" content="Madison County Roofing serves Collinsville, Edwardsville, Glen Carbon, Granite City, Bethalto, Highland, Maryville, Troy, Staunton, Marine, Saint Jacob, and the entire Metro East.">
+<meta name="theme-color" content="#1A2332">
+<link rel="icon" href="/assets/brand/logo.svg" type="image/svg+xml">
+<link rel="canonical" href="https://madison-county-roofing-website.vercel.app/service-area">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,500;1,9..144,700;1,9..144,900&family=Inter:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="/styles.css">
+<style>
+  .town-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-3); margin-top: var(--space-6); }
+  .town { padding: var(--space-4) var(--space-5); background: var(--paper-card); border-left: 3px solid var(--brick); display: grid; gap: 0.25rem; transition: transform 400ms var(--ease), background-color 300ms ease; }
+  @media (hover: hover) { .town:hover { transform: translateX(4px); background: var(--paper-warm); } }
+  .town__name { font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; color: var(--ink); letter-spacing: -0.012em; }
+  .town__meta { font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); font-weight: 600; }
+  .town--primary { background: var(--ink); border-left-color: var(--brick-bright); }
+  .town--primary .town__name { color: var(--paper); }
+  .town--primary .town__meta { color: var(--brick-bright); }
+</style>
+</head>
+<body>
+
+<a class="sr-only" href="#main">Skip to main content</a>
+
+<header class="nav nav--solid" data-nav>
+  <div class="container nav__inner">
+    <a href="/" class="nav__brand" aria-label="Madison County Roofing home"><img src="/assets/brand/logo.svg" alt="Madison County Roofing"><span class="nav__brand-text">Madison County Roofing<small>Collinsville · Since 1937</small></span></a>
+    <nav aria-label="Primary"><ul class="nav__links"><li><a href="/residential-roofing">Residential</a></li><li><a href="/commercial-roofing">Commercial</a></li><li><a href="/storm-damage">Storm Damage</a></li><li><a href="/siding-gutters">Siding &amp; Gutters</a></li><li><a href="/our-work">Our Work</a></li><li><a href="/about">About</a></li><li><a href="/service-area" aria-current="page">Service Area</a></li><li><a href="/contact">Contact</a></li></ul></nav>
+    <div class="nav__actions"><a href="tel:+16188764309" class="nav__cta">Call (618) 876-4309</a><button class="nav__menu-btn" type="button" aria-label="Open menu" data-drawer-open><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" width="24" height="24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button></div>
+  </div>
+</header>
+
+<div class="nav__drawer" data-drawer aria-hidden="true">
+  <div class="nav__drawer-head"><img src="/assets/brand/logo.svg" alt="Madison County Roofing"><button class="nav__menu-btn" type="button" aria-label="Close menu" data-drawer-close><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" width="24" height="24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
+  <ul class="nav__drawer-links"><li><a href="/residential-roofing">Residential Roofing</a></li><li><a href="/commercial-roofing">Commercial Roofing</a></li><li><a href="/storm-damage">Storm Damage</a></li><li><a href="/siding-gutters">Siding &amp; Gutters</a></li><li><a href="/our-work">Our Work</a></li><li><a href="/about">About</a></li><li><a href="/testimonials">Testimonials</a></li><li><a href="/service-area" aria-current="page">Service Area</a></li><li><a href="/contact">Contact</a></li></ul>
+  <div class="nav__drawer-foot"><span>5 Harmin Ln · Collinsville, IL 62234</span><a href="tel:+16188764309">(618) 876-4309</a><span>Mon–Fri 8a–4:30p</span></div>
+</div>
+
+<main id="main">
+
+  <section class="hero hero--page">
+    <div class="hero__bg"><img src="/assets/images/feature-02.webp" alt="Madison County roofing service area" loading="eager" fetchpriority="high"></div>
+    <div class="container hero__inner">
+      <span class="eyebrow" style="color: var(--brick-bright);">Service area</span>
+      <h1 class="hero__page-title">Madison County,<br><span class="italic-display">corner to corner.</span></h1>
+      <p class="hero__page-subtitle">Eight decades of work, all within thirty minutes of the shop.</p>
+    </div>
+  </section>
+
+  <!-- TOWN GRID -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Where we work</span>
+        <h2>The towns we cover.</h2>
+        <p class="lead">Based on Harmin Lane in Collinsville. Most jobs land within twenty miles. If you don't see your town below, call anyway — we've almost certainly done a roof on your block.</p>
+      </div>
+
+      <div class="town-grid reveal" data-stagger>
+        <div class="town town--primary"><span class="town__meta">Home base</span><span class="town__name">Collinsville</span></div>
+        <div class="town"><span class="town__meta">Primary service</span><span class="town__name">Edwardsville</span></div>
+        <div class="town"><span class="town__meta">Primary service</span><span class="town__name">Glen Carbon</span></div>
+        <div class="town"><span class="town__meta">Primary service</span><span class="town__name">Granite City</span></div>
+        <div class="town"><span class="town__meta">Primary service</span><span class="town__name">Maryville</span></div>
+        <div class="town"><span class="town__meta">Primary service</span><span class="town__name">Troy</span></div>
+        <div class="town"><span class="town__meta">Primary service</span><span class="town__name">Bethalto</span></div>
+        <div class="town"><span class="town__meta">Primary service</span><span class="town__name">Highland</span></div>
+        <div class="town"><span class="town__meta">Primary service</span><span class="town__name">Staunton</span></div>
+        <div class="town"><span class="town__meta">Primary service</span><span class="town__name">Marine</span></div>
+        <div class="town"><span class="town__meta">Primary service</span><span class="town__name">Saint Jacob</span></div>
+        <div class="town"><span class="town__meta">Extended service</span><span class="town__name">Pontoon Beach</span></div>
+        <div class="town"><span class="town__meta">Extended service</span><span class="town__name">Madison</span></div>
+        <div class="town"><span class="town__meta">Extended service</span><span class="town__name">Worden</span></div>
+        <div class="town"><span class="town__meta">Extended service</span><span class="town__name">Hamel</span></div>
+        <div class="town"><span class="town__meta">Extended service</span><span class="town__name">Alhambra</span></div>
+      </div>
+
+      <!-- MAP -->
+      <div style="position: relative; aspect-ratio: 16/10; max-width: 1100px; margin: var(--space-7) auto 0; overflow: hidden; border: 1px solid var(--divider); border-radius: 2px;">
+        <iframe src="https://maps.google.com/maps?q=Collinsville%2C+IL+62234&t=&z=10&ie=UTF8&iwloc=B&output=embed" width="100%" height="100%" style="border:0; filter: saturate(0.85);" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Madison County, IL — Sackett Electric service area"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCAL ADVANTAGE -->
+  <section class="section section--tight" style="padding-top: 0;">
+    <div class="container">
+      <div class="split split--wide-text">
+        <div class="split__body">
+          <span class="eyebrow">Why local matters</span>
+          <h2>A short drive,<br><span class="italic-display">a longer warranty.</span></h2>
+          <p>Working a tight service radius means the truck is already in your zip code. Means we can be back the next morning if something needs a second look. Means the manufacturer warranty actually has someone local to honor it in 2034.</p>
+          <p>The franchises operate out of dispatch centers in other states. We operate out of one parking lot in Collinsville. That's the whole strategy.</p>
+        </div>
+        <div class="split__media split__media--landscape">
+          <img src="/assets/work/job-08.webp" alt="Madison County Roofing trucks on the job" loading="lazy">
+          <div class="split__media-cap">On the job, nearby</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section section--brick">
+    <div class="container container--narrow" style="text-align: center;">
+      <span class="eyebrow" style="color: var(--paper);">Outside the list?</span>
+      <h2 style="color: var(--paper);">Call anyway.<br><span class="italic-display" style="color: var(--paper);">We'll tell you.</span></h2>
+      <p style="color: rgba(247, 244, 237, 0.92); font-size: var(--fs-lead); max-width: 56ch; margin: var(--space-4) auto;">If you're somewhere nearby and we can't make it, we know who in the trade we'd trust with your house. Either way you get an answer fast.</p>
+      <a href="tel:+16188764309" class="btn btn--ink btn--lg">Call (618) 876-4309</a>
+    </div>
+  </section>
+
+</main>
+
+<aside class="prefooter">
+  <div class="container prefooter__inner">
+    <div><span class="prefooter__eyebrow">Free in-person estimates</span><p class="prefooter__title">Tell Mark what's going on. We'll come look.</p></div>
+    <a href="tel:+16188764309" class="prefooter__phone">(618) 876-4309</a>
+  </div>
+</aside>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__brand"><img src="/assets/brand/logo.svg" alt="Madison County Roofing"><span class="footer__tag">Roofing Madison County since 1937.</span><address class="footer__addr">5 Harmin Ln<br>Collinsville, IL 62234<br><a href="tel:+16188764309">(618) 876-4309</a><br><span style="color: rgba(247,244,237,0.5); font-size: 0.875rem;">Mon–Fri 8a–4:30p</span></address></div>
+      <div class="footer__col"><h4>What we do</h4><ul><li><a href="/residential-roofing">Residential roofing</a></li><li><a href="/commercial-roofing">Commercial roofing</a></li><li><a href="/storm-damage">Storm damage</a></li><li><a href="/siding-gutters">Siding &amp; gutters</a></li></ul></div>
+      <div class="footer__col"><h4>The shop</h4><ul><li><a href="/about">About us</a></li><li><a href="/our-work">Our work</a></li><li><a href="/testimonials">Testimonials</a></li><li><a href="/service-area">Service area</a></li></ul></div>
+      <div class="footer__col"><h4>Get in touch</h4><ul><li><a href="/contact">Free estimate</a></li><li><a href="tel:+16188764309">(618) 876-4309</a></li><li><a href="https://www.facebook.com/p/Madison-County-Roofing-Home-Improvements-Inc-100089426243721/" target="_blank" rel="noopener">Facebook</a></li></ul></div>
+    </div>
+    <div class="footer__bottom"><span>© 2026 Madison County Roofing &amp; Home Improvements, Inc. All rights reserved.</span><span>Family-owned · Collinsville, IL · Est. 1937</span></div>
+  </div>
+</footer>
+
+<script>
+  (function(){var n=document.querySelector("[data-nav]");if(!n)return;var u=function(){if(window.scrollY>40)n.classList.add("is-scrolled");else n.classList.remove("is-scrolled");};u();window.addEventListener("scroll",u,{passive:true});})();
+  (function(){var d=document.querySelector("[data-drawer]");if(!d)return;var o=function(){d.dataset.open="true";d.setAttribute("aria-hidden","false");document.body.classList.add("no-scroll");},c=function(){d.dataset.open="false";d.setAttribute("aria-hidden","true");document.body.classList.remove("no-scroll");};document.querySelectorAll("[data-drawer-open]").forEach(function(b){b.addEventListener("click",o);});document.querySelectorAll("[data-drawer-close]").forEach(function(b){b.addEventListener("click",c);});d.querySelectorAll("a").forEach(function(a){a.addEventListener("click",c);});document.addEventListener("keydown",function(e){if(e.key==="Escape")c();});})();
+  (function(){if(!("IntersectionObserver" in window))return;var els=document.querySelectorAll(".reveal,[data-stagger]");if(!els.length)return;var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add("is-visible");io.unobserve(e.target);}});},{rootMargin:"0px 0px -10% 0px",threshold:0.08});els.forEach(function(el){io.observe(el);});})();
+</script>
+
+</body>
+</html>
