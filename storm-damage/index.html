@@ -25,6 +25,12 @@
   </div>
 </header>
 
+<div class="shop-status" data-shop-status>
+  <span class="shop-status__dot" aria-hidden="true"></span>
+  <span data-shop-status-label>Checking the shop&hellip;</span>
+  <a href="tel:+16188764309" class="shop-status__phone">(618) 876-4309</a>
+</div>
+
 <div class="nav__drawer" data-drawer aria-hidden="true">
   <div class="nav__drawer-head"><img src="/assets/brand/logo.svg" alt="Madison County Roofing"><button class="nav__menu-btn" type="button" aria-label="Close menu" data-drawer-close><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" width="24" height="24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
   <ul class="nav__drawer-links"><li><a href="/residential-roofing">Residential Roofing</a></li><li><a href="/commercial-roofing">Commercial Roofing</a></li><li><a href="/storm-damage" aria-current="page">Storm Damage</a></li><li><a href="/siding-gutters">Siding &amp; Gutters</a></li><li><a href="/our-work">Our Work</a></li><li><a href="/about">About</a></li><li><a href="/testimonials">Testimonials</a></li><li><a href="/service-area">Service Area</a></li><li><a href="/contact">Contact</a></li></ul>
@@ -115,6 +121,57 @@
     </div>
   </section>
 
+  <!-- INSURANCE CLAIM QUICK-FORM — emergency-tinted CTA -->
+  <section class="section" style="background: var(--bone);">
+    <div class="container container--narrow">
+      <div class="section-head section-head--center reveal">
+        <span class="eyebrow" style="color: var(--emergency);">Filed a claim already?</span>
+        <h2>Tell us your carrier.<br><span class="italic-display">We'll take it from there.</span></h2>
+        <p class="lead" style="margin-inline: auto;">If you've already started a claim with State Farm, Allstate, USAA, Farmers, or anyone else, send us the basics and Mark will reach out within one business day to coordinate the inspection.</p>
+      </div>
+
+      <form class="insurance-helper" action="https://formspree.io/f/your-form-id" method="POST">
+        <h3 class="insurance-helper__title">Insurance claim quick-form</h3>
+        <div class="insurance-helper__row">
+          <div class="quick-quote__field"><label for="ih-name">Your name</label><input id="ih-name" name="name" type="text" required autocomplete="name"></div>
+          <div class="quick-quote__field"><label for="ih-phone">Phone</label><input id="ih-phone" name="phone" type="tel" required autocomplete="tel" inputmode="tel"></div>
+        </div>
+        <div class="insurance-helper__row">
+          <div class="quick-quote__field">
+            <label for="ih-carrier">Insurance carrier</label>
+            <select id="ih-carrier" name="carrier">
+              <option>State Farm</option>
+              <option>Allstate</option>
+              <option>USAA</option>
+              <option>Farmers</option>
+              <option>American Family</option>
+              <option>Country Financial</option>
+              <option>Liberty Mutual</option>
+              <option>Other / not sure</option>
+            </select>
+          </div>
+          <div class="quick-quote__field">
+            <label for="ih-when">When did the storm hit?</label>
+            <input id="ih-when" name="storm_date" type="text" placeholder="Approximate date">
+          </div>
+        </div>
+        <div class="quick-quote__field">
+          <label for="ih-status">Claim status</label>
+          <select id="ih-status" name="status">
+            <option>Haven't filed yet — need an inspection first</option>
+            <option>Filed, waiting for adjuster</option>
+            <option>Adjuster scheduled or already came out</option>
+            <option>Claim approved — need a contractor</option>
+            <option>Claim denied — want a second opinion</option>
+          </select>
+        </div>
+        <input type="hidden" name="form_type" value="insurance_claim">
+        <button type="submit" class="insurance-helper__submit">Send Mark the details</button>
+        <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 0.5rem;">Or call <a href="tel:+16188764309" style="color: var(--brick-deep); font-weight: 600;">(618) 876-4309</a> &middot; we've worked with every major insurer in the Metro East.</p>
+      </form>
+    </div>
+  </section>
+
   <!-- WHAT TO LOOK FOR -->
   <section class="section section--tight" style="background: var(--bone);">
     <div class="container">
@@ -173,7 +230,44 @@
   (function(){var n=document.querySelector("[data-nav]");if(!n)return;var u=function(){if(window.scrollY>40)n.classList.add("is-scrolled");else n.classList.remove("is-scrolled");};u();window.addEventListener("scroll",u,{passive:true});})();
   (function(){var d=document.querySelector("[data-drawer]");if(!d)return;var o=function(){d.dataset.open="true";d.setAttribute("aria-hidden","false");document.body.classList.add("no-scroll");},c=function(){d.dataset.open="false";d.setAttribute("aria-hidden","true");document.body.classList.remove("no-scroll");};document.querySelectorAll("[data-drawer-open]").forEach(function(b){b.addEventListener("click",o);});document.querySelectorAll("[data-drawer-close]").forEach(function(b){b.addEventListener("click",c);});d.querySelectorAll("a").forEach(function(a){a.addEventListener("click",c);});document.addEventListener("keydown",function(e){if(e.key==="Escape")c();});})();
   (function(){if(!("IntersectionObserver" in window))return;var els=document.querySelectorAll(".reveal,[data-stagger]");if(!els.length)return;var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add("is-visible");io.unobserve(e.target);}});},{rootMargin:"0px 0px -10% 0px",threshold:0.08});els.forEach(function(el){io.observe(el);});})();
+
+  // Live shop-hours status pill
+  (function(){
+    var status=document.querySelector("[data-shop-status]");
+    var label=document.querySelector("[data-shop-status-label]");
+    if(!status||!label)return;
+    var now=new Date();
+    var day=now.getDay();
+    var mins=now.getHours()*60+now.getMinutes();
+    var open=(day>=1 && day<=5 && mins>=480 && mins<990);
+    if(open){
+      label.textContent="The shop is open today — closes at 4:30pm";
+    } else {
+      status.classList.add("shop-status--closed");
+      var word="tomorrow at 8am";
+      if(day===0) word="Monday at 8am";
+      else if(day===6) word="Monday at 8am";
+      else if(day===5 && mins>=990) word="Monday at 8am";
+      else if(mins<480) word="today at 8am";
+      label.textContent="Closed now — opens "+word;
+    }
+    requestAnimationFrame(function(){requestAnimationFrame(function(){status.classList.add("is-visible");});});
+  })();
 </script>
+
+
+<aside class="sticky-cta" aria-label="Quick contact">
+  <div class="sticky-cta__inner">
+    <a href="tel:+16188764309" class="sticky-cta__btn sticky-cta__btn--call">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <span class="sticky-cta__btn-label">Call now</span>
+    </a>
+    <a href="/contact" class="sticky-cta__btn sticky-cta__btn--quote">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+      <span class="sticky-cta__btn-label">Free estimate</span>
+    </a>
+  </div>
+</aside>
 
 </body>
 </html>

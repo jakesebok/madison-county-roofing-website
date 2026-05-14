@@ -5,16 +5,26 @@
 
 /* ---------- Tokens ---------- */
 :root {
-  --ink:           #1A2332;
-  --ink-soft:      #243049;
-  --ink-deep:      #0F1722;
+  /* Primary brand — refined navy. Closer to the existing blue brand,
+     just deeper and more saturated. Honors the existing palette. */
+  --ink:           #1A2D44;
+  --ink-soft:      #2C4366;
+  --ink-deep:      #0F1B2C;
   --paper:         #F7F4ED;
   --paper-warm:    #EFEAE0;
   --paper-card:    #FCFAF4;
   --bone:          #FBF8F1;
-  --brick:         #B85428;
-  --brick-bright:  #D26B3E;
-  --brick-deep:    #8A3D1E;
+
+  /* Accent — muted copper-bronze. Premium warm tone, less aggressive
+     than the previous orange-brick. Used for CTAs, hover states, accent lines. */
+  --brick:         #A6633E;
+  --brick-bright:  #C57E50;
+  --brick-deep:    #7A4730;
+
+  /* Emergency-only — saturated terra-cotta. Reserved for storm-damage
+     callouts where urgency is the point. */
+  --emergency:     #C0442B;
+
   --copper-warm:   #C8845A;
   --steel:         #6B7280;
   --steel-soft:    #9CA3AF;
@@ -809,6 +819,328 @@ p { margin: 0; }
 .county-map__label { font-family: var(--font-display); font-size: 11px; font-style: italic; fill: var(--ink); }
 .county-map__hq { fill: var(--brick); }
 .county-map__hq-label { font-family: var(--font-display); font-weight: 700; font-size: 13px; fill: var(--ink); }
+
+/* ============================================================
+   CONVERSION INFRASTRUCTURE
+   ============================================================ */
+
+/* ---------- Live shop-hours status pill (in nav strip) ---------- */
+.shop-status {
+  position: fixed;
+  top: 72px; right: 0; left: 0;
+  z-index: 49;
+  display: flex; justify-content: center; align-items: center;
+  gap: var(--space-2);
+  padding: 0.375rem 1rem;
+  background: var(--ink-deep);
+  color: var(--paper);
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  transform: translateY(-100%);
+  transition: transform 500ms var(--ease) 300ms, top 300ms ease;
+  border-bottom: 1px solid color-mix(in srgb, var(--brick) 30%, transparent);
+}
+.shop-status.is-visible { transform: translateY(0); }
+.nav.is-scrolled + .shop-status { top: 64px; }
+.shop-status__dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--success);
+  flex-shrink: 0;
+  animation: statusPulse 2.2s ease-in-out infinite;
+}
+.shop-status--closed .shop-status__dot { background: var(--brick); animation: none; }
+.shop-status__phone {
+  margin-left: 1rem;
+  color: var(--brick-bright);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: none;
+  font-size: 0.8125rem;
+}
+.shop-status__phone:hover { color: var(--paper); }
+@media (max-width: 720px) { .shop-status { display: none; } /* phone bar handles this on mobile */ }
+
+/* ---------- Sticky mobile CTA bar — Call + Estimate ---------- */
+.sticky-cta {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 48;
+  display: none;
+  background: var(--ink);
+  border-top: 1px solid color-mix(in srgb, var(--brick) 30%, transparent);
+  box-shadow: 0 -8px 24px -8px rgba(15, 27, 44, 0.4);
+  padding: 0.5rem env(safe-area-inset-right) calc(0.5rem + env(safe-area-inset-bottom)) env(safe-area-inset-left);
+}
+.sticky-cta__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  max-width: 540px;
+  margin: 0 auto;
+  padding-inline: 0.5rem;
+}
+.sticky-cta__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1rem;
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: background-color 250ms ease, transform 250ms ease;
+  min-height: 48px;
+}
+.sticky-cta__btn--call { background: var(--brick); color: var(--paper); }
+.sticky-cta__btn--call:hover, .sticky-cta__btn--call:active { background: var(--brick-deep); }
+.sticky-cta__btn--quote { background: transparent; color: var(--paper); border: 1.5px solid var(--paper); }
+.sticky-cta__btn--quote:hover, .sticky-cta__btn--quote:active { background: var(--paper); color: var(--ink); }
+.sticky-cta__btn svg { width: 16px; height: 16px; flex-shrink: 0; }
+.sticky-cta__btn-label { font-size: 0.8125rem; }
+@media (max-width: 880px) {
+  .sticky-cta { display: block; }
+  /* Add bottom padding to body so content isn't hidden behind sticky bar */
+  body { padding-bottom: 76px; }
+  .footer { padding-bottom: calc(var(--space-6) + 60px); }
+}
+
+/* ---------- Above-the-fold trust strip ---------- */
+.trust-bar {
+  background: color-mix(in srgb, var(--ink) 96%, transparent);
+  color: var(--paper);
+  padding-block: clamp(1rem, 2.5vw, 1.5rem);
+  border-top: 1px solid color-mix(in srgb, var(--brick) 25%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--brick) 25%, transparent);
+}
+.trust-bar__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: clamp(1rem, 2.5vw, 2rem);
+  align-items: center;
+  text-align: center;
+}
+.trust-bar__item {
+  display: grid; gap: 0.125rem; padding-inline: 0.5rem;
+  position: relative;
+}
+.trust-bar__item:not(:last-child)::after {
+  content: ""; position: absolute; right: calc(-1 * clamp(0.5rem, 1.25vw, 1rem)); top: 25%; bottom: 25%; width: 1px;
+  background: color-mix(in srgb, var(--brick-bright) 30%, transparent);
+}
+.trust-bar__num {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-style: italic;
+  font-size: clamp(1.25rem, 1.1rem + 0.6vw, 1.625rem);
+  color: var(--brick-bright);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.trust-bar__label {
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: rgba(247, 244, 237, 0.8);
+}
+@media (max-width: 720px) {
+  .trust-bar__grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem 1rem; }
+  .trust-bar__item:not(:last-child)::after { display: none; }
+  .trust-bar__num { font-size: 1rem; }
+}
+
+/* ---------- Hero quick-estimate widget ---------- */
+.quick-quote {
+  background: var(--paper-card);
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  border-radius: 2px;
+  box-shadow: 0 24px 60px -20px rgba(15, 27, 44, 0.4), 0 2px 8px rgba(15, 27, 44, 0.08);
+  border-top: 4px solid var(--brick);
+  display: grid; gap: var(--space-4);
+  position: relative;
+  z-index: 3;
+}
+.quick-quote__head { display: grid; gap: 0.375rem; }
+.quick-quote__eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--brick);
+}
+.quick-quote__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.375rem, 1.2rem + 0.6vw, 1.625rem);
+  color: var(--ink);
+  line-height: 1.15;
+  letter-spacing: -0.012em;
+}
+.quick-quote__sub {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+.quick-quote__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+@media (max-width: 540px) { .quick-quote__row { grid-template-columns: 1fr; } }
+.quick-quote__field { display: grid; gap: 0.25rem; }
+.quick-quote__field label {
+  font-size: 0.6875rem; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--text-muted);
+}
+.quick-quote__field input,
+.quick-quote__field select {
+  background: var(--paper);
+  color: var(--ink);
+  border: 1px solid var(--divider);
+  padding: 0.625rem 0.75rem;
+  font-size: 0.9375rem;
+  font-family: var(--font-body);
+  border-radius: 2px;
+  transition: border-color 250ms ease, box-shadow 250ms ease;
+}
+.quick-quote__field input:focus,
+.quick-quote__field select:focus {
+  outline: none;
+  border-color: var(--brick);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--brick) 18%, transparent);
+}
+.quick-quote__submit {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.875rem 1.25rem;
+  background: var(--brick);
+  color: var(--paper);
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  border: 0;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background-color 250ms ease, transform 250ms ease;
+}
+.quick-quote__submit:hover { background: var(--brick-deep); transform: translateY(-1px); }
+.quick-quote__fine {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-align: center;
+  line-height: 1.5;
+}
+.quick-quote__fine strong { color: var(--ink); font-weight: 600; }
+
+/* When the quick-quote sits inside the hero, give it a different layout */
+.hero--with-quote .hero__inner { max-width: 580px; }
+.hero--with-quote .quick-quote {
+  position: relative;
+  margin-top: var(--space-5);
+}
+@media (min-width: 880px) {
+  .hero--with-quote .hero__inner {
+    display: grid;
+    grid-template-columns: 1fr minmax(340px, 420px);
+    gap: clamp(2rem, 4vw, 4rem);
+    align-items: center;
+    max-width: 1240px;
+  }
+  .hero--with-quote .quick-quote { margin-top: 0; }
+  .hero--with-quote > .hero__year { z-index: 0; opacity: 0.12; }
+}
+
+/* ---------- Estimate CTA button (for nav) ---------- */
+.nav__estimate-btn {
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.125rem;
+  background: transparent;
+  color: var(--paper);
+  border: 1.5px solid var(--paper);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  border-radius: 2px;
+  transition: background-color 250ms ease, color 250ms ease, transform 250ms ease;
+  text-decoration: none;
+}
+.nav.is-scrolled .nav__estimate-btn,
+.nav--solid .nav__estimate-btn {
+  color: var(--ink);
+  border-color: var(--ink);
+}
+.nav__estimate-btn:hover {
+  background: var(--paper);
+  color: var(--ink);
+  transform: translateY(-1px);
+}
+.nav.is-scrolled .nav__estimate-btn:hover,
+.nav--solid .nav__estimate-btn:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+@media (min-width: 720px) { .nav__estimate-btn { display: inline-flex; } }
+
+/* ---------- Insurance claim quick-form (storm damage page) ---------- */
+.insurance-helper {
+  background: var(--paper-card);
+  border: 1px solid var(--divider);
+  border-top: 4px solid var(--emergency);
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  display: grid; gap: var(--space-3);
+  max-width: 640px;
+  margin-inline: auto;
+}
+.insurance-helper__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.375rem, 1.2rem + 0.6vw, 1.625rem);
+  color: var(--ink);
+  line-height: 1.15;
+}
+.insurance-helper__row { display: grid; gap: 0.75rem; grid-template-columns: 1fr 1fr; }
+@media (max-width: 540px) { .insurance-helper__row { grid-template-columns: 1fr; } }
+.insurance-helper input,
+.insurance-helper select {
+  background: var(--paper);
+  border: 1px solid var(--divider);
+  padding: 0.625rem 0.75rem;
+  font-size: 0.9375rem;
+  font-family: var(--font-body);
+  border-radius: 2px;
+}
+.insurance-helper input:focus,
+.insurance-helper select:focus { outline: none; border-color: var(--emergency); box-shadow: 0 0 0 3px color-mix(in srgb, var(--emergency) 18%, transparent); }
+.insurance-helper__submit {
+  background: var(--emergency);
+  color: var(--paper);
+  padding: 0.875rem 1.25rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  border: 0;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background-color 250ms ease;
+}
+.insurance-helper__submit:hover { background: #9E3722; }
 
 /* ---------- Focus / motion ---------- */
 :focus-visible { outline: 2px solid var(--brick); outline-offset: 3px; border-radius: 2px; }
