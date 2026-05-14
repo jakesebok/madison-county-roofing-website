@@ -144,48 +144,55 @@ p { margin: 0; }
   border-bottom: 1px solid var(--divider);
   box-shadow: 0 2px 12px rgba(26, 35, 50, 0.05);
 }
-.nav__inner { display: flex; align-items: center; justify-content: space-between; gap: var(--space-5); padding-block: 0.875rem; min-height: 72px; }
+.nav__inner { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); padding-block: 0.875rem; min-height: 72px; flex-wrap: nowrap; }
 .nav.is-scrolled .nav__inner, .nav--solid .nav__inner { min-height: 64px; }
-.nav__brand { display: flex; align-items: center; gap: 0.75rem; color: var(--paper); text-decoration: none; }
-.nav__brand img { height: 48px; width: auto; }
+.nav__brand { display: flex; align-items: center; gap: 0.625rem; color: var(--paper); text-decoration: none; flex-shrink: 0; }
+.nav__brand img { height: 44px; width: auto; flex-shrink: 0; }
 .nav.is-scrolled .nav__brand, .nav--solid .nav__brand { color: var(--ink); }
-.nav__brand-text { font-family: var(--font-display); font-weight: 700; font-size: 0.9375rem; letter-spacing: 0.05em; text-transform: uppercase; line-height: 1.05; display: none; }
-.nav__brand-text small { display: block; font-family: var(--font-display); font-style: italic; font-weight: 500; font-size: 0.6875rem; letter-spacing: 0.15em; opacity: 0.7; margin-top: 2px; text-transform: none; }
-@media (min-width: 720px) { .nav__brand-text { display: block; } }
+.nav__brand-text { font-family: var(--font-display); font-weight: 700; font-size: 0.9375rem; letter-spacing: 0.04em; text-transform: uppercase; line-height: 1.1; display: none; white-space: nowrap; }
+.nav__brand-text small { display: block; font-family: var(--font-display); font-style: italic; font-weight: 500; font-size: 0.6875rem; letter-spacing: 0.1em; opacity: 0.75; margin-top: 2px; text-transform: none; white-space: nowrap; }
+/* Brand text only at wider sizes so it never wraps */
+@media (min-width: 1320px) { .nav__brand-text { display: block; } }
 
-.nav__links { display: none; align-items: center; gap: clamp(1rem, 1.5vw, 1.75rem); list-style: none; padding: 0; margin: 0; }
+.nav__links { display: none; align-items: center; gap: clamp(0.875rem, 1.4vw, 1.5rem); list-style: none; padding: 0; margin: 0; flex-wrap: nowrap; white-space: nowrap; }
 .nav__links a {
   font-size: 0.75rem;
   font-weight: 600;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--paper);
   transition: color var(--dur-fast) var(--ease);
   position: relative;
+  white-space: nowrap;
 }
 .nav.is-scrolled .nav__links a, .nav--solid .nav__links a { color: var(--ink); }
 .nav__links a:hover { color: var(--brick-bright); }
 .nav__links a[aria-current="page"] { color: var(--brick); }
 .nav__links a[aria-current="page"]::after { content: ""; position: absolute; left: 0; right: 0; bottom: -8px; height: 2px; background: var(--brick); }
-@media (min-width: 1000px) { .nav__links { display: flex; } }
+/* Show nav links at 1180px+ — below this we use the hamburger drawer */
+@media (min-width: 1180px) { .nav__links { display: flex; } }
 
-.nav__actions { display: flex; align-items: center; gap: var(--space-3); }
+.nav__actions { display: flex; align-items: center; gap: 0.625rem; flex-shrink: 0; }
 .nav__cta {
   display: inline-flex; align-items: center; gap: 0.5rem;
-  padding: 0.625rem 1.125rem;
+  padding: 0.625rem 1rem;
   background: var(--brick);
   color: var(--paper) !important;
   font-size: 0.75rem;
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   border-radius: 2px;
+  white-space: nowrap;
   transition: background-color var(--dur-fast) var(--ease), transform var(--dur) var(--ease);
 }
 .nav__cta:hover { background: var(--brick-deep); transform: translateY(-1px); }
-.nav__menu-btn { display: inline-flex; padding: 0.5rem; background: transparent; border: 0; color: var(--paper); }
+.nav__cta svg { width: 14px; height: 14px; flex-shrink: 0; }
+.nav__cta-label { display: none; }
+@media (min-width: 1180px) { .nav__cta-label { display: inline; } }
+.nav__menu-btn { display: inline-flex; padding: 0.5rem; background: transparent; border: 0; color: var(--paper); flex-shrink: 0; }
 .nav.is-scrolled .nav__menu-btn, .nav--solid .nav__menu-btn { color: var(--ink); }
-@media (min-width: 1000px) { .nav__menu-btn { display: none; } }
+@media (min-width: 1180px) { .nav__menu-btn { display: none; } }
 
 /* ---------- Mobile drawer ---------- */
 .nav__drawer {
@@ -263,22 +270,33 @@ p { margin: 0; }
 .hero__title .italic-display { color: var(--brick-bright); }
 .hero__sub { font-size: var(--fs-lead); line-height: 1.6; color: rgba(247, 244, 237, 0.92); max-width: 56ch; }
 
-/* The killer move — giant 1937 watermark behind the home hero */
+/* The 1937 watermark — large but contained.
+   When the hero hosts a quick-quote form (.hero--with-quote),
+   the watermark sits behind the left column only. */
 .hero__year {
   position: absolute;
   z-index: 1;
-  right: clamp(-2rem, -1vw, 2rem);
-  bottom: clamp(-3rem, -1vh, 2rem);
+  left: clamp(-1rem, -0.5vw, 1rem);
+  bottom: clamp(-2rem, -1vh, 1rem);
   font-family: var(--font-display);
   font-weight: 900;
   font-style: italic;
-  font-size: clamp(18rem, 38vw, 38rem);
+  font-size: clamp(14rem, 28vw, 26rem);
   line-height: 0.78;
   color: var(--brick);
-  opacity: 0.18;
+  opacity: 0.14;
   pointer-events: none;
   user-select: none;
   letter-spacing: -0.05em;
+}
+@media (min-width: 880px) {
+  .hero--with-quote .hero__year {
+    /* Push to bottom-left, smaller, behind the text column only */
+    left: clamp(-2rem, -1vw, 0rem);
+    bottom: -1rem;
+    font-size: clamp(12rem, 22vw, 20rem);
+    opacity: 0.11;
+  }
 }
 
 /* Page heroes */
@@ -1068,15 +1086,16 @@ p { margin: 0; }
   display: none;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.625rem 1.125rem;
+  padding: 0.625rem 1rem;
   background: transparent;
   color: var(--paper);
   border: 1.5px solid var(--paper);
   font-size: 0.75rem;
   font-weight: 700;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   border-radius: 2px;
+  white-space: nowrap;
   transition: background-color 250ms ease, color 250ms ease, transform 250ms ease;
   text-decoration: none;
 }
@@ -1095,7 +1114,7 @@ p { margin: 0; }
   background: var(--ink);
   color: var(--paper);
 }
-@media (min-width: 720px) { .nav__estimate-btn { display: inline-flex; } }
+@media (min-width: 1180px) { .nav__estimate-btn { display: inline-flex; } }
 
 /* ---------- Insurance claim quick-form (storm damage page) ---------- */
 .insurance-helper {
