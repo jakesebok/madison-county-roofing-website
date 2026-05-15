@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Madison County Roofing">
+  <!-- Ink background, rounded -->
+  <rect width="64" height="64" rx="10" fill="#1A2D44"/>
+  <!-- House silhouette (bronze) -->
+  <g fill="#C57E50">
+    <!-- Roof line -->
+    <path d="M 10,38 L 32,18 L 54,38 L 50,38 L 32,23 L 14,38 Z"/>
+    <!-- House body suggestion -->
+    <rect x="18" y="38" width="28" height="14" rx="1"/>
+    <!-- Door -->
+    <rect x="29" y="44" width="6" height="8" fill="#1A2D44"/>
+  </g>
+</svg>
