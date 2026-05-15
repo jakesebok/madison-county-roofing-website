@@ -296,11 +296,23 @@ p { margin: 0; }
 
 /* (1937 ghost removed — heritage is communicated by H1, marquee, and affiliations) */
 
-/* Page heroes */
-.hero--page { min-height: clamp(420px, 60svh, 540px); }
-.hero--page .hero__inner { padding-block: clamp(6rem, 12vh, 8rem) clamp(2.5rem, 5vh, 4rem); }
-.hero__page-title { font-size: clamp(2.25rem, 1.6rem + 2.8vw, 3.75rem); color: var(--paper); margin: 0; }
-.hero__page-subtitle { font-family: var(--font-display); font-style: italic; font-weight: 500; font-size: clamp(1.125rem, 0.95rem + 0.7vw, 1.5rem); color: var(--brick-bright); margin: 0; }
+/* Page heroes — deeper presence + legible eyebrow / subtitle on any photo */
+.hero--page { min-height: clamp(560px, 78svh, 720px); }
+.hero--page .hero__inner { padding-block: clamp(7rem, 14vh, 9rem) clamp(3rem, 6vh, 5rem); }
+.hero--page .eyebrow {
+  color: var(--paper);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
+  font-size: 0.75rem;
+}
+.hero__page-title { font-size: clamp(2.5rem, 1.8rem + 3vw, 4rem); color: var(--paper); margin: 0; text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35); }
+.hero__page-title .italic-display { color: var(--brick-bright); text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45); }
+.hero__page-subtitle {
+  font-family: var(--font-display); font-style: italic; font-weight: 500;
+  font-size: clamp(1.25rem, 1.05rem + 0.8vw, 1.625rem);
+  color: var(--paper);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  margin: 0;
+}
 
 /* ---------- Section heads ---------- */
 .section-head { display: grid; gap: var(--space-3); margin-bottom: var(--space-7); max-width: 64ch; }
