@@ -18,7 +18,7 @@
   /* Accent — muted copper-bronze. Premium warm tone, less aggressive
      than the previous orange-brick. Used for CTAs, hover states, accent lines. */
   --brick:         #9D5B35;  /* slightly darker than original #A6633E so paper text on brick passes WCAG AA 4.5:1 contrast */
-  --brick-bright:  #C57E50;
+  --brick-bright:  #D78F62;
   --brick-deep:    #7A4730;
 
   /* Emergency-only — saturated terra-cotta. Reserved for storm-damage
