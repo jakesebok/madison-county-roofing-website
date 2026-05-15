@@ -479,8 +479,20 @@ p { margin: 0; }
   content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
   background: linear-gradient(90deg, var(--brick-deep) 0%, var(--brick) 50%, var(--brick-deep) 100%);
 }
-.footer__top { display: grid; gap: clamp(2.5rem, 5vw, 4rem); grid-template-columns: 1fr; padding-bottom: clamp(2rem, 4vw, 3rem); border-bottom: 1px solid rgba(247, 244, 237, 0.12); }
-@media (min-width: 720px) { .footer__top { grid-template-columns: 1.8fr 1fr 1fr 1fr; } }
+.footer__top { display: grid; gap: var(--space-5); grid-template-columns: 1fr; padding-bottom: clamp(2rem, 4vw, 3rem); border-bottom: 1px solid rgba(247, 244, 237, 0.12); }
+/* Small phones: brand spans full width, link columns go 2-up to halve the height */
+@media (min-width: 380px) {
+  .footer__top { grid-template-columns: repeat(2, 1fr); column-gap: var(--space-5); row-gap: var(--space-5); }
+  .footer__brand { grid-column: 1 / -1; }
+}
+/* Larger phones / small tablets: 3-up link columns */
+@media (min-width: 600px) {
+  .footer__top { grid-template-columns: repeat(3, 1fr); }
+}
+@media (min-width: 720px) {
+  .footer__top { grid-template-columns: 1.8fr 1fr 1fr 1fr; row-gap: clamp(2.5rem, 5vw, 4rem); }
+  .footer__brand { grid-column: auto; }
+}
 .footer__brand { display: grid; gap: var(--space-4); align-content: start; }
 .footer__brand-mark {
   display: flex; align-items: center; gap: 1rem;
@@ -1356,8 +1368,13 @@ p { margin: 0; }
   .stats__inner { gap: 2.5rem; }
   .stats__inner .stat { padding-block: 0; }
 
-  .footer { padding-block: var(--space-7) var(--space-5); }
-  .footer__top { gap: var(--space-5); padding-bottom: var(--space-5); }
+  .footer { padding-block: var(--space-6) var(--space-4); }
+  .footer__top { gap: var(--space-5); padding-bottom: var(--space-4); }
+  .footer__brand { gap: var(--space-3); }
+  .footer__brand-mark img { width: 64px; height: 64px; }
+  .footer__col h4 { margin-bottom: var(--space-2); }
+  .footer__col ul { gap: 0.375rem; }
+  .footer__addr { font-size: 0.875rem; line-height: 1.55; }
 
   .marquee { padding-block: 1rem; }
   .marquee__item { font-size: 0.9375rem; }
