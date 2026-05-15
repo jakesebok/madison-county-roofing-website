@@ -199,20 +199,20 @@
     var open = (day>=1 && day<=5 && mins>=480 && mins<990);
     function fmt(h, m){var am=h<12?"am":"pm";var hh=h%12;if(hh===0)hh=12;return hh+(m?":"+(m<10?"0"+m:m):"")+am;}
     if(open){
-      label.textContent="The shop is open · closes "+fmt(16,30);
+      label.textContent="Open · closes "+fmt(16,30);
     } else {
       status.classList.add("status-pill--closed");
       // next opening
-      var dayNames=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+      var dayNames=["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
       var i=0,next=day;
       while(i<8){
         next=(day+i)%7;
         if(next>=1 && next<=5){ if(i===0 && mins<480){ break; } if(i>0){ break; } }
         i++;
       }
-      if(i===0 && mins<480){ label.textContent="Closed now · Opens today at 8am"; }
-      else if(i===1){ label.textContent="Closed now · Opens tomorrow at 8am"; }
-      else { label.textContent="Closed now · Opens "+dayNames[next]+" at 8am"; }
+      if(i===0 && mins<480){ label.textContent="Closed · opens 8am today"; }
+      else if(i===1){ label.textContent="Closed · opens 8am tomorrow"; }
+      else { label.textContent="Closed · opens 8am "+dayNames[next]; }
     }
   })();
 
