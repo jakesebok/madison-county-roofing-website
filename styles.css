@@ -296,6 +296,32 @@ p { margin: 0; }
 
 /* (1937 ghost removed — heritage is communicated by H1, marquee, and affiliations) */
 
+/* ============================================================
+   FAQ — simple stacked Q/A pairs for service pages (FAQPage schema)
+   ============================================================ */
+.faq { display: grid; gap: 0; max-width: 880px; margin-inline: auto; }
+.faq__item {
+  padding-block: clamp(1.5rem, 2.5vw, 2rem);
+  border-bottom: 1px solid var(--divider);
+  transition: background-color 250ms ease;
+}
+.faq__item:first-child { border-top: 1px solid var(--divider); }
+.faq__q {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.25rem, 1.1rem + 0.7vw, 1.5rem);
+  color: var(--ink);
+  letter-spacing: -0.012em;
+  line-height: 1.25;
+  margin: 0 0 var(--space-3);
+}
+.faq__a {
+  font-size: var(--fs-lead);
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin: 0;
+}
+
 /* Page heroes — deeper presence + legible eyebrow / subtitle on any photo */
 .hero--page { min-height: clamp(560px, 78svh, 720px); }
 .hero--page .hero__inner { padding-block: clamp(7rem, 14vh, 9rem) clamp(3rem, 6vh, 5rem); }
