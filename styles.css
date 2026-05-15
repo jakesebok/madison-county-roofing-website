@@ -17,7 +17,7 @@
 
   /* Accent — muted copper-bronze. Premium warm tone, less aggressive
      than the previous orange-brick. Used for CTAs, hover states, accent lines. */
-  --brick:         #A6633E;
+  --brick:         #9D5B35;  /* slightly darker than original #A6633E so paper text on brick passes WCAG AA 4.5:1 contrast */
   --brick-bright:  #C57E50;
   --brick-deep:    #7A4730;
 
@@ -550,7 +550,7 @@ p { margin: 0; }
 .footer__tag { font-family: var(--font-display); font-style: italic; font-size: 1.0625rem; color: var(--brick-bright); margin-top: 0.25rem; }
 .footer__addr { font-size: 0.9375rem; color: rgba(247, 244, 237, 0.75); line-height: 1.65; font-style: normal; }
 .footer__addr a { color: var(--brick-bright); }
-.footer h4 { font-family: var(--font-body); font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--brick); margin-bottom: var(--space-3); }
+.footer h4, .footer .footer__col-heading { font-family: var(--font-body); font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--brick); margin: 0 0 var(--space-3); }
 .footer__col ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.625rem; }
 .footer__col a {
   color: rgba(247, 244, 237, 0.85);
@@ -1165,7 +1165,7 @@ p { margin: 0; }
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--brick);
+  color: var(--brick-deep);  /* AA contrast on paper-card */
 }
 .quick-quote__title {
   font-family: var(--font-display);
