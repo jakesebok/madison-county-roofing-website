@@ -613,12 +613,16 @@ p { margin: 0; }
 .marquee::before, .marquee::after { content: ""; position: absolute; top: 0; bottom: 0; width: clamp(40px, 8vw, 120px); z-index: 2; pointer-events: none; }
 .marquee::before { left: 0; background: linear-gradient(to right, var(--ink), transparent); }
 .marquee::after  { right: 0; background: linear-gradient(to left, var(--ink), transparent); }
-.marquee__track { display: flex; width: max-content; gap: clamp(2.5rem, 5vw, 4.5rem); animation: marqueeSlide 48s linear infinite; }
+/* Seamless infinite marquee: two identical groups sit edge-to-edge with NO
+   track-level gap. Each group carries its own trailing gap (padding-right ==
+   the internal item gap), so the two groups are exactly equal width and the
+   -50% translate lands precisely on the seam — no half-gap snap, no jump. */
+.marquee__track { display: flex; width: max-content; animation: marqueeSlide 70s linear infinite; will-change: transform; }
 .marquee:hover .marquee__track { animation-play-state: paused; }
-.marquee__group { display: flex; align-items: center; gap: clamp(2.5rem, 5vw, 4.5rem); white-space: nowrap; }
+.marquee__group { display: flex; align-items: center; gap: clamp(2.5rem, 5vw, 4.5rem); padding-right: clamp(2.5rem, 5vw, 4.5rem); white-space: nowrap; }
 .marquee__item { font-family: var(--font-display); font-style: italic; font-weight: 500; font-size: clamp(1rem, 0.9rem + 0.4vw, 1.25rem); }
 .marquee__star { color: var(--brick-bright); font-size: 0.875rem; transform: translateY(-1px); display: inline-block; }
-@keyframes marqueeSlide { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes marqueeSlide { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(-50%, 0, 0); } }
 
 /* Editorial pull quote — wider container, shorter cap on font, tighter padding */
 .pull-quote--editorial {
