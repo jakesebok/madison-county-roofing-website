@@ -290,9 +290,26 @@ p { margin: 0; }
    (sky, trees, brick). Subtle shadow gives it a touch more lift on bright crops. */
 .hero__eyebrow { color: var(--paper); text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4); }
 .hero__tagline { font-family: var(--font-display); font-style: italic; font-weight: 500; font-size: clamp(1.5rem, 1.1rem + 1.5vw, 2.25rem); color: var(--brick-bright); line-height: 1.15; }
-.hero__title { color: var(--paper); }
-.hero__title .italic-display { color: var(--brick-bright); }
-.hero__sub { font-size: var(--fs-lead); line-height: 1.6; color: rgba(247, 244, 237, 0.92); max-width: 56ch; }
+/* P-002 (PREMIUM-PATTERNS.md, MANDATORY per BUILD-STANDARDS §7) — text-shadow
+   on every text element positioned over the hero photo so the H1, the brick
+   italic accent, and the sub-copy all read crisp against busy photo regions
+   (sky, brick, sunlit shingles). Two-layer shadow on the headlines: a soft
+   wide blur creates lift, a tight sharp blur crisps the glyph edges. */
+.hero__title {
+  color: var(--paper);
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.5), 0 1px 2px rgba(0, 0, 0, 0.35);
+}
+.hero__title .italic-display {
+  color: var(--brick-bright);
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.6), 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+.hero__sub {
+  font-size: var(--fs-lead);
+  line-height: 1.6;
+  color: rgba(247, 244, 237, 0.95);
+  max-width: 56ch;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.45);
+}
 
 /* (1937 ghost removed — heritage is communicated by H1, marquee, and affiliations) */
 
