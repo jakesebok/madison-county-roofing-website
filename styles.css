@@ -311,7 +311,10 @@ p { margin: 0; }
   text-shadow: 0 1px 6px rgba(0, 0, 0, 0.45);
 }
 
-/* (1937 ghost removed — heritage is communicated by H1, marquee, and affiliations) */
+/* 1937 watermark restored — see .hero__watermark below. The Fraunces italic
+   year sits bottom-right of the hero at ~0.085 opacity, fading and rising
+   into place 500ms after the photo's kenBurns starts. Editorial heritage
+   beat: the year reads before the eye gets to the H1. */
 
 /* ============================================================
    FAQ — simple stacked Q/A pairs for service pages (FAQPage schema)
@@ -618,6 +621,79 @@ p { margin: 0; }
 .hero__inner > *:nth-child(5) { animation-delay: 1000ms; }
 @keyframes heroFade { 0% { opacity: 0; transform: translateY(28px); } 100% { opacity: 1; transform: none; } }
 
+/* ===========================================================
+   Hero watermark — giant editorial "1937" behind everything
+   =========================================================== */
+.hero__watermark {
+  position: absolute;
+  bottom: clamp(-3rem, -3vw, -1rem);
+  right: clamp(-2rem, -2vw, -0.5rem);
+  z-index: 1;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 700;
+  font-size: clamp(11rem, 28vw, 30rem);
+  line-height: 0.82;
+  letter-spacing: -0.045em;
+  color: var(--paper);
+  opacity: 0;
+  pointer-events: none;
+  user-select: none;
+  animation: watermarkRise 2.2s 500ms cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+}
+@keyframes watermarkRise {
+  0%   { opacity: 0;     transform: translateY(60px) scale(0.94); }
+  100% { opacity: 0.085; transform: translateY(0) scale(1); }
+}
+@media (max-width: 720px) {
+  .hero__watermark { bottom: -0.5rem; right: -1rem; font-size: clamp(9rem, 48vw, 18rem); }
+  @keyframes watermarkRise {
+    0%   { opacity: 0;    transform: translateY(40px) scale(0.94); }
+    100% { opacity: 0.07; transform: translateY(0) scale(1); }
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero__watermark { opacity: 0.085; animation: none; transform: none; }
+}
+
+/* ===========================================================
+   Hero trust strip — BBB / Google / CertainTeed / 1937
+   sits between hero__sub and hero__cta, inherits the column's
+   heroFade so it lands as a beat of the cascade.
+   =========================================================== */
+.hero__trust {
+  list-style: none;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.75rem;
+}
+.hero__trust li { display: grid; gap: 0.1rem; }
+.hero__trust strong {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1.0625rem;
+  letter-spacing: -0.005em;
+  color: var(--brick-bright);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.45);
+}
+.hero__trust span {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: rgba(247, 244, 237, 0.78);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+@media (max-width: 540px) {
+  .hero__trust { gap: 0.875rem 1.25rem; }
+  .hero__trust strong { font-size: 0.95rem; }
+  .hero__trust span { font-size: 0.6875rem; }
+}
+
 /* Marquee */
 .marquee {
   background: var(--ink);
@@ -740,6 +816,49 @@ p { margin: 0; }
 }
 @media (min-width: 640px)  { .scrapbook__grid { grid-template-columns: repeat(2, 1fr); } }
 @media (min-width: 960px)  { .scrapbook__grid { grid-template-columns: repeat(3, 1fr); } }
+
+/* ===========================================================
+   PREMIUM-PATTERNS P-004 — Pull-quote reveal
+   One prominent handwritten note above the scrapbook grid.
+   Resolves from opacity 0 + 20px down + 6px blur on 30%
+   intersection, same easing curve as the hero entrance.
+   =========================================================== */
+.pull-quote {
+  margin: 0 auto;
+  max-width: 720px;
+  text-align: center;
+  padding-block: clamp(2rem, 4vw, 3.5rem);
+  opacity: 0;
+  transform: translateY(20px);
+  filter: blur(6px);
+  transition: opacity 0.9s cubic-bezier(0.22, 0.61, 0.36, 1),
+              transform 0.9s cubic-bezier(0.22, 0.61, 0.36, 1),
+              filter 0.9s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.pull-quote.is-revealed { opacity: 1; transform: none; filter: none; }
+.pull-quote__text {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(1.625rem, 1.3rem + 1.5vw, 2.5rem);
+  line-height: 1.25;
+  color: var(--brick);
+  letter-spacing: -0.012em;
+  margin: 0 0 1.25rem;
+}
+.pull-quote__sig {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: var(--steel);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+@media (prefers-reduced-motion: reduce) {
+  .pull-quote { opacity: 1; transform: none; filter: none; transition: none; }
+}
+
 .notecard {
   position: relative;
   background: var(--paper-card);
