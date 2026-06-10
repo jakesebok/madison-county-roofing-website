@@ -611,7 +611,12 @@ p { margin: 0; }
 
 /* Hero choreography — gentle Ken Burns so more of the image (and the sky)
    stays in view. Strong zoom was cropping the sky out from behind the nav. */
-.hero__bg img { animation: kenBurns 26s ease-out forwards; transform-origin: center 50%; }
+/* Cinematic settle (Miller Septic treatment): the photo lands from a gentle
+   zoom over 8s with a confident ease-out curve, so the image visibly "arrives"
+   while the text cascade plays — instead of the old 26s drift nobody could
+   perceive. transform-origin stays center 50% so the sky never crops out from
+   behind the transparent nav at max zoom. */
+.hero__bg img { animation: kenBurns 8s cubic-bezier(0.16, 0.72, 0.28, 1) both; transform-origin: center 50%; will-change: transform; }
 @keyframes kenBurns { 0% { transform: scale(1.08); } 100% { transform: scale(1.00); } }
 .hero__inner > * { animation: heroFade 1300ms var(--ease) both; }
 .hero__inner > *:nth-child(1) { animation-delay: 200ms; }
@@ -654,44 +659,6 @@ p { margin: 0; }
 }
 @media (prefers-reduced-motion: reduce) {
   .hero__watermark { opacity: 0.085; animation: none; transform: none; }
-}
-
-/* ===========================================================
-   Hero trust strip — BBB / Google / CertainTeed / 1937
-   sits between hero__sub and hero__cta, inherits the column's
-   heroFade so it lands as a beat of the cascade.
-   =========================================================== */
-.hero__trust {
-  list-style: none;
-  margin: 1.25rem 0 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem 1.75rem;
-}
-.hero__trust li { display: grid; gap: 0.1rem; }
-.hero__trust strong {
-  font-family: var(--font-display);
-  font-style: italic;
-  font-weight: 600;
-  font-size: 1.0625rem;
-  letter-spacing: -0.005em;
-  color: var(--brick-bright);
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.45);
-}
-.hero__trust span {
-  font-family: var(--font-body);
-  font-size: 0.75rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  font-weight: 600;
-  color: rgba(247, 244, 237, 0.78);
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
-}
-@media (max-width: 540px) {
-  .hero__trust { gap: 0.875rem 1.25rem; }
-  .hero__trust strong { font-size: 0.95rem; }
-  .hero__trust span { font-size: 0.6875rem; }
 }
 
 /* Marquee */
