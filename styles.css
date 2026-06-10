@@ -619,6 +619,15 @@ p { margin: 0; }
 .hero__bg img { animation: kenBurns 8s cubic-bezier(0.16, 0.72, 0.28, 1) both; transform-origin: center 50%; will-change: transform; }
 @keyframes kenBurns { 0% { transform: scale(1.08); } 100% { transform: scale(1.00); } }
 .hero__inner > * { animation: heroFade 1300ms var(--ease) both; }
+/* Font-swap reflow guard (pairs with the inline head script): while
+   html.fonts-loading is set, the entrance clock is frozen at frame 0 —
+   text sits at opacity 0, so the fallback-serif -> Fraunces reflow
+   (the H1 "4 lines snapping to 3" flash) happens invisibly. The script
+   removes the class the moment Fraunces is available (1.8s cap), and
+   the cascade plays from the top with the real font already in place.
+   No JS = class never set = no pause. The photo + watermark keep
+   moving regardless, so a slow font never reads as a frozen page. */
+html.fonts-loading .hero__inner > * { animation-play-state: paused; }
 .hero__inner > *:nth-child(1) { animation-delay: 200ms; }
 .hero__inner > *:nth-child(2) { animation-delay: 400ms; }
 .hero__inner > *:nth-child(3) { animation-delay: 600ms; }
