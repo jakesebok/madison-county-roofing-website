@@ -636,38 +636,39 @@ html.fonts-loading .hero__inner > * { animation-play-state: paused; }
 @keyframes heroFade { 0% { opacity: 0; transform: translateY(28px); } 100% { opacity: 1; transform: none; } }
 
 /* ===========================================================
-   Hero watermark — giant editorial "1937" behind everything
+   Section watermark — giant editorial "1937" embossed into the
+   paper behind a calm content section. Lives behind "Same family.
+   Same county." where the copy already reads "since 1937", so the
+   numeral echoes the words instead of competing with them. Content
+   sits above it via the container's z-index; the number bleeds off
+   the bottom-right so it reads as heritage texture, not a billboard.
    =========================================================== */
-.hero__watermark {
+.has-watermark { position: relative; overflow: hidden; }
+.has-watermark > .container { position: relative; z-index: 1; }
+.section-watermark {
   position: absolute;
-  bottom: clamp(-3rem, -3vw, -1rem);
-  right: clamp(-2rem, -2vw, -0.5rem);
-  z-index: 1;
+  right: clamp(-2rem, -1.5vw, 0rem);
+  bottom: clamp(-2rem, -1.5vw, -0.5rem);
+  z-index: 0;
   font-family: var(--font-display);
   font-style: italic;
   font-weight: 700;
-  font-size: clamp(11rem, 28vw, 30rem);
-  line-height: 0.82;
-  letter-spacing: -0.045em;
-  color: var(--paper);
-  opacity: 0;
+  font-size: clamp(8rem, 21vw, 19rem);
+  line-height: 0.78;
+  letter-spacing: -0.04em;
+  color: var(--ink);
+  opacity: 0.05;
   pointer-events: none;
   user-select: none;
-  animation: watermarkRise 2.2s 500ms cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
-}
-@keyframes watermarkRise {
-  0%   { opacity: 0;     transform: translateY(60px) scale(0.94); }
-  100% { opacity: 0.085; transform: translateY(0) scale(1); }
+  white-space: nowrap;
 }
 @media (max-width: 720px) {
-  .hero__watermark { bottom: -0.5rem; right: -1rem; font-size: clamp(9rem, 48vw, 18rem); }
-  @keyframes watermarkRise {
-    0%   { opacity: 0;    transform: translateY(40px) scale(0.94); }
-    100% { opacity: 0.07; transform: translateY(0) scale(1); }
+  .section-watermark {
+    font-size: clamp(7rem, 38vw, 12rem);
+    right: -0.5rem;
+    bottom: -0.75rem;
+    opacity: 0.045;
   }
-}
-@media (prefers-reduced-motion: reduce) {
-  .hero__watermark { opacity: 0.085; animation: none; transform: none; }
 }
 
 /* Marquee */
