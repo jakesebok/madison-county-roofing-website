@@ -12,4 +12,10 @@
   <url><loc>https://madison-county-roofing-website.vercel.app/contact</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://madison-county-roofing-website.vercel.app/privacy</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://madison-county-roofing-website.vercel.app/terms</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://madison-county-roofing-website.vercel.app/roof-inspection</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://madison-county-roofing-website.vercel.app/service-area/granite-city</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://madison-county-roofing-website.vercel.app/service-area/troy</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://madison-county-roofing-website.vercel.app/service-area/glen-carbon</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://madison-county-roofing-website.vercel.app/service-area/maryville</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://madison-county-roofing-website.vercel.app/service-area/edwardsville</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>

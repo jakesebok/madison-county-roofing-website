@@ -51,9 +51,161 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "WebSite",
+      "@id": "https://madison-county-roofing-website.vercel.app/#website",
+      "name": "Madison County Roofing",
+      "url": "https://madison-county-roofing-website.vercel.app/"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://madison-county-roofing-website.vercel.app/contact#webpage",
+      "url": "https://madison-county-roofing-website.vercel.app/contact",
+      "name": "Free Estimate & Contact \u00b7 Madison County Roofing \u00b7 Collinsville, IL",
+      "isPartOf": {
+        "@id": "https://madison-county-roofing-website.vercel.app/#website"
+      },
+      "dateModified": "2026-07-12T08:00:00-06:00",
+      "breadcrumb": {
+        "@id": "https://madison-county-roofing-website.vercel.app/contact#breadcrumb"
+      }
+    },
+    {
+      "@type": "RoofingContractor",
+      "@id": "https://madison-county-roofing-website.vercel.app/#business",
+      "name": "Madison County Roofing & Home Improvements",
+      "alternateName": "Madison County Roofing",
+      "url": "https://madison-county-roofing-website.vercel.app/",
+      "image": "https://madison-county-roofing-website.vercel.app/assets/images/hero-home-new-roof.jpg",
+      "logo": "https://madison-county-roofing-website.vercel.app/assets/brand/logo.svg",
+      "telephone": "+1-618-876-4309",
+      "email": "info@madisoncountyroofing.com",
+      "foundingDate": "1937",
+      "priceRange": "$$",
+      "paymentAccepted": "Cash, Check",
+      "currenciesAccepted": "USD",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "5 Harmin Ln",
+        "addressLocality": "Collinsville",
+        "addressRegion": "IL",
+        "postalCode": "62234",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 38.6701,
+        "longitude": -89.9789
+      },
+      "areaServed": [
+        {
+          "@type": "AdministrativeArea",
+          "name": "Madison County, Illinois"
+        },
+        {
+          "@type": "City",
+          "name": "Collinsville"
+        },
+        {
+          "@type": "City",
+          "name": "Edwardsville"
+        },
+        {
+          "@type": "City",
+          "name": "Glen Carbon"
+        },
+        {
+          "@type": "City",
+          "name": "Granite City"
+        },
+        {
+          "@type": "City",
+          "name": "Maryville"
+        },
+        {
+          "@type": "City",
+          "name": "Troy"
+        },
+        {
+          "@type": "City",
+          "name": "Bethalto"
+        },
+        {
+          "@type": "City",
+          "name": "Highland"
+        },
+        {
+          "@type": "City",
+          "name": "Pontoon Beach"
+        },
+        {
+          "@type": "City",
+          "name": "Marine"
+        },
+        {
+          "@type": "City",
+          "name": "Saint Jacob"
+        },
+        {
+          "@type": "City",
+          "name": "Staunton"
+        }
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "08:00",
+          "closes": "16:30"
+        }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "7",
+        "bestRating": "5"
+      },
+      "founder": {
+        "@id": "https://madison-county-roofing-website.vercel.app/#person-owner"
+      },
+      "sameAs": [
+        "https://www.google.com/maps/place/?cid=5916470156890481778",
+        "https://www.facebook.com/p/Madison-County-Roofing-Home-Improvements-Inc-100089426243721/",
+        "https://www.yelp.com/biz/madison-county-roofing-and-home-improvements-collinsville",
+        "https://www.bbb.org/us/il/collinsville/profile/roofing-contractors/madison-county-roofing-0734-110149773"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://madison-county-roofing-website.vercel.app/#person-owner",
+      "name": "Mark Eck",
+      "jobTitle": "Owner & President",
+      "worksFor": {
+        "@id": "https://madison-county-roofing-website.vercel.app/#business"
+      },
+      "url": "https://madison-county-roofing-website.vercel.app/about",
+      "description": "Mark Eck owns and runs Madison County Roofing & Home Improvements in Collinsville, Illinois. He personally inspects every job and has kept the company family-owned since 1937.",
+      "knowsAbout": [
+        "Residential roofing",
+        "Roof replacement",
+        "Storm and hail damage repair",
+        "Insurance claim coordination",
+        "Commercial flat roofing",
+        "Asphalt shingle installation"
+      ],
+      "sameAs": [
+        "https://www.facebook.com/p/Madison-County-Roofing-Home-Improvements-Inc-100089426243721/"
+      ]
+    },
+    {
       "@type": "ContactPage",
       "@id": "https://madison-county-roofing-website.vercel.app/contact#contactpage",
-      "name": "Contact Madison County Roofing · Free Estimate",
+      "name": "Contact Madison County Roofing \u00b7 Free Estimate",
       "description": "Request a free estimate from Madison County Roofing. Call (618) 876-4309 or use the form. Mark Eck comes out himself. Mon-Fri 8a-4:30p. Family-owned in Collinsville, IL since 1937.",
       "url": "https://madison-county-roofing-website.vercel.app/contact",
       "primaryImageOfPage": "https://madison-county-roofing-website.vercel.app/assets/work/job-25-2025.webp",
@@ -78,20 +230,40 @@
           "name": "Contact",
           "item": "https://madison-county-roofing-website.vercel.app/contact"
         }
+      ],
+      "@id": "https://madison-county-roofing-website.vercel.app/contact#breadcrumb"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "@id": "https://madison-county-roofing-website.vercel.app/contact#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How soon will you get back to me?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Within one business day. For the fastest answer, call (618) 876-4309. The office is open Monday through Friday, 8:00am to 4:30pm."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is the estimate really free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Mark Eck comes out himself, looks at the roof, and writes you a real number. No commission-driven sales pitch."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What payment do you accept?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cash or check."
+          }
+        }
       ]
     }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "@id": "https://madison-county-roofing-website.vercel.app/contact#faq",
-  "mainEntity": [
-    { "@type": "Question", "name": "How soon will you get back to me?", "acceptedAnswer": { "@type": "Answer", "text": "Within one business day. For the fastest answer, call (618) 876-4309. The office is open Monday through Friday, 8:00am to 4:30pm." } },
-    { "@type": "Question", "name": "Is the estimate really free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Mark Eck comes out himself, looks at the roof, and writes you a real number. No commission-driven sales pitch." } },
-    { "@type": "Question", "name": "What payment do you accept?", "acceptedAnswer": { "@type": "Answer", "text": "Cash or check." } }
   ]
 }
 </script>
@@ -108,7 +280,14 @@
       <img src="/assets/brand/logo-light.svg" alt="Madison County Roofing" class="nav__brand-img nav__brand-img--light">
       <img src="/assets/brand/logo-dark.svg" alt="" aria-hidden="true" class="nav__brand-img nav__brand-img--dark">
     </a>
-    <nav aria-label="Primary"><ul class="nav__links"><li><a href="/residential-roofing">Residential</a></li><li><a href="/commercial-roofing">Commercial</a></li><li><a href="/storm-damage">Storm Damage</a></li><li><a href="/siding-gutters">Siding &amp; Gutters</a></li><li><a href="/about">About</a></li><li><a href="/contact" aria-current="page">Contact</a></li></ul></nav>
+    <nav aria-label="Primary"><ul class="nav__links">
+        <li><a href="/residential-roofing">Residential</a></li>
+        <li><a href="/commercial-roofing">Commercial</a></li>
+        <li><a href="/storm-damage">Storm Damage</a></li>
+        <li><a href="/roof-inspection">Roof Inspection</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact" aria-current="page">Contact</a></li>
+      </ul></nav>
     <div class="nav__actions"><a href="tel:+16188764309" class="nav__cta" aria-label="Call (618) 876-4309"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span class="nav__cta-label">(618) 876-4309</span></a><button class="nav__menu-btn" type="button" aria-label="Open menu" data-drawer-open><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" width="24" height="24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button></div>
   </div>
 </header>
@@ -121,7 +300,7 @@
 
 <div class="nav__drawer" data-drawer aria-hidden="true">
   <div class="nav__drawer-head"><img src="/assets/brand/logo-light.svg" alt="Madison County Roofing"><button class="nav__menu-btn" type="button" aria-label="Close menu" data-drawer-close><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" width="24" height="24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
-  <ul class="nav__drawer-links"><li><a href="/residential-roofing">Residential Roofing</a></li><li><a href="/commercial-roofing">Commercial Roofing</a></li><li><a href="/storm-damage">Storm Damage</a></li><li><a href="/siding-gutters">Siding &amp; Gutters</a></li><li><a href="/our-work">Our Work</a></li><li><a href="/about">About</a></li><li><a href="/testimonials">Testimonials</a></li><li><a href="/service-area">Service Area</a></li><li><a href="/contact" aria-current="page">Contact</a></li></ul>
+  <ul class="nav__drawer-links"><li><a href="/residential-roofing">Residential Roofing</a></li><li><a href="/commercial-roofing">Commercial Roofing</a></li><li><a href="/storm-damage">Storm Damage</a></li><li><a href="/roof-inspection">Roof Inspection</a></li><li><a href="/siding-gutters">Siding & Gutters</a></li><li><a href="/our-work">Our Work</a></li><li><a href="/about">About</a></li><li><a href="/testimonials">Testimonials</a></li><li><a href="/service-area">Service Area</a></li><li><a href="/contact" aria-current="page">Contact</a></li></ul>
   <div class="nav__drawer-foot"><span>5 Harmin Ln · Collinsville, IL 62234</span><a href="tel:+16188764309">(618) 876-4309</a><span>Mon–Fri 8a–4:30p</span></div>
 </div>
 
@@ -281,13 +460,13 @@
           </div>
         </div>
         <p class="footer__tag">Roofing Madison County since 1937.</p>
-        <address class="footer__addr">5 Harmin Ln<br>Collinsville, IL 62234<br><a href="tel:+16188764309">(618) 876-4309</a><br><span style="color: rgba(247,244,237,0.5); font-size: 0.875rem;">Mon–Fri 8a–4:30p</span></address>
+        <address class="footer__addr">5 Harmin Ln<br>Collinsville, IL 62234<br><a href="tel:+16188764309">(618) 876-4309</a><br><span style="color: rgba(247,244,237,0.5); font-size: 0.875rem;">Mon&ndash;Fri 8a&ndash;4:30p</span></address>
       </div>
-      <div class="footer__col"><h3 class="footer__col-heading">What we do</h3><ul><li><a href="/residential-roofing">Residential roofing</a></li><li><a href="/commercial-roofing">Commercial roofing</a></li><li><a href="/storm-damage">Storm damage</a></li><li><a href="/siding-gutters">Siding &amp; gutters</a></li></ul></div>
-      <div class="footer__col"><h3 class="footer__col-heading">The shop</h3><ul><li><a href="/about">About us</a></li><li><a href="/our-work">Our work</a></li><li><a href="/testimonials">Testimonials</a></li><li><a href="/service-area">Service area</a></li></ul></div>
-      <div class="footer__col"><h3 class="footer__col-heading">Get in touch</h3><ul><li><a href="/contact">Free estimate</a></li><li><a href="tel:+16188764309">(618) 876-4309</a></li><li><a href="https://www.facebook.com/p/Madison-County-Roofing-Home-Improvements-Inc-100089426243721/" target="_blank" rel="noopener">Facebook</a></li></ul></div>
+      <div class="footer__col"><h3 class="footer__col-heading">What we do</h3><ul><li><a href="/residential-roofing">Residential roofing</a></li><li><a href="/roof-inspection">Roof inspection</a></li><li><a href="/storm-damage">Storm damage</a></li><li><a href="/commercial-roofing">Commercial roofing</a></li><li><a href="/siding-gutters">Siding &amp; gutters</a></li></ul></div>
+      <div class="footer__col"><h3 class="footer__col-heading">Where we work</h3><ul><li><a href="/service-area/granite-city">Granite City</a></li><li><a href="/service-area/troy">Troy</a></li><li><a href="/service-area/glen-carbon">Glen Carbon</a></li><li><a href="/service-area/maryville">Maryville</a></li><li><a href="/service-area/edwardsville">Edwardsville</a></li><li><a href="/service-area">All of Madison County</a></li></ul></div>
+      <div class="footer__col"><h3 class="footer__col-heading">The shop</h3><ul><li><a href="/about">About Mark</a></li><li><a href="/our-work">Our work</a></li><li><a href="/testimonials">Testimonials</a></li><li><a href="/contact">Free estimate</a></li><li><a href="tel:+16188764309">(618) 876-4309</a></li><li><a href="https://www.facebook.com/p/Madison-County-Roofing-Home-Improvements-Inc-100089426243721/" target="_blank" rel="noopener">Facebook</a></li></ul></div>
     </div>
-    <div class="footer__bottom"><span>© 2026 Madison County Roofing &amp; Home Improvements, Inc. All rights reserved. Built by <a href="https://localcraftdigital.com" target="_blank" rel="noopener" style="color: inherit; text-decoration: underline; text-decoration-color: rgba(247,244,237,0.3);">LocalCraft Digital</a>.</span><span>Family-owned · Collinsville, IL · Est. 1937 · <a href="/privacy" style="color: inherit; text-decoration: underline; text-decoration-color: rgba(247,244,237,0.3);">Privacy</a> · <a href="/terms" style="color: inherit; text-decoration: underline; text-decoration-color: rgba(247,244,237,0.3);">Terms</a></span></div>
+    <div class="footer__bottom"><span>&copy; 2026 Madison County Roofing &amp; Home Improvements, Inc. All rights reserved. Built by <a href="https://localcraftdigital.com" target="_blank" rel="noopener" style="color: inherit; text-decoration: underline; text-decoration-color: rgba(247,244,237,0.3);">LocalCraft Digital</a>.</span><span>Family-owned &middot; Collinsville, IL &middot; Est. 1937 &middot; <a href="/privacy" style="color: inherit; text-decoration: underline; text-decoration-color: rgba(247,244,237,0.3);">Privacy</a> &middot; <a href="/terms" style="color: inherit; text-decoration: underline; text-decoration-color: rgba(247,244,237,0.3);">Terms</a></span></div>
   </div>
 </footer>
 

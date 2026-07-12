@@ -55,20 +55,27 @@
     {
       "@type": "WebSite",
       "@id": "https://madison-county-roofing-website.vercel.app/#website",
-      "url": "https://madison-county-roofing-website.vercel.app/",
       "name": "Madison County Roofing",
-      "description": "Family-owned roofer in Collinsville, IL since 1937. Residential roofing, commercial roofing, storm damage, siding, gutters.",
-      "publisher": { "@id": "https://madison-county-roofing-website.vercel.app/#business" },
-      "inLanguage": "en-US"
+      "url": "https://madison-county-roofing-website.vercel.app/"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://madison-county-roofing-website.vercel.app/#webpage",
+      "url": "https://madison-county-roofing-website.vercel.app/",
+      "name": "Madison County Roofing \u00b7 Roofers since 1937 \u00b7 Collinsville, IL",
+      "isPartOf": {
+        "@id": "https://madison-county-roofing-website.vercel.app/#website"
+      },
+      "dateModified": "2026-07-12T08:00:00-06:00"
     },
     {
       "@type": "RoofingContractor",
       "@id": "https://madison-county-roofing-website.vercel.app/#business",
       "name": "Madison County Roofing & Home Improvements",
       "alternateName": "Madison County Roofing",
+      "url": "https://madison-county-roofing-website.vercel.app/",
       "image": "https://madison-county-roofing-website.vercel.app/assets/images/hero-home-new-roof.jpg",
       "logo": "https://madison-county-roofing-website.vercel.app/assets/brand/logo.svg",
-      "url": "https://madison-county-roofing-website.vercel.app/",
       "telephone": "+1-618-876-4309",
       "email": "info@madisoncountyroofing.com",
       "foundingDate": "1937",
@@ -83,62 +90,164 @@
         "postalCode": "62234",
         "addressCountry": "US"
       },
-      "geo": { "@type": "GeoCoordinates", "latitude": 38.6701, "longitude": -89.9789 },
-      "areaServed": [
-        { "@type": "AdministrativeArea", "name": "Madison County, Illinois" },
-        { "@type": "City", "name": "Collinsville" },
-        { "@type": "City", "name": "Edwardsville" },
-        { "@type": "City", "name": "Glen Carbon" },
-        { "@type": "City", "name": "Granite City" },
-        { "@type": "City", "name": "Bethalto" },
-        { "@type": "City", "name": "Highland" },
-        { "@type": "City", "name": "Marine" },
-        { "@type": "City", "name": "Saint Jacob" },
-        { "@type": "City", "name": "Staunton" },
-        { "@type": "City", "name": "Troy" },
-        { "@type": "City", "name": "Maryville" }
-      ],
-      "knowsAbout": [
-        "Residential roofing", "Commercial roofing", "Asphalt shingle roofing",
-        "Roof replacement", "Storm damage repair", "Hail damage", "Insurance claim coordination",
-        "EPDM rubber roofing", "Modified bitumen roofing", "GacoRoof silicone coating",
-        "Seamless aluminum gutters", "Vinyl siding", "Soffit and fascia"
-      ],
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Madison County Roofing Services",
-        "itemListElement": [
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Residential Roofing", "url": "https://madison-county-roofing-website.vercel.app/residential-roofing" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Commercial Roofing", "url": "https://madison-county-roofing-website.vercel.app/commercial-roofing" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Storm Damage Repair", "url": "https://madison-county-roofing-website.vercel.app/storm-damage" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Siding, Soffit, Fascia & Seamless Gutters", "url": "https://madison-county-roofing-website.vercel.app/siding-gutters" } }
-        ]
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 38.6701,
+        "longitude": -89.9789
       },
-      "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "6", "bestRating": "5" },
-      "openingHoursSpecification": [{
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "08:00",
-        "closes": "16:30"
-      }],
+      "areaServed": [
+        {
+          "@type": "AdministrativeArea",
+          "name": "Madison County, Illinois"
+        },
+        {
+          "@type": "City",
+          "name": "Collinsville"
+        },
+        {
+          "@type": "City",
+          "name": "Edwardsville"
+        },
+        {
+          "@type": "City",
+          "name": "Glen Carbon"
+        },
+        {
+          "@type": "City",
+          "name": "Granite City"
+        },
+        {
+          "@type": "City",
+          "name": "Maryville"
+        },
+        {
+          "@type": "City",
+          "name": "Troy"
+        },
+        {
+          "@type": "City",
+          "name": "Bethalto"
+        },
+        {
+          "@type": "City",
+          "name": "Highland"
+        },
+        {
+          "@type": "City",
+          "name": "Pontoon Beach"
+        },
+        {
+          "@type": "City",
+          "name": "Marine"
+        },
+        {
+          "@type": "City",
+          "name": "Saint Jacob"
+        },
+        {
+          "@type": "City",
+          "name": "Staunton"
+        }
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "08:00",
+          "closes": "16:30"
+        }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "7",
+        "bestRating": "5"
+      },
+      "founder": {
+        "@id": "https://madison-county-roofing-website.vercel.app/#person-owner"
+      },
+      "sameAs": [
+        "https://www.google.com/maps/place/?cid=5916470156890481778",
+        "https://www.facebook.com/p/Madison-County-Roofing-Home-Improvements-Inc-100089426243721/",
+        "https://www.yelp.com/biz/madison-county-roofing-and-home-improvements-collinsville",
+        "https://www.bbb.org/us/il/collinsville/profile/roofing-contractors/madison-county-roofing-0734-110149773"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://madison-county-roofing-website.vercel.app/#person-owner",
+      "name": "Mark Eck",
+      "jobTitle": "Owner & President",
+      "worksFor": {
+        "@id": "https://madison-county-roofing-website.vercel.app/#business"
+      },
+      "url": "https://madison-county-roofing-website.vercel.app/about",
+      "description": "Mark Eck owns and runs Madison County Roofing & Home Improvements in Collinsville, Illinois. He personally inspects every job and has kept the company family-owned since 1937.",
+      "knowsAbout": [
+        "Residential roofing",
+        "Roof replacement",
+        "Storm and hail damage repair",
+        "Insurance claim coordination",
+        "Commercial flat roofing",
+        "Asphalt shingle installation"
+      ],
       "sameAs": [
         "https://www.facebook.com/p/Madison-County-Roofing-Home-Improvements-Inc-100089426243721/"
       ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "@id": "https://madison-county-roofing-website.vercel.app/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How long has Madison County Roofing been in business?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Since 1937. We're a third-generation, family-owned business based in Collinsville, Illinois. Mark Eck runs it today and is on every single job himself."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What areas do you serve?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Madison County and the Metro East: Collinsville, Edwardsville, Glen Carbon, Granite City, Bethalto, Highland, Maryville, Troy, Staunton, Marine, Saint Jacob, and the surrounding towns."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I get a free estimate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Call (618) 876-4309 or use the form on our contact page. Mark comes out himself, looks at the roof, and writes you a real number. We respond within one business day."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What payment do you accept?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cash or check."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are you licensed, bonded, and insured?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, in Illinois. We're also a CertainTeed ShingleMaster, an Owens Corning Preferred Contractor, and BBB A+ accredited since 2009."
+          }
+        }
+      ]
     }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "@id": "https://madison-county-roofing-website.vercel.app/#faq",
-  "mainEntity": [
-    { "@type": "Question", "name": "How long has Madison County Roofing been in business?", "acceptedAnswer": { "@type": "Answer", "text": "Since 1937. We're a third-generation, family-owned business based in Collinsville, Illinois. Mark Eck runs it today and is on every single job himself." } },
-    { "@type": "Question", "name": "What areas do you serve?", "acceptedAnswer": { "@type": "Answer", "text": "Madison County and the Metro East: Collinsville, Edwardsville, Glen Carbon, Granite City, Bethalto, Highland, Maryville, Troy, Staunton, Marine, Saint Jacob, and the surrounding towns." } },
-    { "@type": "Question", "name": "How do I get a free estimate?", "acceptedAnswer": { "@type": "Answer", "text": "Call (618) 876-4309 or use the form on our contact page. Mark comes out himself, looks at the roof, and writes you a real number. We respond within one business day." } },
-    { "@type": "Question", "name": "What payment do you accept?", "acceptedAnswer": { "@type": "Answer", "text": "Cash or check." } },
-    { "@type": "Question", "name": "Are you licensed, bonded, and insured?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, in Illinois. We're also a CertainTeed ShingleMaster, an Owens Corning Preferred Contractor, and BBB A+ accredited since 2009." } }
   ]
 }
 </script>
@@ -160,7 +269,7 @@
         <li><a href="/residential-roofing">Residential</a></li>
         <li><a href="/commercial-roofing">Commercial</a></li>
         <li><a href="/storm-damage">Storm Damage</a></li>
-        <li><a href="/siding-gutters">Siding &amp; Gutters</a></li>
+        <li><a href="/roof-inspection">Roof Inspection</a></li>
         <li><a href="/about">About</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>
@@ -182,17 +291,7 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" width="24" height="24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
     </button>
   </div>
-  <ul class="nav__drawer-links">
-    <li><a href="/residential-roofing">Residential Roofing</a></li>
-    <li><a href="/commercial-roofing">Commercial Roofing</a></li>
-    <li><a href="/storm-damage">Storm Damage</a></li>
-    <li><a href="/siding-gutters">Siding &amp; Gutters</a></li>
-    <li><a href="/our-work">Our Work</a></li>
-    <li><a href="/about">About</a></li>
-    <li><a href="/testimonials">Testimonials</a></li>
-    <li><a href="/service-area">Service Area</a></li>
-    <li><a href="/contact">Contact</a></li>
-  </ul>
+  <ul class="nav__drawer-links"><li><a href="/residential-roofing">Residential Roofing</a></li><li><a href="/commercial-roofing">Commercial Roofing</a></li><li><a href="/storm-damage">Storm Damage</a></li><li><a href="/roof-inspection">Roof Inspection</a></li><li><a href="/siding-gutters">Siding & Gutters</a></li><li><a href="/our-work">Our Work</a></li><li><a href="/about">About</a></li><li><a href="/testimonials">Testimonials</a></li><li><a href="/service-area">Service Area</a></li><li><a href="/contact">Contact</a></li></ul>
   <div class="nav__drawer-foot">
     <span>5 Harmin Ln · Collinsville, IL 62234</span>
     <a href="tel:+16188764309">(618) 876-4309</a>
@@ -303,6 +402,17 @@
         <span class="marquee__item">Free in-person estimates</span>
         <span class="marquee__star">★</span>
       </div>
+    </div>
+  </section>
+
+  <!-- ANSWER-FIRST: AEO answer capsule + authority citation (sections 4c and 4d) -->
+  <section class="section section--tight" style="padding-bottom: 0;">
+    <div class="container container--narrow reveal">
+      <span class="eyebrow">The short answer</span>
+      <h2>Who has roofed Madison County the longest?</h2>
+      <p class="lead" style="margin-top: var(--space-4);">Madison County Roofing &amp; Home Improvements has put roofs on Madison County, Illinois since 1937, longer than almost any contractor in the Metro East. It stays family-owned and family-run: owner Mark Eck scopes and checks every job himself, backed by a crew whose faces do not change from one year to the next.</p>
+      <p style="margin-top: var(--space-3);">According to the <a href="https://www.iii.org/article/hail" target="_blank" rel="noopener nofollow">Insurance Information Institute</a>, hail is one of the most frequent and costly causes of U.S. property damage, and the St. Louis Metro East sits in a high-hail corridor. Madison County Roofing has documented that damage for local insurance claims since 1937.</p>
+      <p class="last-updated" style="margin-top: var(--space-4); color: var(--steel); font-size: 0.875rem;">Last updated July 12, 2026</p>
     </div>
   </section>
 
@@ -675,39 +785,13 @@
           </div>
         </div>
         <p class="footer__tag">Roofing Madison County since 1937.</p>
-        <address class="footer__addr">5 Harmin Ln<br>Collinsville, IL 62234<br><a href="tel:+16188764309">(618) 876-4309</a><br><span style="color: rgba(247,244,237,0.5); font-size: 0.875rem;">Mon–Fri 8a–4:30p</span></address>
+        <address class="footer__addr">5 Harmin Ln<br>Collinsville, IL 62234<br><a href="tel:+16188764309">(618) 876-4309</a><br><span style="color: rgba(247,244,237,0.5); font-size: 0.875rem;">Mon&ndash;Fri 8a&ndash;4:30p</span></address>
       </div>
-      <div class="footer__col">
-        <h3 class="footer__col-heading">What we do</h3>
-        <ul>
-          <li><a href="/residential-roofing">Residential roofing</a></li>
-          <li><a href="/commercial-roofing">Commercial roofing</a></li>
-          <li><a href="/storm-damage">Storm damage</a></li>
-          <li><a href="/siding-gutters">Siding &amp; gutters</a></li>
-        </ul>
-      </div>
-      <div class="footer__col">
-        <h3 class="footer__col-heading">The shop</h3>
-        <ul>
-          <li><a href="/about">About us</a></li>
-          <li><a href="/our-work">Our work</a></li>
-          <li><a href="/testimonials">Testimonials</a></li>
-          <li><a href="/service-area">Service area</a></li>
-        </ul>
-      </div>
-      <div class="footer__col">
-        <h3 class="footer__col-heading">Get in touch</h3>
-        <ul>
-          <li><a href="/contact">Free estimate</a></li>
-          <li><a href="tel:+16188764309">(618) 876-4309</a></li>
-          <li><a href="https://www.facebook.com/p/Madison-County-Roofing-Home-Improvements-Inc-100089426243721/" target="_blank" rel="noopener">Facebook</a></li>
-        </ul>
-      </div>
+      <div class="footer__col"><h3 class="footer__col-heading">What we do</h3><ul><li><a href="/residential-roofing">Residential roofing</a></li><li><a href="/roof-inspection">Roof inspection</a></li><li><a href="/storm-damage">Storm damage</a></li><li><a href="/commercial-roofing">Commercial roofing</a></li><li><a href="/siding-gutters">Siding &amp; gutters</a></li></ul></div>
+      <div class="footer__col"><h3 class="footer__col-heading">Where we work</h3><ul><li><a href="/service-area/granite-city">Granite City</a></li><li><a href="/service-area/troy">Troy</a></li><li><a href="/service-area/glen-carbon">Glen Carbon</a></li><li><a href="/service-area/maryville">Maryville</a></li><li><a href="/service-area/edwardsville">Edwardsville</a></li><li><a href="/service-area">All of Madison County</a></li></ul></div>
+      <div class="footer__col"><h3 class="footer__col-heading">The shop</h3><ul><li><a href="/about">About Mark</a></li><li><a href="/our-work">Our work</a></li><li><a href="/testimonials">Testimonials</a></li><li><a href="/contact">Free estimate</a></li><li><a href="tel:+16188764309">(618) 876-4309</a></li><li><a href="https://www.facebook.com/p/Madison-County-Roofing-Home-Improvements-Inc-100089426243721/" target="_blank" rel="noopener">Facebook</a></li></ul></div>
     </div>
-    <div class="footer__bottom">
-      <span>© 2026 Madison County Roofing &amp; Home Improvements, Inc. All rights reserved. Built by <a href="https://localcraftdigital.com" target="_blank" rel="noopener" style="color: inherit; text-decoration: underline; text-decoration-color: rgba(247,244,237,0.3);">LocalCraft Digital</a>.</span>
-      <span>Family-owned · Collinsville, IL · Est. 1937 · <a href="/privacy" style="color: inherit; text-decoration: underline; text-decoration-color: rgba(247,244,237,0.3);">Privacy</a> · <a href="/terms" style="color: inherit; text-decoration: underline; text-decoration-color: rgba(247,244,237,0.3);">Terms</a></span>
-    </div>
+    <div class="footer__bottom"><span>&copy; 2026 Madison County Roofing &amp; Home Improvements, Inc. All rights reserved. Built by <a href="https://localcraftdigital.com" target="_blank" rel="noopener" style="color: inherit; text-decoration: underline; text-decoration-color: rgba(247,244,237,0.3);">LocalCraft Digital</a>.</span><span>Family-owned &middot; Collinsville, IL &middot; Est. 1937 &middot; <a href="/privacy" style="color: inherit; text-decoration: underline; text-decoration-color: rgba(247,244,237,0.3);">Privacy</a> &middot; <a href="/terms" style="color: inherit; text-decoration: underline; text-decoration-color: rgba(247,244,237,0.3);">Terms</a></span></div>
   </div>
 </footer>
 

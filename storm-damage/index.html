@@ -52,6 +52,158 @@
   "@context": "https://schema.org",
   "@graph": [
     {
+      "@type": "WebSite",
+      "@id": "https://madison-county-roofing-website.vercel.app/#website",
+      "name": "Madison County Roofing",
+      "url": "https://madison-county-roofing-website.vercel.app/"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://madison-county-roofing-website.vercel.app/storm-damage#webpage",
+      "url": "https://madison-county-roofing-website.vercel.app/storm-damage",
+      "name": "Storm Damage Roof Repair \u00b7 Hail & Wind \u00b7 Madison County Roofing",
+      "isPartOf": {
+        "@id": "https://madison-county-roofing-website.vercel.app/#website"
+      },
+      "dateModified": "2026-07-12T08:00:00-06:00",
+      "breadcrumb": {
+        "@id": "https://madison-county-roofing-website.vercel.app/storm-damage#breadcrumb"
+      }
+    },
+    {
+      "@type": "RoofingContractor",
+      "@id": "https://madison-county-roofing-website.vercel.app/#business",
+      "name": "Madison County Roofing & Home Improvements",
+      "alternateName": "Madison County Roofing",
+      "url": "https://madison-county-roofing-website.vercel.app/",
+      "image": "https://madison-county-roofing-website.vercel.app/assets/images/hero-home-new-roof.jpg",
+      "logo": "https://madison-county-roofing-website.vercel.app/assets/brand/logo.svg",
+      "telephone": "+1-618-876-4309",
+      "email": "info@madisoncountyroofing.com",
+      "foundingDate": "1937",
+      "priceRange": "$$",
+      "paymentAccepted": "Cash, Check",
+      "currenciesAccepted": "USD",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "5 Harmin Ln",
+        "addressLocality": "Collinsville",
+        "addressRegion": "IL",
+        "postalCode": "62234",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 38.6701,
+        "longitude": -89.9789
+      },
+      "areaServed": [
+        {
+          "@type": "AdministrativeArea",
+          "name": "Madison County, Illinois"
+        },
+        {
+          "@type": "City",
+          "name": "Collinsville"
+        },
+        {
+          "@type": "City",
+          "name": "Edwardsville"
+        },
+        {
+          "@type": "City",
+          "name": "Glen Carbon"
+        },
+        {
+          "@type": "City",
+          "name": "Granite City"
+        },
+        {
+          "@type": "City",
+          "name": "Maryville"
+        },
+        {
+          "@type": "City",
+          "name": "Troy"
+        },
+        {
+          "@type": "City",
+          "name": "Bethalto"
+        },
+        {
+          "@type": "City",
+          "name": "Highland"
+        },
+        {
+          "@type": "City",
+          "name": "Pontoon Beach"
+        },
+        {
+          "@type": "City",
+          "name": "Marine"
+        },
+        {
+          "@type": "City",
+          "name": "Saint Jacob"
+        },
+        {
+          "@type": "City",
+          "name": "Staunton"
+        }
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "08:00",
+          "closes": "16:30"
+        }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5.0",
+        "reviewCount": "7",
+        "bestRating": "5"
+      },
+      "founder": {
+        "@id": "https://madison-county-roofing-website.vercel.app/#person-owner"
+      },
+      "sameAs": [
+        "https://www.google.com/maps/place/?cid=5916470156890481778",
+        "https://www.facebook.com/p/Madison-County-Roofing-Home-Improvements-Inc-100089426243721/",
+        "https://www.yelp.com/biz/madison-county-roofing-and-home-improvements-collinsville",
+        "https://www.bbb.org/us/il/collinsville/profile/roofing-contractors/madison-county-roofing-0734-110149773"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://madison-county-roofing-website.vercel.app/#person-owner",
+      "name": "Mark Eck",
+      "jobTitle": "Owner & President",
+      "worksFor": {
+        "@id": "https://madison-county-roofing-website.vercel.app/#business"
+      },
+      "url": "https://madison-county-roofing-website.vercel.app/about",
+      "description": "Mark Eck owns and runs Madison County Roofing & Home Improvements in Collinsville, Illinois. He personally inspects every job and has kept the company family-owned since 1937.",
+      "knowsAbout": [
+        "Residential roofing",
+        "Roof replacement",
+        "Storm and hail damage repair",
+        "Insurance claim coordination",
+        "Commercial flat roofing",
+        "Asphalt shingle installation"
+      ],
+      "sameAs": [
+        "https://www.facebook.com/p/Madison-County-Roofing-Home-Improvements-Inc-100089426243721/"
+      ]
+    },
+    {
       "@type": "Service",
       "@id": "https://madison-county-roofing-website.vercel.app/storm-damage#service",
       "name": "Storm Damage Roof Repair in Madison County, Illinois",
@@ -122,120 +274,117 @@
           "name": "Storm Damage",
           "item": "https://madison-county-roofing-website.vercel.app/storm-damage"
         }
+      ],
+      "@id": "https://madison-county-roofing-website.vercel.app/storm-damage#breadcrumb"
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "@id": "https://madison-county-roofing-website.vercel.app/storm-damage#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What should I do immediately after a hailstorm or windstorm?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "First, safely document any visible damage with photos from the ground. Then call us at (618) 876-4309. We'll come out, climb up to inspect, and give you a damage assessment before you file with your insurance carrier."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will my insurance cover hail damage to my roof?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In most cases, yes. Standard homeowner's insurance policies in Illinois cover sudden storm damage including hail and wind. We can help you document the damage and walk your adjuster through it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you work directly with insurance carriers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We've worked with State Farm, Allstate, Farmers, USAA, and most regional Metro East carriers since 1937. We document the damage with photos and walk the adjuster through the claim."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How quickly can you come out after a storm?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We aim to be on site within one business day for storm-damage inspections. If there's active leaking we can usually tarp the same day."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does hail damage look like on a shingle roof?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "On asphalt shingles, hail damage typically shows as small round dents in the shingle granules, exposed black asphalt mat, or missing granules in concentrated areas. We can identify and document it during a free inspection."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I tell a real local contractor from a storm chaser?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Local contractors have a real local address (ours is 5 Harmin Ln, Collinsville), Illinois licensure, manufacturer certifications you can verify (CertainTeed ShingleMaster, Owens Corning Preferred Contractor), and a long history in the area. Storm chasers usually have out-of-state plates and door-knock right after a major storm."
+          }
+        }
       ]
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "@id": "https://madison-county-roofing-website.vercel.app/storm-damage#faq",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What should I do immediately after a hailstorm or windstorm?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "First, safely document any visible damage with photos from the ground. Then call us at (618) 876-4309. We'll come out, climb up to inspect, and give you a damage assessment before you file with your insurance carrier."
-      }
     },
     {
-      "@type": "Question",
-      "name": "Will my insurance cover hail damage to my roof?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "In most cases, yes. Standard homeowner's insurance policies in Illinois cover sudden storm damage including hail and wind. We can help you document the damage and walk your adjuster through it."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do you work directly with insurance carriers?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. We've worked with State Farm, Allstate, Farmers, USAA, and most regional Metro East carriers since 1937. We document the damage with photos and walk the adjuster through the claim."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How quickly can you come out after a storm?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "We aim to be on site within one business day for storm-damage inspections. If there's active leaking we can usually tarp the same day."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What does hail damage look like on a shingle roof?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "On asphalt shingles, hail damage typically shows as small round dents in the shingle granules, exposed black asphalt mat, or missing granules in concentrated areas. We can identify and document it during a free inspection."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I tell a real local contractor from a storm chaser?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Local contractors have a real local address (ours is 5 Harmin Ln, Collinsville), Illinois licensure, manufacturer certifications you can verify (CertainTeed ShingleMaster, Owens Corning Preferred Contractor), and a long history in the area. Storm chasers usually have out-of-state plates and door-knock right after a major storm."
-      }
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  "@id": "https://madison-county-roofing-website.vercel.app/storm-damage#howto",
-  "name": "How to file a roof-damage insurance claim after a hailstorm or windstorm",
-  "description": "A six-step process for handling a roof-damage insurance claim with Madison County Roofing, from free inspection to final roof replacement.",
-  "totalTime": "P14D",
-  "supply": [],
-  "tool": [],
-  "step": [
-    {
-      "@type": "HowToStep",
-      "position": 1,
-      "name": "Free inspection",
-      "text": "Madison County Roofing comes out, gets on the roof, and documents hail strikes, wind lift, and any related damage to siding, gutters, fascia, and skylights. You receive photos and a written summary.",
-      "url": "https://madison-county-roofing-website.vercel.app/storm-damage#step-1"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 2,
-      "name": "File the claim",
-      "text": "You file with your insurance carrier — State Farm, Allstate, Farmers, USAA, or a regional carrier. We give you the language for cause of damage, age of roof, and scope of repair.",
-      "url": "https://madison-county-roofing-website.vercel.app/storm-damage#step-2"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 3,
-      "name": "Meet the adjuster on-site",
-      "text": "Mark or a team member meets your insurance adjuster on-site, walks the roof with them, and makes sure nothing gets missed.",
-      "url": "https://madison-county-roofing-website.vercel.app/storm-damage#step-3"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 4,
-      "name": "Write the scope and estimate",
-      "text": "We write the scope of work to match the adjuster's findings. Code upgrades required by your municipality (Collinsville, Edwardsville, etc.) are itemized separately and are usually covered.",
-      "url": "https://madison-county-roofing-website.vercel.app/storm-damage#step-4"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 5,
-      "name": "Replace the roof",
-      "text": "Our crew arrives when scheduled. Tear-off, dry-in, and install. Most single-family roof replacements are completed in one to two days.",
-      "url": "https://madison-county-roofing-website.vercel.app/storm-damage#step-5"
-    },
-    {
-      "@type": "HowToStep",
-      "position": 6,
-      "name": "Final inspection and payment",
-      "text": "You pay your insurance deductible. The carrier pays Madison County Roofing directly. Manufacturer warranty and workmanship warranty go into effect.",
-      "url": "https://madison-county-roofing-website.vercel.app/storm-damage#step-6"
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "@id": "https://madison-county-roofing-website.vercel.app/storm-damage#howto",
+      "name": "How to file a roof-damage insurance claim after a hailstorm or windstorm",
+      "description": "A six-step process for handling a roof-damage insurance claim with Madison County Roofing, from free inspection to final roof replacement.",
+      "totalTime": "P14D",
+      "supply": [],
+      "tool": [],
+      "step": [
+        {
+          "@type": "HowToStep",
+          "position": 1,
+          "name": "Free inspection",
+          "text": "Madison County Roofing comes out, gets on the roof, and documents hail strikes, wind lift, and any related damage to siding, gutters, fascia, and skylights. You receive photos and a written summary.",
+          "url": "https://madison-county-roofing-website.vercel.app/storm-damage#step-1"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 2,
+          "name": "File the claim",
+          "text": "You file with your insurance carrier \u2014 State Farm, Allstate, Farmers, USAA, or a regional carrier. We give you the language for cause of damage, age of roof, and scope of repair.",
+          "url": "https://madison-county-roofing-website.vercel.app/storm-damage#step-2"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 3,
+          "name": "Meet the adjuster on-site",
+          "text": "Mark or a team member meets your insurance adjuster on-site, walks the roof with them, and makes sure nothing gets missed.",
+          "url": "https://madison-county-roofing-website.vercel.app/storm-damage#step-3"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 4,
+          "name": "Write the scope and estimate",
+          "text": "We write the scope of work to match the adjuster's findings. Code upgrades required by your municipality (Collinsville, Edwardsville, etc.) are itemized separately and are usually covered.",
+          "url": "https://madison-county-roofing-website.vercel.app/storm-damage#step-4"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 5,
+          "name": "Replace the roof",
+          "text": "Our crew arrives when scheduled. Tear-off, dry-in, and install. Most single-family roof replacements are completed in one to two days.",
+          "url": "https://madison-county-roofing-website.vercel.app/storm-damage#step-5"
+        },
+        {
+          "@type": "HowToStep",
+          "position": 6,
+          "name": "Final inspection and payment",
+          "text": "You pay your insurance deductible. The carrier pays Madison County Roofing directly. Manufacturer warranty and workmanship warranty go into effect.",
+          "url": "https://madison-county-roofing-website.vercel.app/storm-damage#step-6"
+        }
+      ]
     }
   ]
 }
@@ -253,7 +402,14 @@
       <img src="/assets/brand/logo-light.svg" alt="Madison County Roofing" class="nav__brand-img nav__brand-img--light">
       <img src="/assets/brand/logo-dark.svg" alt="" aria-hidden="true" class="nav__brand-img nav__brand-img--dark">
     </a>
-    <nav aria-label="Primary"><ul class="nav__links"><li><a href="/residential-roofing">Residential</a></li><li><a href="/commercial-roofing">Commercial</a></li><li><a href="/storm-damage" aria-current="page">Storm Damage</a></li><li><a href="/siding-gutters">Siding &amp; Gutters</a></li><li><a href="/about">About</a></li><li><a href="/contact">Contact</a></li></ul></nav>
+    <nav aria-label="Primary"><ul class="nav__links">
+        <li><a href="/residential-roofing">Residential</a></li>
+        <li><a href="/commercial-roofing">Commercial</a></li>
+        <li><a href="/storm-damage" aria-current="page">Storm Damage</a></li>
+        <li><a href="/roof-inspection">Roof Inspection</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul></nav>
     <div class="nav__actions"><a href="tel:+16188764309" class="nav__cta" aria-label="Call (618) 876-4309"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span class="nav__cta-label">(618) 876-4309</span></a><button class="nav__menu-btn" type="button" aria-label="Open menu" data-drawer-open><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" width="24" height="24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button></div>
   </div>
 </header>
@@ -266,7 +422,7 @@
 
 <div class="nav__drawer" data-drawer aria-hidden="true">
   <div class="nav__drawer-head"><img src="/assets/brand/logo-light.svg" alt="Madison County Roofing"><button class="nav__menu-btn" type="button" aria-label="Close menu" data-drawer-close><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" width="24" height="24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
-  <ul class="nav__drawer-links"><li><a href="/residential-roofing">Residential Roofing</a></li><li><a href="/commercial-roofing">Commercial Roofing</a></li><li><a href="/storm-damage" aria-current="page">Storm Damage</a></li><li><a href="/siding-gutters">Siding &amp; Gutters</a></li><li><a href="/our-work">Our Work</a></li><li><a href="/about">About</a></li><li><a href="/testimonials">Testimonials</a></li><li><a href="/service-area">Service Area</a></li><li><a href="/contact">Contact</a></li></ul>
+  <ul class="nav__drawer-links"><li><a href="/residential-roofing">Residential Roofing</a></li><li><a href="/commercial-roofing">Commercial Roofing</a></li><li><a href="/storm-damage" aria-current="page">Storm Damage</a></li><li><a href="/roof-inspection">Roof Inspection</a></li><li><a href="/siding-gutters">Siding & Gutters</a></li><li><a href="/our-work">Our Work</a></li><li><a href="/about">About</a></li><li><a href="/testimonials">Testimonials</a></li><li><a href="/service-area">Service Area</a></li><li><a href="/contact">Contact</a></li></ul>
   <div class="nav__drawer-foot"><span>5 Harmin Ln · Collinsville, IL 62234</span><a href="tel:+16188764309">(618) 876-4309</a><span>Mon–Fri 8a–4:30p</span></div>
 </div>
 
@@ -286,10 +442,13 @@
       <div class="split">
         <div class="split__body">
           <span class="eyebrow">Local. Licensed. 87 years on it.</span>
-          <h2>The difference is local.<br><span class="italic-display">Not a storm-chaser.</span></h2>
-          <p class="lead">Every spring, Metro East hailstorms bring a wave of out-of-state trucks with vinyl decals and "free inspection" door-knockers. Most disappear by August. A lot of those roofs leak by Christmas.</p>
+          <h2>Who should you call<br><span class="italic-display">after a Metro East hailstorm?</span></h2>
+          <p class="lead">Madison County Roofing should be your first call after a Metro East hailstorm, not the storm-chaser truck that shows up the next morning. A local, licensed crew has handled storm work in Madison County since 1937, documents the damage, and stays around to honor the warranty long after out-of-state trucks disappear by August.</p>
+          <p>Every spring, Metro East hailstorms bring a wave of out-of-state trucks with vinyl decals and "free inspection" door-knockers. Most disappear by August. A lot of those roofs leak by Christmas.</p>
           <p>We've been doing storm work in Madison County since 1937. Many of our customers have used us for repeat work over decades. We're licensed in Illinois. We've worked with every major insurance carrier in the region. We don't show up — we're already here.</p>
           <p><strong>What that means for you:</strong> The roof gets fixed once. By people who'll be around to honor the warranty in 2031.</p>
+          <p>According to the <a href="https://www.weather.gov/lsx" target="_blank" rel="noopener nofollow">National Weather Service in St. Louis</a>, the Metro East sits in a corridor that sees frequent spring and summer hail and damaging straight-line wind. Madison County Roofing documents that damage and walks the insurance adjuster through the claim.</p>
+          <p class="last-updated" style="margin-top: var(--space-4); color: var(--steel); font-size: 0.875rem;">Last updated July 12, 2026</p>
         </div>
         <div class="split__media">
           <img src="/assets/images/roof-replacement-brick.jpg" width="1800" height="1200" alt="Roofers replacing a hail-damaged roof" loading="lazy">
@@ -495,13 +654,13 @@
           </div>
         </div>
         <p class="footer__tag">Roofing Madison County since 1937.</p>
-        <address class="footer__addr">5 Harmin Ln<br>Collinsville, IL 62234<br><a href="tel:+16188764309">(618) 876-4309</a><br><span style="color: rgba(247,244,237,0.5); font-size: 0.875rem;">Mon–Fri 8a–4:30p</span></address>
+        <address class="footer__addr">5 Harmin Ln<br>Collinsville, IL 62234<br><a href="tel:+16188764309">(618) 876-4309</a><br><span style="color: rgba(247,244,237,0.5); font-size: 0.875rem;">Mon&ndash;Fri 8a&ndash;4:30p</span></address>
       </div>
-      <div class="footer__col"><h3 class="footer__col-heading">What we do</h3><ul><li><a href="/residential-roofing">Residential roofing</a></li><li><a href="/commercial-roofing">Commercial roofing</a></li><li><a href="/storm-damage">Storm damage</a></li><li><a href="/siding-gutters">Siding &amp; gutters</a></li></ul></div>
-      <div class="footer__col"><h3 class="footer__col-heading">The shop</h3><ul><li><a href="/about">About us</a></li><li><a href="/our-work">Our work</a></li><li><a href="/testimonials">Testimonials</a></li><li><a href="/service-area">Service area</a></li></ul></div>
-      <div class="footer__col"><h3 class="footer__col-heading">Get in touch</h3><ul><li><a href="/contact">Free estimate</a></li><li><a href="tel:+16188764309">(618) 876-4309</a></li><li><a href="https://www.facebook.com/p/Madison-County-Roofing-Home-Improvements-Inc-100089426243721/" target="_blank" rel="noopener">Facebook</a></li></ul></div>
+      <div class="footer__col"><h3 class="footer__col-heading">What we do</h3><ul><li><a href="/residential-roofing">Residential roofing</a></li><li><a href="/roof-inspection">Roof inspection</a></li><li><a href="/storm-damage">Storm damage</a></li><li><a href="/commercial-roofing">Commercial roofing</a></li><li><a href="/siding-gutters">Siding &amp; gutters</a></li></ul></div>
+      <div class="footer__col"><h3 class="footer__col-heading">Where we work</h3><ul><li><a href="/service-area/granite-city">Granite City</a></li><li><a href="/service-area/troy">Troy</a></li><li><a href="/service-area/glen-carbon">Glen Carbon</a></li><li><a href="/service-area/maryville">Maryville</a></li><li><a href="/service-area/edwardsville">Edwardsville</a></li><li><a href="/service-area">All of Madison County</a></li></ul></div>
+      <div class="footer__col"><h3 class="footer__col-heading">The shop</h3><ul><li><a href="/about">About Mark</a></li><li><a href="/our-work">Our work</a></li><li><a href="/testimonials">Testimonials</a></li><li><a href="/contact">Free estimate</a></li><li><a href="tel:+16188764309">(618) 876-4309</a></li><li><a href="https://www.facebook.com/p/Madison-County-Roofing-Home-Improvements-Inc-100089426243721/" target="_blank" rel="noopener">Facebook</a></li></ul></div>
     </div>
-    <div class="footer__bottom"><span>© 2026 Madison County Roofing &amp; Home Improvements, Inc. All rights reserved. Built by <a href="https://localcraftdigital.com" target="_blank" rel="noopener" style="color: inherit; text-decoration: underline; text-decoration-color: rgba(247,244,237,0.3);">LocalCraft Digital</a>.</span><span>Family-owned · Collinsville, IL · Est. 1937 · <a href="/privacy" style="color: inherit; text-decoration: underline; text-decoration-color: rgba(247,244,237,0.3);">Privacy</a> · <a href="/terms" style="color: inherit; text-decoration: underline; text-decoration-color: rgba(247,244,237,0.3);">Terms</a></span></div>
+    <div class="footer__bottom"><span>&copy; 2026 Madison County Roofing &amp; Home Improvements, Inc. All rights reserved. Built by <a href="https://localcraftdigital.com" target="_blank" rel="noopener" style="color: inherit; text-decoration: underline; text-decoration-color: rgba(247,244,237,0.3);">LocalCraft Digital</a>.</span><span>Family-owned &middot; Collinsville, IL &middot; Est. 1937 &middot; <a href="/privacy" style="color: inherit; text-decoration: underline; text-decoration-color: rgba(247,244,237,0.3);">Privacy</a> &middot; <a href="/terms" style="color: inherit; text-decoration: underline; text-decoration-color: rgba(247,244,237,0.3);">Terms</a></span></div>
   </div>
 </footer>
 

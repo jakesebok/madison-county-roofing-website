@@ -11,6 +11,7 @@ Madison County Roofing is a CertainTeed ShingleMaster, holds the CertainTeed Mas
 ## Services
 
 - [Residential Roofing](https://madison-county-roofing-website.vercel.app/residential-roofing): Asphalt shingle installation, repair, and replacement on homes across Madison County. CertainTeed ShingleMaster certified work, fully warranty-backed.
+- [Roof Inspection](https://madison-county-roofing-website.vercel.app/roof-inspection): Free in-person roof inspections across Madison County. Pre-purchase, pre-sale, and post-storm, with a written report and photos. Mark Eck comes out himself.
 - [Commercial Roofing](https://madison-county-roofing-website.vercel.app/commercial-roofing): EPDM rubber, modified bitumen, and GacoRoof silicone coating systems for small businesses, churches, and property managers.
 - [Storm Damage Repair](https://madison-county-roofing-website.vercel.app/storm-damage): Hail and wind damage repair with insurance claim coordination. Handled by the company since 1937.
 - [Siding, Soffit, Fascia & Seamless Gutters](https://madison-county-roofing-website.vercel.app/siding-gutters): Vinyl siding repair and replacement, seamless aluminum gutters cut on-site, and exterior trim work. Often paired with a fresh roof.
@@ -18,6 +19,13 @@ Madison County Roofing is a CertainTeed ShingleMaster, holds the CertainTeed Mas
 ## Service Area
 
 Madison County, Illinois and the surrounding Metro East. Specific cities served include Collinsville, Edwardsville, Glen Carbon, Granite City, Bethalto, Highland, Maryville, Troy, Staunton, Marine, Saint Jacob, and surrounding communities. See the [Service Area page](https://madison-county-roofing-website.vercel.app/service-area) for the full list.
+
+Dedicated town pages:
+- [Roofing in Granite City, IL](https://madison-county-roofing-website.vercel.app/service-area/granite-city)
+- [Roofing in Troy, IL](https://madison-county-roofing-website.vercel.app/service-area/troy)
+- [Roofing in Glen Carbon, IL](https://madison-county-roofing-website.vercel.app/service-area/glen-carbon)
+- [Roofing in Maryville, IL](https://madison-county-roofing-website.vercel.app/service-area/maryville)
+- [Roofing in Edwardsville, IL](https://madison-county-roofing-website.vercel.app/service-area/edwardsville)
 
 ## Key Pages
 
@@ -37,7 +45,10 @@ Call (618) 876-4309 or use the form on the [Contact page](https://madison-county
 Cash and check only.
 
 **Do you handle insurance claims?**
-Yes. We work directly with insurance carriers in the Metro East — State Farm, Allstate, Farmers, USAA, and regional outfits. We document storm damage with photos and walk the adjuster through it. We've been doing this since the company opened in 1937.
+Yes. We work directly with insurance carriers in the Metro East, including State Farm, Allstate, Farmers, USAA, and regional outfits. We document storm damage with photos and walk the adjuster through it. We've been doing this since the company opened in 1937.
+
+**Do you offer free roof inspections?**
+Yes. Madison County Roofing gives free in-person roof inspections across Madison County: pre-purchase, pre-sale, and post-storm. You get a written report with photos and no upsell pressure. See the [Roof Inspection page](https://madison-county-roofing-website.vercel.app/roof-inspection).
 
 **Are you licensed and insured?**
 Yes. Licensed, bonded, and insured in Illinois.
