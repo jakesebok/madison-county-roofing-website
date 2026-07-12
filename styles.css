@@ -508,7 +508,7 @@ p { margin: 0; }
   border-top: 1px solid color-mix(in srgb, var(--brick) 30%, transparent);
 }
 .prefooter__inner { display: flex; flex-direction: column; gap: var(--space-3); text-align: center; align-items: center; }
-.prefooter__eyebrow { font-size: 0.6875rem; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 700; color: var(--brick-bright); }
+.prefooter__eyebrow { font-size: 0.6875rem; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 700; color: #edb388; }
 .prefooter__title { font-family: var(--font-display); font-style: italic; font-weight: 500; font-size: 1.5rem; color: var(--paper); margin: 0; }
 .prefooter__phone { font-family: var(--font-display); font-weight: 700; font-size: 2rem; color: var(--paper); letter-spacing: -0.02em; }
 .prefooter__phone:hover { color: var(--brick-bright); }
