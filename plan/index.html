@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="robots" content="noindex, nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Madison County Roofing &times; LocalCraft Digital &middot; Strategy &amp; Growth Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1A2D44; --ink-soft:#2C4366; --ink-deep:#0F1B2C;
+    --paper:#F7F4ED; --paper-warm:#EFEAE0;
+    --brick:#9D5B35; --brick-bright:#D78F62; --brick-deep:#7A4730;
+    --accent:#D78F62;          /* = brick-bright, the deck accent */
+    --heat:#C6402F;            /* strike / gap red */
+    --line:rgba(26,45,68,.12);
+    --dim:#8a94a3;             /* used by the AEO logo cloud caption */
+    --fh:'Fraunces','Georgia',serif;
+    --fb:'Inter',system-ui,sans-serif;
+    --radius:16px; --maxw:1040px; --pad-x:clamp(28px,5vw,88px);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{height:100%}
+  body{font-family:var(--fb);color:var(--ink);background:var(--ink-deep);-webkit-font-smoothing:antialiased}
+  @media (prefers-reduced-motion:no-preference){.deck{scroll-behavior:smooth}}
+  .deck{height:100vh;height:100dvh;overflow-y:scroll;scroll-snap-type:y mandatory;scrollbar-width:none}
+  .deck::-webkit-scrollbar{display:none}
+  .slide{min-height:100vh;min-height:100dvh;scroll-snap-align:start;scroll-snap-stop:always;
+    display:flex;flex-direction:column;justify-content:center;padding:clamp(52px,7vh,92px) var(--pad-x) clamp(48px,6.4vh,80px);
+    position:relative;overflow:hidden}
+  .wrap{width:100%;max-width:var(--maxw);margin:0 auto}
+  .s-dark{background:radial-gradient(120% 120% at 15% 0%,#22395b 0%,var(--ink-deep) 62%);color:#fff}
+  .s-light{background:var(--paper);color:var(--ink)}
+  .s-brick{background:linear-gradient(135deg,var(--brick) 0%,var(--brick-deep) 100%);color:#fff}
+
+  /* progress bar */
+  .progress{position:fixed;top:0;left:0;height:3px;background:var(--brick-bright);width:0;z-index:60;transition:width .12s linear}
+
+  /* chrome (top + bottom rails) */
+  .chrome{position:absolute;left:var(--pad-x);right:var(--pad-x);display:flex;align-items:center;justify-content:space-between;
+    font-size:12px;letter-spacing:.02em;z-index:3;pointer-events:none}
+  .chrome--top{top:clamp(22px,3.4vh,34px)}
+  .chrome--bottom{bottom:clamp(22px,3.4vh,34px)}
+  .brandmark{display:flex;align-items:center;gap:9px;font-family:var(--fh);font-weight:600;font-size:13px;letter-spacing:.01em}
+  .brandmark .seal{width:9px;height:9px;border-radius:2px;background:var(--brick-bright);transform:rotate(45deg);flex:none}
+  .pagenum{font-family:var(--fb);font-weight:600;font-variant-numeric:tabular-nums;letter-spacing:.04em}
+  .pagenum .of{opacity:.5;font-weight:500}
+  .s-dark .chrome{color:rgba(255,255,255,.58)}.s-dark .brandmark,.s-dark .pagenum{color:#fff}
+  .s-brick .chrome{color:rgba(255,255,255,.72)}.s-brick .brandmark,.s-brick .pagenum{color:#fff}
+  .s-light .chrome{color:var(--ink-soft)}.s-light .brandmark,.s-light .pagenum{color:var(--ink)}
+
+  /* typography */
+  .eyebrow{font-family:var(--fb);font-weight:700;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:16px;display:inline-flex;align-items:center;gap:10px}
+  .s-dark .eyebrow,.s-brick .eyebrow{color:var(--brick-bright)}
+  .s-light .eyebrow{color:var(--brick-deep)}
+  .eyebrow::before{content:"";width:26px;height:2px;background:currentColor;border-radius:2px}
+  h1{font-family:var(--fh);font-weight:700;line-height:1.04;letter-spacing:-.02em;font-size:clamp(2.2rem,4.8vw,3.6rem)}
+  h2{font-family:var(--fh);font-weight:700;line-height:1.08;letter-spacing:-.02em;font-size:clamp(1.85rem,4vw,2.95rem)}
+  .a{font-style:italic;font-weight:500}
+  .s-dark .a,.s-brick .a{color:var(--brick-bright)}
+  .s-light .a{color:var(--brick)}
+  .lede{font-size:clamp(1rem,1.5vw,1.22rem);line-height:1.6;max-width:62ch;margin-top:20px}
+  .s-dark .lede,.s-brick .lede{color:rgba(255,255,255,.85)}
+  .s-light .lede{color:var(--ink-soft)}
+  strong{font-weight:700}.s-dark strong,.s-brick strong{color:#fff}
+
+  /* cover */
+  .cover-media{position:absolute;inset:0;z-index:0;overflow:hidden}
+  .cover-media img{width:100%;height:100%;object-fit:cover;object-position:center}
+  .cover-media::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(90deg,rgba(15,27,44,.95) 0%,rgba(15,27,44,.72) 28%,rgba(15,27,44,.3) 48%,rgba(15,27,44,.08) 62%,transparent 74%),
+      linear-gradient(0deg,rgba(15,27,44,.62),transparent 42%)}
+  .cover-slide .wrap{position:relative;z-index:2}
+  .cover-inner{max-width:660px}
+  .cover-slide h1{font-size:clamp(1.95rem,4.3vw,3.25rem)}
+  .cover-lockup{display:inline-flex;align-items:center;gap:clamp(13px,1.7vw,22px);margin-top:clamp(20px,3vh,38px)}
+  .cover-lockup .seal{height:clamp(42px,4.4vw,58px);width:auto;display:block}
+  .cover-lockup .lcd{width:clamp(120px,15vw,190px);height:auto;display:block}
+  .cover-lockup .px{font-family:var(--fb);color:rgba(255,255,255,.42);font-size:clamp(17px,1.9vw,24px);font-weight:300}
+  .liveurl{margin-top:clamp(12px,1.9vh,20px);font-size:.95rem;color:rgba(255,255,255,.8)}
+  .liveurl a{color:var(--brick-bright);text-decoration:none}
+  .cover-slide.reveal-armed .cover-inner>*{opacity:0;transform:translateY(24px);filter:blur(6px);
+    transition:opacity .8s cubic-bezier(.22,.61,.36,1),transform .9s cubic-bezier(.22,.61,.36,1),filter .8s cubic-bezier(.22,.61,.36,1)}
+  .cover-slide.reveal-armed.is-revealed .cover-inner>*{opacity:1;transform:none;filter:blur(0)}
+  .cover-slide.reveal-armed.is-revealed .eyebrow{transition-delay:.02s}
+  .cover-slide.reveal-armed.is-revealed h1{transition-delay:.14s}
+  .cover-slide.reveal-armed.is-revealed .lede{transition-delay:.30s}
+  .cover-slide.reveal-armed.is-revealed .cover-lockup{transition-delay:.44s}
+  .cover-slide.reveal-armed.is-revealed .liveurl{transition-delay:.56s}
+  @media(prefers-reduced-motion:reduce){.cover-slide.reveal-armed .cover-inner>*{opacity:1;transform:none;filter:none;transition:none}}
+
+  /* current-state scorecard (slide 2) */
+  .state{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2vw,24px);margin-top:clamp(20px,3vh,34px)}
+  @media(max-width:760px){.state{grid-template-columns:1fr}}
+  .statecard{border-radius:var(--radius);padding:clamp(18px,2.4vh,26px);border:1px solid var(--line);background:rgba(255,255,255,.6)}
+  .statecard--good{border-color:rgba(157,91,53,.34);background:rgba(215,143,98,.07)}
+  .statecard--gap{border-color:rgba(198,64,47,.28);background:rgba(198,64,47,.05)}
+  .statecard .sh{font-family:var(--fh);font-weight:600;letter-spacing:.01em;font-size:1.02rem;margin-bottom:14px;display:flex;align-items:center;gap:9px}
+  .statecard--good .sh{color:var(--brick-deep)}
+  .statecard--gap .sh{color:var(--heat)}
+  .statecard .sh::before{content:"";width:9px;height:9px;border-radius:50%;flex:none}
+  .statecard--good .sh::before{background:var(--brick)}
+  .statecard--gap .sh::before{background:var(--heat)}
+  .statecard ul{list-style:none;margin:0;padding:0}
+  /* GOTCHA: li is block with a hanging bullet via ::before, never flex */
+  .statecard li{display:block;position:relative;padding-left:20px;font-size:.97rem;color:var(--ink-soft);line-height:1.45;margin-top:11px}
+  .statecard li:first-child{margin-top:0}
+  .statecard li b{color:var(--ink);font-weight:700}
+  .statecard li::before{content:"";position:absolute;left:0;top:.55em;width:7px;height:7px;border-radius:50%}
+  .statecard--good li::before{background:var(--brick-bright)}
+  .statecard--gap li::before{background:var(--heat)}
+
+  /* avatar / competitor cards (slides 3 + 7) */
+  .avatars{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,1.6vw,16px);margin-top:clamp(16px,2.4vh,28px)}
+  @media(max-width:760px){.avatars{grid-template-columns:1fr}}
+  .avatar{border-radius:var(--radius);padding:clamp(15px,2vh,22px)}
+  .s-brick .avatar{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16)}
+  .s-light .avatar{background:rgba(255,255,255,.65);border:1px solid var(--line)}
+  .avatar h3{font-family:var(--fh);font-weight:600;font-size:1.06rem;margin:0 0 4px}
+  .s-brick .avatar h3{color:#fff}.s-light .avatar h3{color:var(--ink)}
+  .avatar .tag{font-size:.77rem;font-weight:600;letter-spacing:.01em}
+  .s-brick .avatar .tag{color:var(--brick-bright)}.s-light .avatar .tag{color:var(--brick)}
+  .avatar p{font-size:.9rem;line-height:1.5;margin-top:10px}
+  .s-brick .avatar p{color:rgba(255,255,255,.82)}.s-light .avatar p{color:var(--ink-soft)}
+  .avatar .win{font-size:.85rem;margin-top:11px}
+  .s-brick .avatar .win{color:#fff}.s-light .avatar .win{color:var(--ink)}
+  .avatar .win b{font-weight:700}.s-brick .avatar .win b{color:var(--brick-bright)}.s-light .avatar .win b{color:var(--brick)}
+  .avatar--flag{position:relative;grid-column:1/-1;margin-top:clamp(12px,1.6vw,16px)}
+  .s-brick .avatar--flag{border-color:var(--brick-bright);background:rgba(255,255,255,.14);box-shadow:0 0 0 1.5px rgba(215,143,98,.55),0 22px 54px -26px rgba(0,0,0,.6)}
+  .s-light .avatar--flag{border-color:var(--brick-bright);background:rgba(215,143,98,.1);box-shadow:0 0 0 1.5px rgba(215,143,98,.5),0 22px 54px -30px rgba(157,91,53,.5)}
+  .s-brick .avatar--flag h3{color:#fff}.s-light .avatar--flag h3{color:var(--brick-deep)}
+  .flagtag{position:absolute;top:-11px;left:16px;background:var(--brick-bright);color:var(--ink-deep);font-family:var(--fh);font-weight:700;
+    text-transform:uppercase;font-size:.6rem;letter-spacing:.08em;padding:4px 11px;border-radius:100px}
+  /* card-heavy slides (3 + 7): top-align + trim the footprint so five cards fit a short laptop viewport
+     (top padding kept large enough to clear the top chrome; only the bottom is compacted) */
+  .slide--cards{justify-content:flex-start;padding-top:clamp(46px,6vh,68px);padding-bottom:clamp(30px,3.8vh,50px)}
+  .slide--cards h2{font-size:clamp(1.55rem,3.1vw,2.3rem)}
+  .slide--cards .lede{margin-top:11px;font-size:clamp(.95rem,1.3vw,1.1rem);max-width:none}
+  .slide--cards .avatars{margin-top:13px;gap:clamp(9px,1.1vw,13px)}
+  .slide--cards .avatar{padding:clamp(11px,1.4vh,15px)}
+  .slide--cards .avatar h3{font-size:1rem}
+  .slide--cards .avatar .tag{font-size:.74rem}
+  .slide--cards .avatar p{font-size:.84rem;line-height:1.38;margin-top:6px}
+  .slide--cards .avatar .win{margin-top:7px;font-size:.81rem}
+  .slide--cards .avatar--flag{margin-top:clamp(9px,1.1vw,13px)}
+
+  /* slides 4 & 5: headline + body side by side, freeing vertical room for the visual */
+  .k4head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(20px,3.4vw,50px);align-items:end;margin-bottom:clamp(6px,1.2vh,14px)}
+  @media(max-width:820px){.k4head{grid-template-columns:1fr;gap:12px}}
+  .k4head .lede{margin-top:0;max-width:none}
+
+  /* volume chart (slide 4, on paper) */
+  .vchart{margin-top:clamp(16px,2.4vh,26px)}
+  .vband{margin-bottom:clamp(8px,1.4vh,16px)}
+  .vbh{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+  .vbh .pip{width:11px;height:11px;border-radius:3px;flex:none}
+  .vbh b{font-family:var(--fh);font-weight:600;letter-spacing:.01em;font-size:.95rem;color:var(--ink)}
+  .vbh span{font-size:.78rem;color:var(--ink-soft);opacity:.85}
+  .vrow{display:flex;align-items:center;gap:12px;height:clamp(30px,4.2vh,40px)}
+  .vrow .vl{width:clamp(120px,17vw,188px);font-size:.95rem;color:var(--ink);flex:none}
+  .vrow .vbw{flex:1;display:flex;align-items:center;gap:12px;min-width:0}
+  .vbar{height:22px;border-radius:5px;min-width:4px}
+  .vv{font-family:var(--fh);font-weight:600;font-size:1.02rem;min-width:56px}
+  .vp{width:clamp(120px,17vw,208px);text-align:right;font-size:.8rem;color:var(--ink-soft);flex:none}
+  @media(max-width:760px){.vrow .vp{display:none}.vrow .vl{width:110px;font-size:.85rem}}
+  .vt .vbar{background:linear-gradient(90deg,#9D5B35,#D78F62)}.vt .vv{color:var(--brick-deep)}
+  .vg .vbar{background:linear-gradient(90deg,#A97C2E,#D8AC55)}.vg .vv{color:#8A6420}
+  .vpp .vbar{background:linear-gradient(90deg,#2C4366,#6E86A8)}.vpp .vv{color:var(--ink)}
+  .src{font-size:.72rem;color:var(--ink-soft);opacity:.85;margin-top:clamp(10px,1.6vh,18px);line-height:1.5}
+
+  /* mindmap (slide 5, on dark) */
+  .mapwrap{margin-top:clamp(10px,1.6vh,18px);max-width:1200px}
+  .mapwrap svg{width:100%;height:auto;max-height:64vh;display:block}
+  .nofallback{font-size:.85rem;color:rgba(255,255,255,.7);margin-top:14px;line-height:1.6}
+
+  /* AEO slide (slide 6) two-column (proof bullets | logo cloud) */
+  .aeo2{display:grid;grid-template-columns:0.78fr 1.22fr;gap:clamp(18px,2.6vw,42px);margin-top:clamp(14px,2.2vh,26px);align-items:center}
+  @media(max-width:820px){.aeo2{grid-template-columns:1fr}}
+  .aicloud{position:relative;min-height:clamp(300px,43vh,410px);
+    background:radial-gradient(50% 52% at 50% 42%,rgba(89,240,226,.09),transparent 72%)}
+  .aicloud .cap{position:absolute;bottom:-10px;left:0;right:0;text-align:center;font-size:11px;color:var(--dim);letter-spacing:.06em;text-transform:uppercase}
+  .ai{position:absolute;transform:translate(-50%,-50%);display:flex;align-items:center;gap:9px;color:#fff;font-family:var(--fb);font-weight:600;white-space:nowrap;letter-spacing:.005em;font-size:20px}
+  .ai svg{display:block;flex:0 0 auto;width:28px;height:28px}
+  .ai-chatgpt{left:50%;top:44%;font-size:23px}.ai-chatgpt svg{width:33px;height:33px}
+  .ai-gemini{left:50%;top:7%}
+  .ai-grok{left:85%;top:26%}
+  .ai-google{left:85%;top:62%}
+  .ai-perplexity{left:50%;top:81%}
+  .ai-claude{left:15%;top:62%}
+  .ai-copilot{left:15%;top:26%}
+  @media(max-width:820px){.aicloud{display:flex;flex-wrap:wrap;gap:16px 22px;justify-content:center;align-items:center;min-height:0;padding-bottom:24px}
+    .ai{position:static!important;transform:none!important;font-size:17px!important}}
+  .bullets{margin:clamp(16px,2.4vh,26px) 0 0;padding:0;list-style:none;display:grid;gap:clamp(9px,1.5vh,13px);max-width:52ch}
+  .bullets li{position:relative;padding-left:22px;font-size:1rem;line-height:1.55}
+  .s-dark .bullets li{color:rgba(255,255,255,.86)}
+  .bullets li::before{content:"";position:absolute;left:0;top:.5em;width:8px;height:8px;border-radius:2px;background:var(--brick-bright)}
+  .bullets li b{font-weight:600}.s-dark .bullets li b{color:#fff}
+
+  /* 4-step measure row (slide 8, on brick) */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,1.5vw,16px);margin-top:clamp(18px,2.6vh,32px)}
+  @media(max-width:820px){.steps{grid-template-columns:1fr 1fr}}
+  .step{border-radius:var(--radius);padding:clamp(15px,2vh,22px);background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.16)}
+  .step .n{font-family:var(--fh);font-weight:700;font-size:1rem;color:var(--brick-bright)}
+  .step h3{font-family:var(--fh);font-weight:600;font-size:1.04rem;margin:10px 0 8px;color:#fff}
+  .step p{font-size:.87rem;color:rgba(255,255,255,.82);line-height:1.5;margin:0}
+
+  /* two doorways (slide 9, on paper) */
+  .doors{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:clamp(18px,2.8vh,32px)}
+  @media(max-width:760px){.doors{grid-template-columns:1fr}}
+  .door{position:relative;border-radius:var(--radius);padding:clamp(20px,2.6vh,28px);border:1px solid var(--line);background:rgba(255,255,255,.65)}
+  .door--pick{border-color:var(--brick-bright);background:rgba(215,143,98,.09);box-shadow:0 22px 54px -28px rgba(157,91,53,.6),0 0 0 1px rgba(215,143,98,.4)}
+  .door .k{font-family:var(--fh);font-weight:600;letter-spacing:.01em;font-size:.95rem;color:var(--ink-soft)}
+  .door .price{font-family:var(--fh);font-weight:700;font-size:clamp(1.8rem,3.4vw,2.35rem);margin:8px 0 4px;color:var(--ink)}
+  .door--pick .price{color:var(--brick)}
+  .door p{font-size:.95rem;color:var(--ink-soft);line-height:1.5;margin:12px 0 0}
+  .door .pill{position:absolute;top:-12px;right:20px;background:var(--brick-bright);color:var(--ink-deep);font-family:var(--fh);font-weight:700;
+    text-transform:uppercase;font-size:.62rem;letter-spacing:.06em;padding:5px 12px;border-radius:100px}
+
+  /* value stack (slide 10, on dark, animated) */
+  .value-slide .wrap{text-align:center}
+  .value-slide .eyebrow{justify-content:center}
+  .stack{margin:clamp(16px,2.4vh,28px) auto 0;border:1px solid rgba(255,255,255,.16);border-radius:var(--radius);overflow:hidden;max-width:760px;text-align:left}
+  .stack .row{display:flex;justify-content:space-between;align-items:center;padding:clamp(9px,1.4vh,13px) 20px;border-bottom:1px solid rgba(255,255,255,.1);font-size:.98rem}
+  .stack .row:last-child{border-bottom:0}
+  .stack .row span{color:rgba(255,255,255,.82)}
+  .stack .row b{font-family:var(--fh);font-weight:600;color:#fff}
+  .stack .total{background:rgba(215,143,98,.1)}
+  .stack .total span{color:#fff;font-weight:500}
+  .stack .total .was{color:rgba(255,255,255,.5);font-family:var(--fh);margin-right:12px;font-weight:500}
+  .stack .total b{color:var(--brick-bright);font-size:1.4rem}
+  .stack .row b.x{position:relative;display:inline-block;color:rgba(255,255,255,.5);font-weight:500;text-decoration:none}
+  .stack .row b.x::after,.stack .total .was::after{content:"";position:absolute;left:-5%;top:52%;height:2.5px;width:108%;background:var(--heat);
+    border-radius:2px;box-shadow:0 0 8px rgba(198,64,47,.55);transition:width .6s cubic-bezier(.4,.04,.3,1)}
+  .stack .total .was{position:relative;display:inline-block}
+  .stack .total .now{display:inline-block}
+  .value-slide.armed .stack .row b.x{color:#fff}
+  .value-slide.armed .stack .row b.x::after,.value-slide.armed .stack .total .was::after{width:0}
+  .value-slide.armed .stack .total .was{color:#fff}
+  .value-slide.armed.is-built .stack .row b.x{color:rgba(255,255,255,.5);transition:color .4s ease}
+  .value-slide.armed.is-built .stack .total .was{color:rgba(255,255,255,.5);transition:color .4s ease}
+  .value-slide.armed.is-built .stack .row b.x::after,.value-slide.armed.is-built .stack .total .was::after{width:108%}
+  .value-slide.armed.is-built .stack .row:nth-child(1) b.x::after{transition-delay:.08s}
+  .value-slide.armed.is-built .stack .row:nth-child(2) b.x::after{transition-delay:.20s}
+  .value-slide.armed.is-built .stack .row:nth-child(3) b.x::after{transition-delay:.32s}
+  .value-slide.armed.is-built .stack .row:nth-child(4) b.x::after{transition-delay:.44s}
+  .value-slide.armed.is-built .stack .row:nth-child(5) b.x::after{transition-delay:.56s}
+  .value-slide.armed.is-built .stack .row:nth-child(6) b.x::after{transition-delay:.68s}
+  .value-slide.armed.is-built .stack .row:nth-child(7) b.x::after{transition-delay:.80s}
+  .value-slide.armed.is-built .stack .row:nth-child(8) b.x::after{transition-delay:.92s}
+  .value-slide.armed.is-built .stack .total .was::after{transition-delay:1.06s}
+  .value-slide.armed .stack .total .now{opacity:0}
+  .value-slide.armed.is-built .stack .total .now{animation:pop197 .8s cubic-bezier(.2,.7,.2,1) 1.16s both}
+  @keyframes pop197{0%{opacity:.4;transform:scale(.66)}55%{opacity:1;transform:scale(1.34)}100%{opacity:1;transform:scale(1)}}
+  @media(prefers-reduced-motion:reduce){.value-slide.armed .stack .row b.x::after,.value-slide.armed .stack .total .was::after{width:108%}
+    .value-slide.armed .stack .row b.x,.value-slide.armed .stack .total .was{color:rgba(255,255,255,.5)}
+    .value-slide.armed .stack .total .now{opacity:1;animation:none}}
+
+  /* your offer today (slide 11, on paper) */
+  .offer2{display:grid;grid-template-columns:minmax(0,410px) minmax(0,1fr);gap:clamp(20px,3vw,46px);margin-top:clamp(18px,2.6vh,30px);align-items:stretch}
+  @media(max-width:820px){.offer2{grid-template-columns:1fr}}
+  .offer2__cards{display:grid;gap:clamp(12px,1.8vh,18px)}
+  .pcard{position:relative;display:flex;align-items:center;justify-content:space-between;gap:16px;border-radius:var(--radius);border:1px solid var(--line);
+    background:rgba(255,255,255,.65);padding:clamp(16px,2vh,22px) clamp(18px,1.8vw,26px)}
+  .pcard__anchor{position:relative;font-family:var(--fh);font-weight:700;font-size:clamp(1.5rem,3vw,2.1rem);color:var(--ink-soft);opacity:.72;line-height:1;white-space:nowrap}
+  .pcard__anchor::after{content:"";position:absolute;left:-8%;right:-8%;top:46%;height:3px;background:var(--heat);border-radius:2px;
+    transform:rotate(-11deg);box-shadow:0 0 10px rgba(198,64,47,.45)}
+  .pcard__anchor small{display:block;font-size:.62rem;color:var(--ink-soft);opacity:.85;letter-spacing:.03em;margin-top:7px;font-weight:600;text-transform:uppercase}
+  .pcard__now{text-align:right;flex:0 0 auto}
+  .pcard__now .n{font-family:var(--fh);font-weight:700;font-size:clamp(2rem,4.4vw,3rem);color:var(--brick);line-height:.95}
+  .pcard__now .l{font-family:var(--fb);font-size:.7rem;color:var(--ink-soft);margin-top:6px;text-transform:uppercase;letter-spacing:.04em}
+  .bonuses{display:grid;gap:clamp(12px,1.8vh,18px);align-content:center}
+  .bonus{position:relative;border:1px solid var(--brick-bright);border-radius:var(--radius);padding:clamp(16px,2vh,22px);
+    background:rgba(215,143,98,.08);box-shadow:0 22px 54px -30px rgba(157,91,53,.55)}
+  .bonus .bk{font-family:var(--fh);font-weight:700;font-size:clamp(1.05rem,1.9vw,1.3rem);color:var(--brick-deep);display:flex;align-items:center;gap:10px}
+  .bonus .bk svg{width:22px;height:22px;flex:none;color:var(--brick)}
+  .bonus p{font-size:.92rem;color:var(--ink-soft);line-height:1.5;margin:8px 0 0}
+  .bonus__math{font-family:var(--fh)!important;font-weight:700;font-size:.85rem;color:var(--brick)!important;margin:9px 0 0!important}
+
+  /* closing (slide 12, on dark) */
+  .close2{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(20px,3vw,48px);align-items:center;margin-top:clamp(12px,2vh,22px)}
+  @media(max-width:820px){.close2{grid-template-columns:1fr}}
+  .partnermark{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:clamp(14px,2.2vh,24px);
+    border-left:1px solid rgba(255,255,255,.16);padding-left:clamp(18px,2.4vw,40px)}
+  @media(max-width:820px){.partnermark{border-left:0;padding-left:0;border-top:1px solid rgba(255,255,255,.16);padding-top:22px}}
+  .partnermark .seal{height:clamp(74px,10vw,120px);width:auto;display:block}
+  .partnermark .lcd{width:clamp(190px,24vw,320px);height:auto;display:block}
+  .partnermark .px{font-family:var(--fb);color:rgba(255,255,255,.42);font-size:clamp(20px,2.4vw,30px);font-weight:300}
+
+  /* glowing CTA */
+  .cta-glow{position:relative;overflow:hidden;display:inline-flex;align-items:center;gap:11px;margin-top:clamp(18px,2.6vh,32px);
+    font-family:var(--fh);font-weight:600;font-size:clamp(1.05rem,1.6vw,1.3rem);
+    background:linear-gradient(180deg,#E2A177,#C57A4E);color:#fff;padding:16px 38px;border-radius:100px;text-decoration:none;
+    box-shadow:0 0 0 1px rgba(215,143,98,.5),0 18px 50px -14px rgba(157,91,53,.75);animation:ctapulse 3.2s ease-in-out infinite}
+  .cta-glow span{position:relative;z-index:2}
+  .cta-glow::after{content:"";position:absolute;top:0;left:-60%;width:42%;height:100%;z-index:1;
+    background:linear-gradient(100deg,transparent,rgba(255,255,255,.5),transparent);transform:skewX(-18deg);animation:ctasheen 3.8s ease-in-out infinite}
+  @keyframes ctapulse{0%,100%{box-shadow:0 0 0 1px rgba(215,143,98,.5),0 18px 50px -16px rgba(157,91,53,.6)}
+    50%{box-shadow:0 0 0 1px rgba(215,143,98,.7),0 22px 62px -12px rgba(157,91,53,.9)}}
+  @keyframes ctasheen{0%{left:-60%}58%,100%{left:135%}}
+  @media(prefers-reduced-motion:reduce){.cta-glow{animation:none}.cta-glow::after{display:none}}
+
+  /* grow plan (slide 13, on dark) */
+  .grow{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(20px,3vw,42px);margin-top:clamp(14px,2.2vh,26px);align-items:start}
+  @media(max-width:820px){.grow{grid-template-columns:1fr}}
+  .grow__k{font-family:var(--fh);font-weight:600;letter-spacing:.02em;font-size:.9rem;color:rgba(255,255,255,.82);margin-bottom:clamp(9px,1.4vh,14px)}
+  .grow__adds{display:grid;gap:clamp(9px,1.4vh,13px)}
+  .growitem{display:flex;gap:12px;align-items:flex-start;border-radius:var(--radius);border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.06);padding:clamp(12px,1.6vh,16px) clamp(13px,1.4vw,18px)}
+  .growitem svg{width:19px;height:19px;flex:none;color:var(--brick-bright);margin-top:2px}
+  .growitem b{font-family:var(--fh);font-weight:600;font-size:.95rem;color:#fff;display:block}
+  .growitem span{font-size:.86rem;color:rgba(255,255,255,.78);line-height:1.45;display:block;margin-top:3px}
+  .proof{position:relative;border:1px solid var(--brick-bright);border-radius:16px;padding:clamp(18px,2.3vh,26px);background:rgba(215,143,98,.1);box-shadow:0 0 60px -30px rgba(215,143,98,.6)}
+  .proof__shot{position:absolute;top:-140px;right:-8px;width:clamp(156px,18vw,198px);height:auto;border-radius:8px;
+    transform:rotate(-5deg);box-shadow:0 24px 46px -12px rgba(0,0,0,.62);z-index:4;pointer-events:none}
+  @media(max-width:820px){.proof__shot{display:none}}
+  .proof__k{font-family:var(--fh);font-weight:600;letter-spacing:.03em;font-size:.72rem;color:var(--brick-bright);text-transform:uppercase}
+  .proof__stat{font-family:var(--fh);font-weight:700;font-size:clamp(1.6rem,3.5vw,2.5rem);color:#fff;line-height:1.05;margin-top:9px}
+  .proof__stat b{color:var(--brick-bright)}
+  .proof p{font-size:.86rem;color:rgba(255,255,255,.8);line-height:1.5;margin:11px 0 0}
+  .growprice{display:flex;align-items:baseline;gap:11px;margin-top:clamp(12px,1.8vh,18px)}
+  .growprice .n{font-family:var(--fh);font-weight:700;font-size:clamp(1.8rem,3.6vw,2.5rem);color:var(--brick-bright);line-height:1}
+  .growprice .l{font-size:.86rem;color:rgba(255,255,255,.8)}
+  .cta-stack{display:inline-flex;flex-direction:column;align-items:flex-start}
+  .grow__downsell{margin-top:11px;font-size:.86rem;color:rgba(255,255,255,.8);text-decoration:underline;text-underline-offset:3px;transition:color .18s}
+  .grow__downsell:hover{color:var(--brick-bright)}
+
+  /* ===== Performance dashboard (slide 9, "Ferrari under the hood") ===== */
+  .perf-slide{--lh-green:#3FD08A;--lh-amber:#E0A93E;--lh-red:#E0574E;
+    --card:rgba(255,255,255,.05);--border:rgba(255,255,255,.14);--radius-lg:16px;
+    --ink:#F6ECE2;--ink-soft:rgba(255,255,255,.82);--ink-mute:rgba(255,255,255,.58)}
+  .perf-slide .lede{max-width:760px}
+  .perf-decks{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2vw,22px);margin:clamp(16px,2.4vh,24px) 0 clamp(12px,1.8vh,18px)}
+  .perf-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:clamp(13px,1.6vw,20px)}
+  .perf-card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:11px}
+  .perf-dev{display:flex;align-items:center;gap:9px;color:var(--ink-soft)}
+  .perf-dev b{font-family:var(--fh);font-weight:600;font-size:13.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink)}
+  .perf-url{font-family:var(--fh);font-size:10px;letter-spacing:.04em;color:var(--ink-mute);font-variant-numeric:tabular-nums}
+  .perf-slide .gauges{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+  .perf-slide .g{display:flex;flex-direction:column;align-items:center;gap:8px}
+  .perf-slide .g .ring{position:relative;width:clamp(74px,7vw,98px);aspect-ratio:1}
+  .perf-slide .g svg{width:100%;height:100%;transform:rotate(-90deg)}
+  .perf-slide .g .trk{fill:none;stroke:rgba(245,239,226,.09);stroke-width:8}
+  .perf-slide .g .arc{fill:none;stroke-width:8;stroke-linecap:round;transition:stroke-dashoffset 1.05s cubic-bezier(.22,1,.36,1)}
+  .perf-slide .g .num{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--fh);font-weight:600;font-size:clamp(24px,2.4vw,31px);font-variant-numeric:tabular-nums}
+  .perf-slide .g .cap{font-family:var(--fh);font-size:9.5px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);text-align:center;line-height:1.2}
+  .perf-slide .g[data-band=green] .arc{stroke:var(--lh-green);filter:drop-shadow(0 0 5px rgba(63,208,138,.55))}
+  .perf-slide .g[data-band=green] .num{color:var(--lh-green)}
+  .perf-slide .g[data-band=amber] .arc{stroke:var(--lh-amber);filter:drop-shadow(0 0 5px rgba(224,169,62,.5))}
+  .perf-slide .g[data-band=amber] .num{color:var(--lh-amber)}
+  .perf-slide .g[data-band=red] .arc{stroke:var(--lh-red);filter:drop-shadow(0 0 5px rgba(224,87,78,.5))}
+  .perf-slide .g[data-band=red] .num{color:var(--lh-red)}
+  .perf-legend{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;border-top:1px solid var(--border);padding-top:clamp(11px,1.7vh,15px)}
+  .perf-legend .leg .lt{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+  .perf-legend .leg .lt b{font-family:var(--fh);font-weight:600;font-size:12.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink)}
+  .perf-legend .leg .lt i{font-family:var(--fh);font-style:normal;font-size:9.5px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 45%,transparent);border-radius:20px;padding:2px 7px}
+  .perf-legend .leg p{margin:4px 0 0;font-size:11.5px;line-height:1.4;color:var(--ink-mute)}
+  .perf-cwv{position:absolute;left:0;right:0;bottom:clamp(46px,6.6vh,62px);display:flex;gap:16px;justify-content:center;font-family:var(--fh);font-size:11px;letter-spacing:.06em;color:var(--lh-green,#3FD08A);text-transform:uppercase;font-weight:500;padding:0 24px}
+  .perf-cwv b{color:var(--ink-soft);font-weight:600;font-variant-numeric:tabular-nums}
+  .perf-cwv-note{color:var(--ink-mute)}
+  @media (max-width:820px){.perf-decks{grid-template-columns:1fr}.perf-legend{grid-template-columns:1fr 1fr}.perf-cwv{position:static;margin-top:14px;flex-wrap:wrap}}
+</style>
+</head>
+<body>
+<div class="progress" id="bar"></div>
+<div class="deck" id="deck">
+
+  <!-- 1 COVER -->
+  <section class="slide s-dark cover-slide">
+    <div class="cover-media" aria-hidden="true">
+      <img src="https://mcr.localcraftdigital.com/assets/images/hero-home-new-roof.jpg" alt="">
+    </div>
+    <div class="chrome chrome--top"><div class="brandmark"><span class="seal"></span>Madison County Roofing</div><div>Strategy &amp; Growth Plan</div></div>
+    <div class="wrap"><div class="cover-inner">
+      <div class="eyebrow">Madison County Roofing &times; LocalCraft Digital</div>
+      <h1>Your website, built to bring<br><span class="a">Madison County to your door.</span></h1>
+      <p class="lede">A site engineered around what your neighbors actually search, wired so every roof, every storm, and every town becomes its own way to find you on Google. Here is the strategy behind it, and how we keep it working.</p>
+      <div class="cover-lockup"><img class="seal" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIiBmaWxsPSJub25lIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9Ik1hZGlzb24gQ291bnR5IFJvb2ZpbmcgwrcgRXN0LiAxOTM3Ij4KICA8IS0tIE91dGVyIGRvdWJsZS1saW5lIHJpbmcgaW4gcGFwZXIgLS0+CiAgPGNpcmNsZSBjeD0iMTAwIiBjeT0iMTAwIiByPSI5NCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRjdGNEVEIiBzdHJva2Utd2lkdGg9IjEuNSIvPgogIDxjaXJjbGUgY3g9IjEwMCIgY3k9IjEwMCIgcj0iODgiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0Y3RjRFRCIgc3Ryb2tlLXdpZHRoPSIwLjc1Ii8+CgogIDxkZWZzPgogICAgPHBhdGggaWQ9Im1jci1sLXRvcCIgZD0iTSAyMiwxMDAgQSA3OCw3OCAwIDAgMSAxNzgsMTAwIi8+CiAgICA8cGF0aCBpZD0ibWNyLWwtYm90IiBkPSJNIDE3OCwxMDAgQSA3OCw3OCAwIDAgMSAyMiwxMDAiLz4KICA8L2RlZnM+CgogIDx0ZXh0IGZvbnQtZmFtaWx5PSJGcmF1bmNlcywgR2VvcmdpYSwgc2VyaWYiIGZvbnQtd2VpZ2h0PSI3MDAiIGZvbnQtc2l6ZT0iMTEiIGxldHRlci1zcGFjaW5nPSIyLjUiIGZpbGw9IiNGN0Y0RUQiPgogICAgPHRleHRQYXRoIGhyZWY9IiNtY3ItbC10b3AiIHN0YXJ0T2Zmc2V0PSI1MCUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPk1BRElTT04gQ09VTlRZIFJPT0ZJTkc8L3RleHRQYXRoPgogIDwvdGV4dD4KICA8dGV4dCBmb250LWZhbWlseT0iRnJhdW5jZXMsIEdlb3JnaWEsIHNlcmlmIiBmb250LXdlaWdodD0iNTAwIiBmb250LXN0eWxlPSJpdGFsaWMiIGZvbnQtc2l6ZT0iOSIgbGV0dGVyLXNwYWNpbmc9IjIuNSIgZmlsbD0iI0Y3RjRFRCI+CiAgICA8dGV4dFBhdGggaHJlZj0iI21jci1sLWJvdCIgc3RhcnRPZmZzZXQ9IjUwJSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+Q09MTElOU1ZJTExFIMK3IElMTElOT0lTPC90ZXh0UGF0aD4KICA8L3RleHQ+CgogIDxnIGZpbGw9IiNGN0Y0RUQiPgogICAgPHBhdGggZD0iTSAxNCwxMDAgTCAxOCw5NiBMIDIyLDEwMCBMIDE4LDEwNCBaIi8+CiAgICA8cGF0aCBkPSJNIDE3OCwxMDAgTCAxODIsOTYgTCAxODYsMTAwIEwgMTgyLDEwNCBaIi8+CiAgPC9nPgoKICA8IS0tIENlbnRyYWwgaG91c2Ugc2lsaG91ZXR0ZSBpbiBicmljay1icmlnaHQgKG1vcmUgdmlzaWJsZSBvbiBkYXJrKSAtLT4KICA8ZyBmaWxsPSIjQzU3RTUwIj4KICAgIDxwYXRoIGQ9Ik0gNjAsMTA4IEwgMTAwLDcyIEwgMTQwLDEwOCBMIDEzOCwxMDggTCAxMDAsNzYgTCA2MiwxMDggWiIvPgogICAgPHBhdGggZD0iTSA2NSwxMTUgTCAxMDAsODQgTCAxMzUsMTE1IEwgMTM1LDExOCBMIDEwMCw4OSBMIDY1LDExOCBaIiBvcGFjaXR5PSIwLjQiLz4KICA8L2c+CgogIDx0ZXh0IHg9IjEwMCIgeT0iMTM1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGZvbnQtZmFtaWx5PSJGcmF1bmNlcywgR2VvcmdpYSwgc2VyaWYiIGZvbnQtd2VpZ2h0PSI3MDAiIGZvbnQtc3R5bGU9Iml0YWxpYyIKICAgICAgICBmb250LXNpemU9IjIyIiBsZXR0ZXItc3BhY2luZz0iLTAuNSIKICAgICAgICBmaWxsPSIjQzU3RTUwIj5FU1QuIDE5Mzc8L3RleHQ+Cjwvc3ZnPgo=" alt="Madison County Roofing"><span class="px">&times;</span><img class="lcd" src="lcd-wordmark.svg" alt="LocalCraft Digital"></div>
+      <div class="liveurl">Live at <a href="https://mcr.localcraftdigital.com" target="_blank" rel="noopener">mcr.localcraftdigital.com</a></div>
+    </div></div>
+    <div class="chrome chrome--bottom"><div>Collinsville, IL</div><div class="pagenum"></div></div>
+  </section>
+
+  <!-- 2 WHERE YOU ARE TODAY -->
+  <section class="slide s-light">
+    <div class="chrome chrome--top"><div class="brandmark"><span class="seal"></span>Madison County Roofing</div><div>Where you are today</div></div>
+    <div class="wrap">
+      <div class="eyebrow">The starting line</div>
+      <h2>You earned the trust. <span class="a">The old site can't carry it.</span></h2>
+      <p class="lede">You are a 5.0-star name that has been on Collinsville roofs since 1937, and you already rank #1 in Google's organic results for roof replacement. But the site holding all of that is a dated one-pager, and one page catches only a sliver of what your name has earned.</p>
+      <div class="state">
+        <div class="statecard statecard--good">
+          <div class="sh">What you have already earned</div>
+          <ul>
+            <li><b>5.0 stars on Google</b>, the top rating in the Collinsville pack</li>
+            <li><b>BBB A+ accredited since 2009</b>, plus CertainTeed and Owens Corning credentials</li>
+            <li><b>Owner Mark Eck answers the phone</b> and works every job himself</li>
+            <li><b>Family-owned in Collinsville since 1937</b>, 87 unbroken years</li>
+            <li><b>Already #1 in Google's organic results</b> for roof replacement in Collinsville</li>
+          </ul>
+        </div>
+        <div class="statecard statecard--gap">
+          <div class="sh">What the old site does with it</div>
+          <ul>
+            <li><b>A dated WordPress one-pager</b> that shows one dimension of the business</li>
+            <li><b>No pages built for Google or AI to read</b>, and no pages for the towns you serve</li>
+            <li><b>Only 7 Google reviews</b> against incumbents carrying 140 to 390</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="chrome chrome--bottom"><div>Madison County Roofing &times; LocalCraft Digital</div><div class="pagenum"></div></div>
+  </section>
+
+  <!-- 3 TARGET AUDIENCE -->
+  <section class="slide s-brick slide--cards">
+    <div class="chrome chrome--top"><div class="brandmark"><span class="seal"></span>Madison County Roofing</div><div>Who it's for</div></div>
+    <div class="wrap">
+      <div class="eyebrow">Target audience</div>
+      <h2>Four homeowners, <span class="a">one instinct</span>:<br>do it right, once, with a real local.</h2>
+      <p class="lede">Every one of them wants the same thing: a roofer who answers his own phone and shows up himself.</p>
+      <div class="avatars">
+        <div class="avatar"><h3>Referred forever-home homeowner</h3><div class="tag">The core buyer &middot; primary</div><p>45 to 70, an established Madison County home whose roof is at the end of its life. A neighbor said to call Mark. The K. Todd and Colleen Peters reviews, verbatim.</p><div class="win"><b>Wins on:</b> owner-accountable, done right the first time</div></div>
+        <div class="avatar"><h3>Hail &amp; storm homeowner</h3><div class="tag">Insurance claim &middot; primary, urgent</div><p>Just took hail or wind and needs the damage documented and the adjuster walked through the claim. The Doug K. (Colonel USAF, ret.) review, verbatim.</p><div class="win"><b>Wins on:</b> insurance-claim expertise since 1937</div></div>
+        <div class="avatar"><h3>Pre-sale &amp; first-roof buyer</h3><div class="tag">Comparison &middot; secondary</div><p>An inspector flagged the roof before a sale, or it is their first older home. They want an honest inspection and a real number, not a sales pitch. The Jarod Burdess review, verbatim.</p><div class="win"><b>Wins on:</b> a free inspection and a straight answer</div></div>
+        <div class="avatar"><h3>Light-commercial owner</h3><div class="tag">Flat roof &middot; secondary</div><p>A small business, church, or property manager with a flat or low-slope roof that leaks or needs a recoat. The storm-chasers skip flat work; MCR has done it since the company opened.</p><div class="win"><b>Wins on:</b> real EPDM, modified, and coating work</div></div>
+        <div class="avatar avatar--flag"><div class="flagtag">The common thread</div><h3>The through-line</h3><div class="tag">One attitude</div><p>Every one of them has been burned by, or fears, the out-of-state storm-chaser who pressures a claim and vanishes by spring. Madison County Roofing's rare answer is 87 unbroken years in the same county, a family that still owns it, and Mark Eck on every single job.</p><div class="win"><b>The trust signal:</b> the opposite of a franchise</div></div>
+      </div>
+    </div>
+    <div class="chrome chrome--bottom"><div>Madison County Roofing &times; LocalCraft Digital</div><div class="pagenum"></div></div>
+  </section>
+
+  <!-- 4 KEYWORD RESEARCH + VOLUME CHART -->
+  <section class="slide s-light">
+    <div class="chrome chrome--top"><div class="brandmark"><span class="seal"></span>Madison County Roofing</div><div>Keyword research</div></div>
+    <div class="wrap">
+      <div class="k4head">
+        <div>
+          <div class="eyebrow">We searched the way your buyers do</div>
+          <h2>Real demand, <span class="a">sorted by intent</span>.</h2>
+        </div>
+        <p class="lede">These are actual monthly Google searches across Illinois, grouped by intent, each mapped to the page that answers it. Your old site already ranks #1 for roof replacement in Collinsville, roof inspection is a 1,600-a-month opening no local roofer owns, and the satellite towns show no map pack at all. We built for the lanes you can win and skipped the head terms the directories own.</p>
+      </div>
+      <div class="vchart" id="vchart">
+        <noscript><p class="src">Ready to book: roofer near me 6,600 &middot; roofers 5,400 &middot; roofing contractors 3,600 &middot; roofing companies 2,900 &middot; roof repair 2,400 &middot; roof replacement 880. Comparing options: roof inspection 1,600 &middot; roof leak repair 1,300. Something's wrong: hail damage roof repair 70.</p></noscript>
+      </div>
+      <div class="src">Source: DataForSEO &middot; Google Ads &middot; Illinois &middot; average monthly searches, pulled 2026-07-12. Head terms shown; town-qualified long-tail is additive.</div>
+    </div>
+    <div class="chrome chrome--bottom"><div>Madison County Roofing &times; LocalCraft Digital</div><div class="pagenum"></div></div>
+  </section>
+
+  <!-- 5 SEO STRATEGY + MINDMAP -->
+  <section class="slide s-dark">
+    <div class="chrome chrome--top"><div class="brandmark"><span class="seal"></span>Madison County Roofing</div><div>SEO strategy</div></div>
+    <div class="wrap">
+      <div class="k4head">
+        <div>
+          <div class="eyebrow">How you get found on Google</div>
+          <h2>One page can't catch <span class="a">what 18 can</span>.</h2>
+        </div>
+        <p class="lede">Your old site was one page. We built 18, wired together, so every service and every town is its own front door. A search from any corner of Madison County gets caught.</p>
+      </div>
+      <div class="mapwrap"><svg id="netmap" viewBox="0 0 1220 700" preserveAspectRatio="xMidYMid meet" role="img" aria-label="One-page site versus an 18-page interlinked architecture"></svg>
+        <noscript><p class="nofallback">One home page became 18, wired together: Roofing (Residential Roofing, Roof Inspection), Storm (Storm Damage), Commercial (Commercial Roofing), Exteriors (Siding &amp; Gutters), Service Area (the hub plus Granite City, Troy, Glen Carbon, Maryville, Edwardsville), and Company (About, Our Work, Testimonials, Contact, Privacy, Terms).</p></noscript>
+      </div>
+    </div>
+    <div class="chrome chrome--bottom"><div>Madison County Roofing &times; LocalCraft Digital</div><div class="pagenum"></div></div>
+  </section>
+
+  <!-- 6 AEO -->
+  <section class="slide s-dark">
+    <div class="chrome chrome--top"><div class="brandmark"><span class="seal"></span>Madison County Roofing</div><div>Answer engines</div></div>
+    <div class="wrap">
+      <div class="eyebrow">AEO</div>
+      <h2>When Madison County asks AI, <span class="a">you're the answer</span>.</h2>
+      <p class="lede">More homeowners skip the results and just ask ChatGPT, Google's AI Overview, or Perplexity "who's a good roofer near Collinsville?" Those engines quote sites built to be read by machines. Yours is. None of the incumbents' are.</p>
+      <div class="aeo2">
+        <ul class="bullets">
+          <li><b>An llms.txt brief on your site</b>, a plain-English map every AI crawler can read. None of the Metro East roofers have one.</li>
+          <li><b>Answer-first FAQ capsules on every page</b>, written to the exact questions homeowners ask: what a roof costs here, do I need a new roof, how a hail claim works. An engine can quote them word for word.</li>
+          <li><b>One consistent set of facts</b>, since 1937, BBB A+, CertainTeed ShingleMaster, the exact towns you serve. And AI Overviews already fire on "roofing Troy," "Glen Carbon," and "Maryville." The lane is live now, not a someday bet.</li>
+        </ul>
+        <div class="aicloud" role="img" aria-label="AI answer engines your neighbors ask: ChatGPT, Google, Gemini, Claude, Perplexity, Grok, Copilot">
+          <span class="ai ai-gemini"><svg viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gemg" x1="2" y1="4" x2="22" y2="20" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#4796E3"/><stop offset=".5" stop-color="#9177C7"/><stop offset="1" stop-color="#D96570"/></linearGradient></defs><path fill="url(#gemg)" d="M12 0c.42 6.34 5.66 11.58 12 12-6.34.42-11.58 5.66-12 12-.42-6.34-5.66-11.58-12-12C6.34 11.58 11.58 6.34 12 0z"/></svg>Gemini</span>
+          <span class="ai ai-chatgpt"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="#fff" stroke-width="1.5" d="M12 3a4.4 4.4 0 0 1 4.35 3.62 4.4 4.4 0 0 1 1.55 8.2A4.4 4.4 0 0 1 12 21a4.4 4.4 0 0 1-5.9-4.98 4.4 4.4 0 0 1 1.55-8.2A4.4 4.4 0 0 1 12 3z"/></svg>ChatGPT</span>
+          <span class="ai ai-google"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M23.5 12.27c0-.82-.07-1.6-.2-2.36H12v4.46h6.45a5.5 5.5 0 0 1-2.4 3.6v3h3.87c2.26-2.09 3.58-5.17 3.58-8.7z"/><path fill="#34A853" d="M12 24c3.24 0 5.96-1.08 7.94-2.92l-3.87-3c-1.08.72-2.45 1.16-4.07 1.16-3.13 0-5.78-2.11-6.73-4.96H1.26v3.1A12 12 0 0 0 12 24z"/><path fill="#FBBC05" d="M5.27 14.28a7.2 7.2 0 0 1 0-4.56v-3.1H1.26a12 12 0 0 0 0 10.76z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0A12 12 0 0 0 1.26 6.62l4.01 3.1C6.22 6.86 8.87 4.75 12 4.75z"/></svg>Google</span>
+          <span class="ai ai-claude"><svg viewBox="0 0 24 24" aria-hidden="true"><g stroke="#D97757" stroke-width="1.7" stroke-linecap="round"><path d="M12 3.5v17M3.5 12h17M6 6l12 12M18 6 6 18M8.2 4l7.6 16M15.8 4 8.2 20M4 8.2l16 7.6M4 15.8 20 8.2"/></g></svg>Claude</span>
+          <span class="ai ai-copilot"><svg viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="copg" x1="3" y1="6" x2="21" y2="18" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#2AE5C2"/><stop offset=".5" stop-color="#2E8CE6"/><stop offset="1" stop-color="#8A5CF6"/></linearGradient></defs><path fill="url(#copg)" d="M8 5c3 0 4.1 2 5.2 5.1S15.2 15 18.4 15c-1.5 2.6-4.1 4-7.1 4-4 0-6.8-2.7-6.8-6.7C4.5 10.1 6 5 8 5z"/></svg>Copilot</span>
+          <span class="ai ai-perplexity"><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="#20B8CD" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v16"/><path d="M12 7.2 6 4.4v6.2l6 3 6-3V4.4z"/><path d="M6 13.6v6l6 3M18 13.6v6l-6 3"/></g></svg>Perplexity</span>
+          <span class="ai ai-grok"><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M7 20c-1.2-6.4 2.2-11.4 8-13.4-3.1 3-5.6 7.2-6.2 13.4z"/><path d="M12.6 9.1 19 4"/></g></svg>Grok</span>
+          <span class="cap">Where your neighbors are starting to ask</span>
+        </div>
+      </div>
+    </div>
+    <div class="chrome chrome--bottom"><div>Madison County Roofing &times; LocalCraft Digital</div><div class="pagenum"></div></div>
+  </section>
+
+  <!-- 7 COMPETITOR GAP -->
+  <section class="slide s-light slide--cards">
+    <div class="chrome chrome--top"><div class="brandmark"><span class="seal"></span>Madison County Roofing</div><div>The opening</div></div>
+    <div class="wrap">
+      <div class="eyebrow">Competitor gap</div>
+      <h2>The map pack is a review race. <span class="a">The rest is wide open.</span></h2>
+      <p class="lede">Here is who leads the local pack, measured, and where the door is open for you.</p>
+      <div class="avatars">
+        <div class="avatar"><h3>Edwards and Sons Roofing</h3><div class="tag">Collinsville pack #1 &middot; 5.0 / 142 reviews</div><p>Does well: a huge review base, storm and restoration marketing, fast-response positioning.</p><div class="win"><b>Your opening:</b> a restoration brand with no local heritage. You already rank #1 organic for roof replacement while they lead only the map pack. Win on 1937 roots and the AEO lane.</div></div>
+        <div class="avatar"><h3>Accredited Roofing</h3><div class="tag">Collinsville pack #3 &middot; 4.9 / 392 reviews</div><p>Does well: the largest review base in the pack, and review volume is the lever the map pack turns on.</p><div class="win"><b>Your opening:</b> the pack is a review-count race you close with a Google review habit, while you take the organic and per-town lanes Accredited runs no pages for.</div></div>
+        <div class="avatar"><h3>Riverside Restoration</h3><div class="tag">Collinsville pack #2 &middot; 4.7 / 245 reviews</div><p>Does well: broad restoration presence across the Metro East.</p><div class="win"><b>Your opening:</b> a restoration generalist, not a roofing specialist. You are a dedicated roofer with 87 years in one county. Differentiate on specialization and longevity.</div></div>
+        <div class="avatar"><h3>H&amp;F Exteriors</h3><div class="tag">Edwardsville pack &middot; 4.9 / 837 reviews</div><p>Does well: a regional volume player dominating Edwardsville reviews.</p><div class="win"><b>Your opening:</b> you win the Madison County core on Collinsville roots and the towns where no competitor runs a dedicated page.</div></div>
+        <div class="avatar avatar--flag"><div class="flagtag">The opening</div><h3>The real gap</h3><div class="tag">Corridor-wide, uncontested</div><p>The map pack is a review-count race you can't win overnight (7 reviews vs 142 to 390), and a steady Google Business Profile review habit closes it over time. But the organic results, the AI answers, and the per-town lanes are wide open: you already rank #1 organic for roof replacement and #2 in Granite City, AI Overviews trigger on "roofing {town}" in Troy, Glen Carbon, and Maryville with no local pack, and not one competitor runs town pages.</p><div class="win"><b>Your lane:</b> the corridor-wide opening this site was built to take</div></div>
+      </div>
+    </div>
+    <div class="chrome chrome--bottom"><div>Measured via DataForSEO &middot; Collinsville, IL &middot; 2026-07-12</div><div class="pagenum"></div></div>
+  </section>
+
+  <!-- 8 MEASURE, ITERATE, GROW -->
+  <section class="slide s-brick">
+    <div class="chrome chrome--top"><div class="brandmark"><span class="seal"></span>Madison County Roofing</div><div>Measure &amp; grow</div></div>
+    <div class="wrap">
+      <div class="eyebrow">Ongoing</div>
+      <h2>A pixel sees every call, so we <span class="a">tune it and grow it</span>.</h2>
+      <p class="lede">A tracking pixel on every one of your 18 pages counts every call and every form, so we never guess. We see exactly what is working, sharpen it every quarter, and keep growing your share of Madison County.</p>
+      <div class="steps">
+        <div class="step"><div class="n">01</div><h3>Set it</h3><p>Launch a site built on real Madison County search data, live and ranking across the county.</p></div>
+        <div class="step"><div class="n">02</div><h3>See it</h3><p>The LocalCraft pixel counts every call and form. A live portal shows which pages and towns convert.</p></div>
+        <div class="step"><div class="n">03</div><h3>Iterate it</h3><p>Quarterly conversion and SEO tune-ups, no new project fee. Fix what lags, double the winners.</p></div>
+        <div class="step"><div class="n">04</div><h3>Grow it</h3><p>Compounding rankings, more calls, a bigger share of Madison County, month over month.</p></div>
+      </div>
+    </div>
+    <div class="chrome chrome--bottom"><div>Madison County Roofing &times; LocalCraft Digital</div><div class="pagenum"></div></div>
+  </section>
+
+  <!-- 9 PERFORMANCE PROOF (Ferrari under the hood) -->
+  <section class="slide s-dark perf-slide">
+    <div class="chrome chrome--top"><div class="brandmark"><span class="seal"></span>Madison County Roofing</div><div>Under the hood</div></div>
+    <div class="wrap perf-inner">
+      <div class="eyebrow">Under the hood</div>
+      <h2>Your site is a <span class="a">Ferrari</span> under the hood.</h2>
+      <p class="lede">Not our opinion. These are <strong>real Google Lighthouse scores</strong> pulled from your live site, <strong>measured July 2026</strong>. Every bar is scored 0&ndash;100; <strong>90+ is green, 100 is perfect</strong>.</p>
+      <div class="perf-decks">
+        <div class="perf-card">
+          <div class="perf-card-top">
+            <span class="perf-dev"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg><b>Desktop</b></span>
+            <span class="perf-url">madison-county-roofing-website.vercel.app</span>
+          </div>
+          <div class="gauges" data-labels="Performance,Accessibility,Best Practices,SEO">
+            <span class="g" data-score="93"></span><span class="g" data-score="100"></span><span class="g" data-score="100"></span><span class="g" data-score="100"></span>
+          </div>
+        </div>
+        <div class="perf-card">
+          <div class="perf-card-top">
+            <span class="perf-dev"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg><b>Mobile</b></span>
+            <span class="perf-url">madison-county-roofing-website.vercel.app</span>
+          </div>
+          <div class="gauges" data-labels="Performance,Accessibility,Best Practices,SEO">
+            <span class="g" data-score="84"></span><span class="g" data-score="100"></span><span class="g" data-score="100"></span><span class="g" data-score="100"></span>
+          </div>
+        </div>
+      </div>
+      <div class="perf-legend">
+        <div class="leg"><span class="lt"><b>Performance</b><i>Speed</i></span><p>How fast the page loads and becomes usable. Slow sites lose visitors before they ever see you.</p></div>
+        <div class="leg"><span class="lt"><b>Accessibility</b><i>Access</i></span><p>Usable by everyone, including screen-reader and keyboard users. Also the signal behind ADA compliance.</p></div>
+        <div class="leg"><span class="lt"><b>Best&nbsp;Practices</b><i>Foundation</i></span><p>Built to modern web standards: secure (HTTPS), no broken code, no console errors.</p></div>
+        <div class="leg"><span class="lt"><b>SEO</b><i>Findability</i></span><p>Structured so Google can read, index, and rank you: clean tags, valid schema, mobile-ready.</p></div>
+      </div>
+    </div>
+    <div class="perf-cwv"><span><b>LCP 1.3s</b> &#10003;</span><span><b>CLS 0</b> &#10003;</span><span><b>Blocking 0ms</b> &#10003;</span><span class="perf-cwv-note">&middot; Core Web Vitals, desktop</span></div>
+    <div class="chrome chrome--bottom"><div>Madison County Roofing &times; LocalCraft Digital</div><div class="pagenum"></div></div>
+  </section>
+
+  <!-- 10 TWO DOORWAYS -->
+  <section class="slide s-light">
+    <div class="chrome chrome--top"><div class="brandmark"><span class="seal"></span>Madison County Roofing</div><div>Two doorways</div></div>
+    <div class="wrap">
+      <div class="eyebrow">Your options</div>
+      <h2>Two doorways. Walk through <span class="a">whichever fits</span>.</h2>
+      <div class="doors">
+        <div class="door"><div class="k">Doorway A &middot; Own it outright</div><div class="price">$4,997 <span style="font-size:1rem;color:var(--ink-soft)">once</span></div><p>A $25,000 website, built and yours to keep. No subscription, no strings. Take it, or leave it.</p></div>
+        <div class="door door--pick"><div class="pill">The one I'd pick</div><div class="k">Doorway B &middot; Partner with me</div><div class="price">$2,497 <span style="font-size:1rem;color:var(--ink-soft)">+ $197/mo</span></div><p>The build at half price, and I never stop working on it. Hosting, updates, optimization, and a direct line to me. Month to month, cancel anytime, the site is always yours.</p></div>
+      </div>
+    </div>
+    <div class="chrome chrome--bottom"><div>Madison County Roofing &times; LocalCraft Digital</div><div class="pagenum"></div></div>
+  </section>
+
+  <!-- 11 VALUE STACK -->
+  <section class="slide s-dark value-slide">
+    <div class="chrome chrome--top"><div class="brandmark"><span class="seal"></span>Madison County Roofing</div><div>What's included</div></div>
+    <div class="wrap">
+      <div class="eyebrow">The offer</div>
+      <h2>A lot goes into <span class="a">keeping a site working</span>.</h2>
+      <div class="stack">
+        <div class="row"><span>Managed premium hosting</span><b class="x">$49/mo</b></div>
+        <div class="row"><span>Security, monitoring &amp; backups</span><b class="x">$99/mo</b></div>
+        <div class="row"><span>Unlimited feature requests</span><b class="x">$1,200/mo</b></div>
+        <div class="row"><span>Unlimited content updates</span><b class="x">$600/mo</b></div>
+        <div class="row"><span>Quarterly conversion &amp; SEO tune-up</span><b class="x">$450/mo</b></div>
+        <div class="row"><span>Monthly performance reports</span><b class="x">$200/mo</b></div>
+        <div class="row"><span>Live traffic portal</span><b class="x">$75/mo</b></div>
+        <div class="row"><span>A direct line to your developer (me)</span><b class="x">$500/mo</b></div>
+        <div class="row total"><span>Everything, every month</span><b><span class="was">$3,173/mo</span><span class="now">$197/mo</span></b></div>
+      </div>
+    </div>
+    <div class="chrome chrome--bottom"><div>Madison County Roofing &times; LocalCraft Digital</div><div class="pagenum"></div></div>
+  </section>
+
+  <!-- 12 YOUR OFFER TODAY -->
+  <section class="slide s-light">
+    <div class="chrome chrome--top"><div class="brandmark"><span class="seal"></span>Madison County Roofing</div><div>Your offer today</div></div>
+    <div class="wrap">
+      <div class="eyebrow">Your offer today</div>
+      <h2>A $25,000 site, yours for $2,497. <span class="a">And it gets better.</span></h2>
+      <div class="offer2">
+        <div class="offer2__cards">
+          <div class="pcard">
+            <div class="pcard__anchor">$25,000<small>one-time build value</small></div>
+            <div class="pcard__now"><div class="n">$2,497</div><div class="l">to build, once</div></div>
+          </div>
+          <div class="pcard">
+            <div class="pcard__anchor">$3,173<small>/mo of real value</small></div>
+            <div class="pcard__now"><div class="n">$197<span style="font-size:.5em">/mo</span></div><div class="l">everything, handled</div></div>
+          </div>
+        </div>
+        <div class="bonuses">
+          <div class="bonus">
+            <div class="bk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 12l2 2 4-4"/><path d="M21 12c0 5-3.5 7.5-8.5 9C7.5 19.5 4 17 4 12V6l8.5-3L21 6z"/></svg>No contracts, ever</div>
+            <p>Month to month, cancel anytime. The site is always yours, whether you stay a month or a decade.</p>
+          </div>
+          <div class="bonus">
+            <div class="bk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12v9H4v-9M2 7h20v5H2zM12 22V7M12 7S12 3 9 3 6 7 12 7zM12 7s0-4 3-4 3 4-3 4z"/></svg>Free months for referrals</div>
+            <p>When a business you refer signs on as a client, your next month is on me. No cap, as long as you're with me.</p>
+            <p class="bonus__math">12 referrals = a free year.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="chrome chrome--bottom"><div>Madison County Roofing &times; LocalCraft Digital</div><div class="pagenum"></div></div>
+  </section>
+
+  <!-- 13 CLOSING -->
+  <section class="slide s-dark">
+    <div class="chrome chrome--top"><div class="brandmark"><span class="seal"></span>Madison County Roofing</div><div>Let's make it yours</div></div>
+    <div class="wrap">
+      <div class="close2">
+        <div>
+          <div class="eyebrow">The start</div>
+          <h2>It's built. It's ready.<br><span class="a">Let's make it yours.</span></h2>
+          <p class="lede">A site engineered around real Madison County demand, and the only AEO-ready roofer in the county. Claim it below, Mark, and we start growing it together. Live now at mcr.localcraftdigital.com.</p>
+          <a class="cta-glow" href="https://localcraftdigital.com/get-started?client=madison-county-roofing&amp;plan=care" target="_blank" rel="noopener"><span>Go live today &rarr;</span></a>
+        </div>
+        <div class="partnermark">
+          <img class="seal" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMDAgMjAwIiBmaWxsPSJub25lIiByb2xlPSJpbWciIGFyaWEtbGFiZWw9Ik1hZGlzb24gQ291bnR5IFJvb2ZpbmcgwrcgRXN0LiAxOTM3Ij4KICA8IS0tIE91dGVyIGRvdWJsZS1saW5lIHJpbmcgaW4gcGFwZXIgLS0+CiAgPGNpcmNsZSBjeD0iMTAwIiBjeT0iMTAwIiByPSI5NCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRjdGNEVEIiBzdHJva2Utd2lkdGg9IjEuNSIvPgogIDxjaXJjbGUgY3g9IjEwMCIgY3k9IjEwMCIgcj0iODgiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0Y3RjRFRCIgc3Ryb2tlLXdpZHRoPSIwLjc1Ii8+CgogIDxkZWZzPgogICAgPHBhdGggaWQ9Im1jci1sLXRvcCIgZD0iTSAyMiwxMDAgQSA3OCw3OCAwIDAgMSAxNzgsMTAwIi8+CiAgICA8cGF0aCBpZD0ibWNyLWwtYm90IiBkPSJNIDE3OCwxMDAgQSA3OCw3OCAwIDAgMSAyMiwxMDAiLz4KICA8L2RlZnM+CgogIDx0ZXh0IGZvbnQtZmFtaWx5PSJGcmF1bmNlcywgR2VvcmdpYSwgc2VyaWYiIGZvbnQtd2VpZ2h0PSI3MDAiIGZvbnQtc2l6ZT0iMTEiIGxldHRlci1zcGFjaW5nPSIyLjUiIGZpbGw9IiNGN0Y0RUQiPgogICAgPHRleHRQYXRoIGhyZWY9IiNtY3ItbC10b3AiIHN0YXJ0T2Zmc2V0PSI1MCUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPk1BRElTT04gQ09VTlRZIFJPT0ZJTkc8L3RleHRQYXRoPgogIDwvdGV4dD4KICA8dGV4dCBmb250LWZhbWlseT0iRnJhdW5jZXMsIEdlb3JnaWEsIHNlcmlmIiBmb250LXdlaWdodD0iNTAwIiBmb250LXN0eWxlPSJpdGFsaWMiIGZvbnQtc2l6ZT0iOSIgbGV0dGVyLXNwYWNpbmc9IjIuNSIgZmlsbD0iI0Y3RjRFRCI+CiAgICA8dGV4dFBhdGggaHJlZj0iI21jci1sLWJvdCIgc3RhcnRPZmZzZXQ9IjUwJSIgdGV4dC1hbmNob3I9Im1pZGRsZSI+Q09MTElOU1ZJTExFIMK3IElMTElOT0lTPC90ZXh0UGF0aD4KICA8L3RleHQ+CgogIDxnIGZpbGw9IiNGN0Y0RUQiPgogICAgPHBhdGggZD0iTSAxNCwxMDAgTCAxOCw5NiBMIDIyLDEwMCBMIDE4LDEwNCBaIi8+CiAgICA8cGF0aCBkPSJNIDE3OCwxMDAgTCAxODIsOTYgTCAxODYsMTAwIEwgMTgyLDEwNCBaIi8+CiAgPC9nPgoKICA8IS0tIENlbnRyYWwgaG91c2Ugc2lsaG91ZXR0ZSBpbiBicmljay1icmlnaHQgKG1vcmUgdmlzaWJsZSBvbiBkYXJrKSAtLT4KICA8ZyBmaWxsPSIjQzU3RTUwIj4KICAgIDxwYXRoIGQ9Ik0gNjAsMTA4IEwgMTAwLDcyIEwgMTQwLDEwOCBMIDEzOCwxMDggTCAxMDAsNzYgTCA2MiwxMDggWiIvPgogICAgPHBhdGggZD0iTSA2NSwxMTUgTCAxMDAsODQgTCAxMzUsMTE1IEwgMTM1LDExOCBMIDEwMCw4OSBMIDY1LDExOCBaIiBvcGFjaXR5PSIwLjQiLz4KICA8L2c+CgogIDx0ZXh0IHg9IjEwMCIgeT0iMTM1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgICAgIGZvbnQtZmFtaWx5PSJGcmF1bmNlcywgR2VvcmdpYSwgc2VyaWYiIGZvbnQtd2VpZ2h0PSI3MDAiIGZvbnQtc3R5bGU9Iml0YWxpYyIKICAgICAgICBmb250LXNpemU9IjIyIiBsZXR0ZXItc3BhY2luZz0iLTAuNSIKICAgICAgICBmaWxsPSIjQzU3RTUwIj5FU1QuIDE5Mzc8L3RleHQ+Cjwvc3ZnPgo=" alt="Madison County Roofing">
+          <span class="px">&times;</span>
+          <img class="lcd" src="lcd-wordmark.svg" alt="LocalCraft Digital">
+        </div>
+      </div>
+    </div>
+    <div class="chrome chrome--bottom"><div>Collinsville, IL &middot; Mark Eck</div><div class="pagenum"></div></div>
+  </section>
+
+  <!-- 14 GROW PLAN -->
+  <section class="slide s-dark">
+    <div class="chrome chrome--top"><div class="brandmark"><span class="seal"></span>Madison County Roofing</div><div>The grow plan</div></div>
+    <div class="wrap">
+      <div class="eyebrow">Optional &middot; go further</div>
+      <h2>Ready to grow faster? <span class="a">Here's the engine.</span></h2>
+      <p class="lede">The plan you just saw keeps the site sharp. The grow plan turns it into a machine that goes and gets the traffic, week after week.</p>
+      <div class="grow">
+        <div>
+          <div class="grow__k">Everything in your plan, plus:</div>
+          <div class="grow__adds">
+            <div class="growitem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><div><b>Optimized every week</b><span>Retuned weekly to what Madison County is searching for right now, not last week, not three months ago. You stay in front of demand as it moves.</span></div></div>
+            <div class="growitem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><div><b>ZIP and category exclusivity</b><span>Only one roofer in your area is ever on the grow plan, and it's you. One client per trade per ZIP, so a competitor never gets the same leg up.</span></div></div>
+            <div class="growitem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><div><b>Fresh SEO content weekly</b><span>A new page or article every week, aimed at the demand climbing across the county.</span></div></div>
+            <div class="growitem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><div><b>Ongoing AEO maintenance</b><span>Your answers kept fresh for ChatGPT, Gemini, and Google's AI as they change.</span></div></div>
+          </div>
+        </div>
+        <div>
+          <div class="proof">
+            <img class="proof__shot" src="shasta-power.webp" alt="The Shasta Power website, built by LocalCraft Digital">
+            <div class="proof__k">Proven, not theoretical</div>
+            <div class="proof__stat"><b>$15M+</b> raised. <b>Thousands</b> of visitors a month.</div>
+            <p>This is the exact content-and-SEO engine I built for the Shasta Power website. It worked there. Now it runs for Madison County.</p>
+          </div>
+          <div class="growprice"><span class="n">$497<span style="font-size:.5em">/mo</span></span><span class="l">the grow plan &middot; everything you have, plus the engine</span></div>
+          <div class="cta-stack">
+            <a class="cta-glow" href="https://localcraftdigital.com/get-started?client=madison-county-roofing&amp;plan=growth" target="_blank" rel="noopener"><span>Go live on the grow plan &rarr;</span></a>
+            <a class="grow__downsell" href="https://localcraftdigital.com/get-started?client=madison-county-roofing&amp;plan=care" target="_blank" rel="noopener">Or launch today on the Care plan instead &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="chrome chrome--bottom"><div>Collinsville, IL</div><div class="pagenum"></div></div>
+  </section>
+
+</div>
+<script>
+/* ---- cover: cinematic entrance on load (JS-gated so no-JS shows it statically) ---- */
+(function(){
+  var cover=document.querySelector('.cover-slide');
+  if(!cover) return;
+  cover.classList.add('reveal-armed');
+  function reveal(){ cover.classList.add('is-revealed'); }
+  requestAnimationFrame(function(){ requestAnimationFrame(reveal); });
+  setTimeout(reveal, 400); /* backstop: ensure reveal even if rAF is throttled in a backgrounded tab */
+})();
+
+/* ---- value stack: arm the strikethroughs, draw them in when the slide enters view ---- */
+(function(){
+  var vs=document.querySelector('.value-slide');
+  if(!vs) return;
+  vs.classList.add('armed');
+  var reduce=window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce || !('IntersectionObserver' in window)){ vs.classList.add('is-built'); return; }
+  var fired=false;
+  function build(){ if(fired) return; fired=true; vs.classList.add('is-built'); }
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting && e.intersectionRatio>=.45) build(); });
+  }, { threshold:[0,.45,.9] });
+  io.observe(vs);
+  var deckEl=document.getElementById('deck');
+  if(deckEl) deckEl.addEventListener('scroll', function(){
+    if(fired) return; var r=vs.getBoundingClientRect();
+    if(r.top < window.innerHeight*0.5 && r.bottom > window.innerHeight*0.5) build();
+  }, {passive:true});
+})();
+
+/* ---- volume chart (real DataForSEO, IL monthly, pulled 2026-07-12) ---- */
+(function(){
+  var MAX=6600, bands=[
+    {cls:'vt',color:'#C57A4E',name:'Ready to book',note:'transactional, home + service pages',rows:[
+      ['roofer near me',6600,'Home + near-me long-tail'],
+      ['roofers',5400,'Home + Residential'],
+      ['roofing contractors',3600,'Home + near-me'],
+      ['roofing companies',2900,'Home'],
+      ['roof repair',2400,'Residential + Storm'],
+      ['roof replacement',880,'Residential Roofing, ranks #1']]},
+    {cls:'vg',color:'#C79A3E',name:'Comparing options',note:'solution-aware, answer-first pages',rows:[
+      ['roof inspection',1600,'Roof Inspection, new + free'],
+      ['roof leak repair',1300,'Residential + Storm']]},
+    {cls:'vpp',color:'#5B7196',name:'Something’s wrong',note:'problem-aware, storm + insurance',rows:[
+      ['hail damage roof repair',70,'Storm Damage + claims']]}
+  ];
+  var h='';
+  bands.forEach(function(b){
+    h+='<div class="vband '+b.cls+'"><div class="vbh"><span class="pip" style="background:'+b.color+'"></span><b>'+b.name+'</b><span>'+b.note+'</span></div>';
+    b.rows.forEach(function(r){var w=Math.max(1,r[1]/MAX*100);
+      h+='<div class="vrow"><div class="vl">'+r[0]+'</div><div class="vbw"><div class="vbar" style="width:'+w.toFixed(2)+'%"></div><div class="vv">'+r[1].toLocaleString()+'</div></div><div class="vp">'+r[2]+'</div></div>';});
+    h+='</div>';
+  });
+  var host=document.getElementById('vchart');
+  if(host) host.insertAdjacentHTML('afterbegin',h);
+})();
+
+/* ---- SEO architecture mindmap (1 page vs 18) ---- */
+(function(){
+  var NS='http://www.w3.org/2000/svg', svg=document.getElementById('netmap');
+  if(!svg) return;
+  var BRICK='#D78F62', SLATE='#6E86A8', RED='#C6402F', CREAM='#EDE4DA', MUTE='#9aa8bd';
+  function el(n,a){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);return e;}
+  function add(e){svg.appendChild(e);return e;}
+  function text(x,y,s,o){o=o||{};var t=el('text',{x:x,y:y,'text-anchor':o.anchor||'middle','dominant-baseline':'middle',fill:o.fill||CREAM,'font-family':o.fh?"'Fraunces',Georgia,serif":"'Inter',sans-serif",'font-size':o.size||13,'font-weight':o.w||500});t.textContent=s;add(t);return t;}
+  function node(x,y,w,hh,label,o){o=o||{};var g=el('g',{});svg.appendChild(g);
+    var r=el('rect',{x:x-w/2,y:y-hh/2,width:w,height:hh,rx:o.rx||8,fill:o.fill||'#14223a',stroke:o.stroke||'rgba(215,143,98,.3)','stroke-width':o.sw||1.3});g.appendChild(r);
+    var t=el('text',{x:x,y:y,'text-anchor':'middle','dominant-baseline':'middle',fill:o.color||CREAM,'font-family':o.fh?"'Fraunces',Georgia,serif":"'Inter',sans-serif",'font-size':o.size||12.5,'font-weight':o.w||500});t.textContent=label;g.appendChild(t);return {x:x,y:y,w:w,h:hh};}
+  function curve(a,b,o){o=o||{};var x1=a.x+a.w/2,y1=a.y,x2=b.x-b.w/2,y2=b.y,mx=(x1+x2)/2;
+    var p=el('path',{d:'M'+x1+','+y1+' C'+mx+','+y1+' '+mx+','+y2+' '+x2+','+y2,fill:'none',stroke:o.stroke||BRICK,'stroke-width':o.sw||1.1,opacity:o.op||.4});svg.insertBefore(p,svg.firstChild);return p;}
+
+  // BEFORE
+  text(44,60,'BEFORE',{fh:1,size:22,w:700,fill:RED,anchor:'start'});
+  text(44,90,'The old one-pager',{size:15,fill:MUTE,anchor:'start'});
+  node(120,350,140,58,'Home',{stroke:'#6b7789',color:'#d6dbe4',size:19,fh:1,w:600});
+  text(44,600,'One page.',{size:15,fill:MUTE,anchor:'start'});
+  text(44,626,'Most searches slip past.',{size:15,fill:MUTE,anchor:'start'});
+
+  // arrow
+  add(el('path',{d:'M212,350 L286,350 M266,334 L286,350 L266,366',stroke:BRICK,'stroke-width':2.8,fill:'none',opacity:.9,'stroke-linecap':'round','stroke-linejoin':'round'}));
+
+  // AFTER
+  text(340,60,'AFTER',{fh:1,size:22,w:700,fill:BRICK,anchor:'start'});
+  text(340,90,'Your new 18-page site',{size:15,fill:MUTE,anchor:'start'});
+
+  var hub=node(438,350,196,74,'MADISON COUNTY',{stroke:BRICK,sw:2.4,fill:'#20130c',color:'#F6E7DA',size:15.5,fh:1,w:700,rx:13});
+
+  var cats=[
+    {name:'Roofing',color:BRICK,leaves:['Residential Roofing','Roof Inspection']},
+    {name:'Storm',color:BRICK,leaves:['Storm Damage']},
+    {name:'Commercial',color:BRICK,leaves:['Commercial Roofing']},
+    {name:'Exteriors',color:BRICK,leaves:['Siding & Gutters']},
+    {name:'Service Area',color:BRICK,leaves:['Granite City','Troy','Glen Carbon','Maryville','Edwardsville'],isPage:true},
+    {name:'Company',color:SLATE,leaves:['About','Our Work','Testimonials','Contact','Privacy','Terms'],mute:true}
+  ];
+  // proportional vertical bands
+  var catX=706, leafX0=946, leafColW=140, rowH=54, yTop=70;
+  var totalRows=0;
+  cats.forEach(function(c){ c.rows=(c.leaves.length<=3?c.leaves.length:Math.ceil(c.leaves.length/2)); totalRows+=c.rows; });
+  var usable=totalRows*rowH, yStart=350-usable/2, yCur=yStart;
+  if(yStart<yTop){ yCur=yTop; }
+  cats.forEach(function(c){
+    var bandH=c.rows*rowH, cy=yCur+bandH/2;
+    var stroke=c.mute?SLATE:c.color, txt=c.mute?'#C7D2E0':'#F3E6DA';
+    var cat=node(catX,cy,150,46,c.name,{stroke:stroke,sw:1.9,fill:c.mute?'#131f33':'#181c26',color:txt,size:14.5,fh:1,w:600});
+    curve(hub,cat,{stroke:stroke,sw:2.4,op:c.mute?.4:.6});
+    var n=c.leaves.length, twoCol=n>3;
+    var col0 = twoCol ? Math.ceil(n/2) : n;
+    c.leaves.forEach(function(p,i){
+      var col = twoCol ? (i<col0?0:1) : 0;
+      var inCol = twoCol ? (col===0?col0:(n-col0)) : n;
+      var idx = twoCol ? (col===0?i:i-col0) : i;
+      var x = leafX0 + col*leafColW;
+      var y = cy + (idx-(inCol-1)/2)*44;
+      var pn=node(x,y,134,36,p,{stroke:c.mute?'rgba(110,134,168,.35)':'rgba(215,143,98,.32)',sw:1.2,fill:'#101a2c',color:c.mute?'#C0CBDA':CREAM,size:12});
+      curve(cat,pn,{stroke:stroke,sw:1.1,op:c.mute?.28:.38});
+    });
+    yCur+=bandH;
+  });
+  text(340,672,'One home page became 18, wired together. Every service and town, a way in.',{size:15,fill:MUTE,anchor:'start'});
+})();
+
+/* ---- keyboard nav + progress bar ---- */
+(function(){
+  var deck=document.getElementById('deck'),bar=document.getElementById('bar');
+  var slides=[].slice.call(document.querySelectorAll('.slide'));
+  function cur(){return Math.round(deck.scrollTop/deck.clientHeight);}
+  function go(i){i=Math.max(0,Math.min(slides.length-1,i));slides[i].scrollIntoView();}
+  addEventListener('keydown',function(e){
+    if(e.key==='ArrowDown'||e.key==='PageDown'||e.key===' '){e.preventDefault();go(cur()+1);}
+    else if(e.key==='ArrowUp'||e.key==='PageUp'){e.preventDefault();go(cur()-1);}
+    else if(e.key==='Home'){e.preventDefault();go(0);}
+    else if(e.key==='End'){e.preventDefault();go(slides.length-1);}
+  });
+  deck.addEventListener('scroll',function(){
+    var max=deck.scrollHeight-deck.clientHeight;
+    bar.style.width=(max>0?deck.scrollTop/max*100:0)+'%';
+  },{passive:true});
+})();
+
+/* ---- auto page numbers (DOM order) ---- */
+(function(){
+  var deck=document.getElementById('deck');
+  var slides=Array.prototype.slice.call(deck.querySelectorAll('.slide'));
+  var tot=('0'+slides.length).slice(-2);
+  slides.forEach(function(s,i){var pn=s.querySelector('.pagenum');if(pn){pn.innerHTML=('0'+(i+1)).slice(-2)+' <span class="of">/ '+tot+'</span>';}});
+})();
+
+/* ---- performance dashboard gauges (real Lighthouse scores, band colour by threshold) ---- */
+(function(){
+  var C = 2 * Math.PI * 48;               // ring radius 48
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('.perf-slide .gauges').forEach(function(row){
+    var labels = (row.getAttribute('data-labels')||'').split(',');
+    row.querySelectorAll('.g').forEach(function(g, i){
+      var s = Math.max(0, Math.min(100, parseInt(g.getAttribute('data-score'), 10) || 0));
+      g.setAttribute('data-band', s >= 90 ? 'green' : (s >= 50 ? 'amber' : 'red'));
+      g.innerHTML =
+        '<div class="ring"><svg viewBox="0 0 120 120">' +
+          '<circle class="trk" cx="60" cy="60" r="48"></circle>' +
+          '<circle class="arc" cx="60" cy="60" r="48" stroke-dasharray="' + C + '" ' +
+             'stroke-dashoffset="' + (reduce ? (C*(1-s/100)).toFixed(1) : C) + '"></circle>' +
+        '</svg><div class="num">' + (reduce ? s : 0) + '</div></div>' +
+        '<div class="cap">' + (labels[i] || '') + '</div>';
+      g._score = s;
+    });
+  });
+  if (reduce) return;                       // final state already rendered
+  function fill(g){
+    var s = g._score, arc = g.querySelector('.arc'), num = g.querySelector('.num');
+    arc.style.strokeDashoffset = (C * (1 - s/100)).toFixed(1);
+    var t0 = null;
+    (function step(ts){ if(!t0) t0 = ts; var p = Math.min((ts - t0)/900, 1);
+      num.textContent = Math.round(s * p);
+      if (p < 1) requestAnimationFrame(step); else num.textContent = s;
+    })(performance.now());
+  }
+  var seen = false;
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting && !seen){ seen = true;
+      document.querySelectorAll('.perf-slide .gauges .g').forEach(function(g, i){ setTimeout(function(){ fill(g); }, 90 * i); });
+    }});
+  }, { threshold: 0.4 });
+  var slide = document.querySelector('.perf-slide .perf-inner'); if (slide) io.observe(slide);
+})();
+</script>
+</body>
+</html>
