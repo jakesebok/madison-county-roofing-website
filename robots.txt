@@ -2,3 +2,28 @@ User-agent: *
 Allow: /
 
 Sitemap: https://madison-county-roofing-website.vercel.app/sitemap.xml
+
+# STAGED — AI crawlers blocked until go-live (BUILD-STANDARDS §24).
+# Googlebot stays ALLOWED on purpose: it must be able to crawl the page to
+# read the noindex meta. Disallowing it here would hide the noindex and the
+# URL could still be listed from external links.
+User-agent: GPTBot
+Disallow: /
+User-agent: OAI-SearchBot
+Disallow: /
+User-agent: ChatGPT-User
+Disallow: /
+User-agent: ClaudeBot
+Disallow: /
+User-agent: Claude-Web
+Disallow: /
+User-agent: anthropic-ai
+Disallow: /
+User-agent: PerplexityBot
+Disallow: /
+User-agent: Google-Extended
+Disallow: /
+User-agent: CCBot
+Disallow: /
+User-agent: Bytespider
+Disallow: /
