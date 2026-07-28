@@ -3,7 +3,7 @@ Allow: /
 
 Sitemap: https://madison-county-roofing-website.vercel.app/sitemap.xml
 
-# STAGED — AI crawlers blocked until go-live (BUILD-STANDARDS §24).
+# STAGED — AI crawlers blocked until go-live (BUILD-STANDARDS §25).
 # Googlebot stays ALLOWED on purpose: it must be able to crawl the page to
 # read the noindex meta. Disallowing it here would hide the noindex and the
 # URL could still be listed from external links.
