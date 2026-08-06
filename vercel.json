@@ -1,4 +1,5 @@
 {
+  "buildCommand": "npm run build",
   "outputDirectory": ".",
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
@@ -34,6 +35,7 @@
     { "source": "/home-improvement", "destination": "/siding-gutters", "permanent": true },
     { "source": "/contact-us", "destination": "/contact", "permanent": true },
     { "source": "/quote", "destination": "/contact#quote", "permanent": true },
-    { "source": "/estimate", "destination": "/contact#quote", "permanent": true }
+    { "source": "/estimate", "destination": "/contact#quote", "permanent": true },
+    { "source": "/content/blog/:slug.md", "destination": "/blog/:slug", "permanent": true }
   ]
 }

@@ -1551,3 +1551,195 @@ html.fonts-loading .hero__inner > * { animation-play-state: paused; }
   .notecard { padding: 1.5rem 1.25rem 1.25rem; }
   .era-marker__year { font-size: clamp(10rem, 50vw, 16rem); }
 }
+
+/* ============ Blog (content/blog → /blog/) — LocalCraft blog kit ============
+   Append this block to the site's styles.css. Uses the site's existing
+   tokens (--accent, --accent-2, --accent-3, --ink, --ink-soft, --ink-deep,
+   --surface, --line, --s2..--s6, --radius, --radius-lg, --font-heading) and
+   shared classes (.container, .eyebrow, .lede, .card, .card-grid, .offer-link,
+   .band-surface, .page-hero, .ty-hero). No new tokens required. */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+.blog-measure { max-width: 760px; }
+.blog-post-head { padding-top: var(--s6); }
+.blog-post-head h1 { font-size: clamp(2.1rem, 4.4vw, 3.2rem); line-height: 1.08; margin: 0 0 var(--s2); }
+.blog-kicker-link { color: inherit; text-decoration: none; }
+.blog-meta { color: var(--ink-soft); font-size: 0.95rem; }
+.blog-hero-figure { margin: var(--s4) 0 0; }
+.blog-hero-figure img { width: 100%; height: auto; border-radius: var(--radius-lg); display: block; box-shadow: 0 10px 34px rgba(22,8,32,0.10); }
+.blog-prose { font-size: 1.075rem; line-height: 1.72; color: var(--ink); margin-top: var(--s4); }
+.blog-prose > * + * { margin-top: 1.1em; }
+.blog-prose h2 { font-size: clamp(1.5rem, 2.6vw, 1.9rem); line-height: 1.2; margin-top: 2em; }
+.blog-prose h3 { font-size: 1.25rem; margin-top: 1.6em; }
+.blog-prose a { color: var(--accent); text-underline-offset: 2px; }
+.blog-prose ul, .blog-prose ol { padding-left: 1.3em; }
+.blog-prose li + li { margin-top: 0.4em; }
+.blog-prose blockquote { border-left: 4px solid var(--accent-3); padding-left: var(--s3); color: var(--ink-soft); font-style: italic; }
+.blog-prose img { max-width: 100%; height: auto; border-radius: var(--radius); }
+.blog-prose strong { color: var(--ink-deep); }
+.blog-faq { max-width: 820px; }
+.blog-faq-list { margin-top: var(--s4); display: flex; flex-direction: column; gap: 12px; }
+.blog-faq-item { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+.blog-faq-item summary { cursor: pointer; list-style: none; padding: var(--s3); font-weight: 600; font-family: var(--font-heading); display: flex; justify-content: space-between; align-items: center; gap: var(--s3); }
+.blog-faq-item summary::-webkit-details-marker { display: none; }
+.blog-faq-item summary::after { content: "+"; color: var(--accent); font-size: 1.4rem; line-height: 1; }
+.blog-faq-item[open] summary::after { content: "−"; }
+.blog-faq-a { padding: 0 var(--s3) var(--s3); color: var(--ink-soft); }
+.blog-faq-a p { margin: 0; }
+.blog-card .num { color: var(--accent-2); text-transform: none; letter-spacing: 0; font-weight: 600; }
+
+/* ==========================================================================
+   BLOG KIT COMPATIBILITY BRIDGE (LocalCraft blog-publishing-kit, §18.1)
+   This site's design system predates the kit's shared vocabulary. It uses
+   --space-1..--space-8 / --brick / --paper-card / --divider / --font-display
+   and .container / .section / .hero--page. It defines NONE of the kit's
+   tokens (--s2..--s6, --radius, --radius-lg, --font-heading, --accent,
+   --accent-2, --accent-3, --surface, --line) and none of its structural
+   classes (.card, .card-grid, .page-hero, .lede, .band-surface, .offer-link,
+   .num, .ty-hero, .font-prose). build-blog.mjs emits that vocabulary
+   verbatim, so map the kit's names onto this site's real tokens here.
+   Every selector and token below was grepped and confirmed ABSENT from this
+   stylesheet before the block was added, so no existing page changes. The one
+   deliberate override is .blog-post-head's padding-top, which the kit's own
+   block above sets; the fixed .nav needs more clearance than var(--s6).
+   NOTE: --ink / --ink-soft / --ink-deep already exist here and are NOT
+   redefined. .container / .eyebrow / .sr-only already exist and are reused
+   as-is. .lede and .num appear in /plan/index.html, but that page carries its
+   own inline styles and does not load styles.css, so it is unaffected.
+   ========================================================================== */
+
+/* ---- token aliases: kit name -> this site's real token ---- */
+:root {
+  --s2: var(--space-3);   /* 12px */
+  --s3: var(--space-4);   /* 16px */
+  --s4: var(--space-6);   /* 32px */
+  --s5: var(--space-7);   /* 48px */
+  --s6: var(--space-8);   /* 64px */
+
+  /* This site is deliberately square-cornered: border-radius is 2px sitewide. */
+  --radius:    2px;
+  --radius-lg: 2px;
+
+  --font-heading: var(--font-display);
+
+  --accent:   var(--brick);
+  --accent-2: var(--brick-deep);
+  --accent-3: var(--brick);
+
+  --surface: var(--paper-card);
+  --line:    var(--divider);
+}
+
+/* ---- structural classes the kit emits and this site never had ---- */
+
+/* /blog/ index hero. No background image, so it needs its own clearance under
+   the fixed .nav — matching .hero--page's padding-block rhythm. */
+.page-hero {
+  background: var(--paper);
+  padding-top: clamp(7rem, 13vh, 9rem);
+  padding-bottom: clamp(1.5rem, 3vw, 2.5rem);
+}
+.page-hero h1 { margin-top: var(--space-3); }
+.lede {
+  font-size: var(--fs-lead);
+  line-height: 1.55;
+  color: var(--text-muted);
+  max-width: 60ch;
+  margin-top: var(--space-4);
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+  padding-bottom: var(--space-section);
+}
+@media (min-width: 760px) { .card-grid { grid-template-columns: repeat(3, 1fr); } }
+
+.card {
+  display: block;
+  background: var(--paper-card);
+  border: 1px solid var(--divider);
+  border-radius: var(--radius);
+  padding: var(--space-5);
+  box-shadow: 0 1px 3px var(--shadow);
+}
+.blog-card {
+  color: inherit;
+  text-decoration: none;
+  transition: transform var(--dur-fast) var(--ease),
+              box-shadow var(--dur-fast) var(--ease),
+              border-color var(--dur-fast) var(--ease);
+}
+.blog-card h3 { margin: var(--space-2) 0 var(--space-3); }
+.blog-card p { color: var(--text-muted); line-height: 1.6; }
+@media (hover: hover) {
+  .blog-card:hover { transform: translateY(-2px); border-color: var(--brick); box-shadow: 0 10px 28px var(--shadow); }
+}
+.num {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--brick);
+}
+.offer-link {
+  margin-top: var(--space-4);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brick);
+}
+.band-surface {
+  background: var(--paper-warm);
+  border-top: 1px solid var(--divider);
+  padding-block: clamp(3rem, 4vw + 1rem, 5rem);
+}
+.font-prose { font-family: var(--font-body); color: var(--text-muted); }
+
+/* ---- kit block adjustments (blog-only classes) ---- */
+/* The fixed .nav is 72px tall plus safe-area inset; var(--s6) alone tucks the
+   post title under it. */
+.blog-post-head { padding-top: clamp(7rem, 13vh, 9rem); }
+.blog-post { padding-bottom: var(--space-section); }
+/* Global `a { text-decoration: none }` means an accent-coloured prose link
+   reads as body copy. Underline it inside the article only. */
+.blog-prose a { text-decoration: underline; }
+
+/* ---- header state on blog pages ----
+   The kit copies the homepage header, which is transparent until this site's
+   own inline script adds .is-scrolled, and the kit's injected script targets
+   #siteHeader / #navToggle (ids this site does not use — it uses [data-nav]).
+   Blog pages have no dark hero behind the bar, so pin the header to the solid
+   state the other 17 pages get from .nav--solid. Scoped by :has() to markup
+   that only build-blog.mjs emits (.page-hero on the index, .blog-post on a
+   post), so no existing page is reached. */
+body:has(.blog-post, .page-hero) .nav {
+  background: color-mix(in srgb, var(--paper) 94%, transparent);
+  backdrop-filter: saturate(160%) blur(14px);
+  -webkit-backdrop-filter: saturate(160%) blur(14px);
+  border-bottom: 1px solid var(--divider);
+  box-shadow: 0 2px 12px rgba(26, 35, 50, 0.05);
+}
+body:has(.blog-post, .page-hero) .nav__brand { color: var(--ink); }
+body:has(.blog-post, .page-hero) .nav__brand-img--light { display: none; }
+body:has(.blog-post, .page-hero) .nav__brand-img--dark { display: block; }
+body:has(.blog-post, .page-hero) .nav__links a { color: var(--ink); }
+body:has(.blog-post, .page-hero) .nav__estimate-btn { color: var(--ink); border-color: var(--ink); }
+body:has(.blog-post, .page-hero) .nav__estimate-btn:hover { background: var(--ink); color: var(--paper); }
+/* The mobile drawer markup (.nav__drawer) and its open/close script live
+   OUTSIDE <header> in index.html, so the kit's chrome extraction cannot carry
+   them onto a blog page. Hide the hamburger there rather than ship a dead
+   control; the footer carries the full link set on mobile. */
+body:has(.blog-post, .page-hero) .nav__menu-btn { display: none; }
+
+/* Reveal convention: this site animates .reveal / [data-stagger] with the
+   .is-visible class from its own inline script. The kit emits [data-reveal]
+   and its injected script adds .is-in. Nothing in this stylesheet hides
+   [data-reveal], so blog content is visible with or without JS; no reveal
+   bridge is needed and none is added (adding an opacity:0 default would risk
+   blank pages if the observer never fires). */
