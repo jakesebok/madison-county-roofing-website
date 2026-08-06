@@ -28,6 +28,21 @@ const cfg = JSON.parse(fs.readFileSync(path.join(ROOT, "blog.config.json"), "utf
 const ORIGIN = cfg.origin.replace(/\/$/, "");
 const BANNED = (cfg.bannedTerms || []).map((t) => String(t).toLowerCase());
 
+// ── Slash convention (read from the site, never hardcoded) ──────────────────
+// A site with "trailingSlash": false SERVES /blog/foo and 308s /blog/foo/, so
+// emitting trailing-slash canonicals there points every post's canonical and
+// og:url at a redirecting URL. Derive it from the site's own vercel.json.
+const SLASH = (() => {
+  try {
+    const v = JSON.parse(fs.readFileSync(path.join(ROOT, "vercel.json"), "utf8"));
+    return v.trailingSlash === false ? "" : "/";
+  } catch {
+    return "/";
+  }
+})();
+const BLOG = `/blog${SLASH}`;
+const postPath = (slug) => `/blog/${slug}${SLASH}`;
+
 marked.setOptions({ mangle: false, headerIds: false });
 const esc = (s = "") =>
   String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
@@ -162,7 +177,7 @@ function faqHtml(faq) {
 }
 
 function postPage(p) {
-  const url = `${ORIGIN}/blog/${p.slug}/`;
+  const url = `${ORIGIN}${postPath(p.slug)}`;
   const hero = p.hero_image_url
     ? `<div class="container blog-measure"><figure class="blog-hero-figure"><img src="${esc(
         p.hero_image_url
@@ -172,7 +187,7 @@ function postPage(p) {
   <article class="blog-post">
     <header class="blog-post-head" data-reveal>
       <div class="container blog-measure">
-        <p class="eyebrow"><a href="/blog/" class="blog-kicker-link">Insights</a></p>
+        <p class="eyebrow"><a href="${BLOG}" class="blog-kicker-link">Insights</a></p>
         <h1>${esc(p.title)}</h1>
         <p class="blog-meta">${fmtDate(p.published_at)} · ${readTime(p.body)}</p>
       </div>
@@ -199,7 +214,7 @@ function indexPage(posts) {
   const cards = posts
     .map(
       (p) => `
-        <a class="card blog-card" href="/blog/${p.slug}/">
+        <a class="card blog-card" href="${postPath(p.slug)}">
           <div class="num">${fmtDate(p.published_at)}</div>
           <h3>${esc(p.title)}</h3>
           <p>${esc(p.excerpt || "")}</p>
@@ -227,8 +242,8 @@ function indexPage(posts) {
     {
       title: `Blog | ${cfg.brandName || ""}`.trim().replace(/\|\s*$/, "").trim(),
       description: cfg.blogLede || "Articles and insights.",
-      canonical: `${ORIGIN}/blog/`,
-      jsonld: [{ "@context": "https://schema.org", "@type": "Blog", "@id": `${ORIGIN}/blog/#blog`, url: `${ORIGIN}/blog/` }]
+      canonical: `${ORIGIN}${BLOG}`,
+      jsonld: [{ "@context": "https://schema.org", "@type": "Blog", "@id": `${ORIGIN}${BLOG}#blog`, url: `${ORIGIN}${BLOG}` }]
     },
     body
   );
@@ -236,20 +251,33 @@ function indexPage(posts) {
 
 function refreshSitemap(posts) {
   if (!fs.existsSync(SITEMAP)) return;
-  let xml = fs.readFileSync(SITEMAP, "utf8");
-  xml = xml.replace(/\s*<url>(?:(?!<\/url>)[\s\S])*?\/blog\/[\s\S]*?<\/url>/g, "");
-  const entries = [
-    { loc: `${ORIGIN}/blog/`, lastmod: posts[0]?.published_at },
-    ...posts.map((p) => ({ loc: `${ORIGIN}/blog/${p.slug}/`, lastmod: p.modified_at || p.published_at }))
-  ]
-    .map(
-      (e) =>
-        `  <url>\n    <loc>${e.loc}</loc>${
-          e.lastmod ? `\n    <lastmod>${new Date(e.lastmod).toISOString().slice(0, 10)}</lastmod>` : ""
-        }\n  </url>`
-    )
-    .join("\n");
-  fs.writeFileSync(SITEMAP, xml.replace(/\s*<\/urlset>/, `\n${entries}\n</urlset>`));
+  const before = fs.readFileSync(SITEMAP, "utf8");
+  // Strip existing blog rows. Match /blog followed by / or the closing tag, so
+  // the slash-less form is caught too — a /blog-only pattern left the no-slash
+  // index entry behind and duplicated it on every rebuild.
+  const stripped = before.replace(
+    /\s*<url>(?:(?!<\/url>)[\s\S])*?\/blog(?:\/|<)[\s\S]*?<\/url>/g,
+    ""
+  );
+  let next = stripped;
+  if (posts.length) {
+    const entries = [
+      { loc: `${ORIGIN}${BLOG}`, lastmod: posts[0]?.published_at },
+      ...posts.map((p) => ({ loc: `${ORIGIN}${postPath(p.slug)}`, lastmod: p.modified_at || p.published_at }))
+    ]
+      .map(
+        (e) =>
+          `  <url>\n    <loc>${e.loc}</loc>${
+            e.lastmod ? `\n    <lastmod>${new Date(e.lastmod).toISOString().slice(0, 10)}</lastmod>` : ""
+          }\n  </url>`
+      )
+      .join("\n");
+    next = stripped.replace(/\s*<\/urlset>/, `\n${entries}\n</urlset>`);
+  }
+  // Idempotent: sitemap.xml is git-tracked, and a build that rewrites it every
+  // run dirties the repo and forces a backup/restore dance around every local
+  // test build. Write only when the content genuinely changes.
+  if (next !== before) fs.writeFileSync(SITEMAP, next);
 }
 
 const posts = readPosts();
