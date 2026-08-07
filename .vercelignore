@@ -1,4 +1,4 @@
-# ---- LocalCraft standard exclusions (BUILD-STANDARDS §20) ----
+# ---- LocalCraft standard exclusions (BUILD-STANDARDS §29) ----
 # Vercel uploads the repo root (vercel.json pins outputDirectory "."), so
 # anything NOT excluded here is served at a guessable URL on the live domain.
 #
