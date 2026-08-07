@@ -1,0 +1,22 @@
+# ---- LocalCraft standard exclusions (BUILD-STANDARDS §20) ----
+# Vercel uploads the repo root (vercel.json pins outputDirectory "."), so
+# anything NOT excluded here is served at a guessable URL on the live domain.
+#
+# ROOT-ANCHORED ON PURPOSE (leading slash). A blanket `*.md` also strips
+# content/blog/*.md before the build runs, so the blog renderer builds 0 posts,
+# /blog serves an empty index, every post 404s, and the deployment still
+# reports READY. That is what happened to Events by Klay.
+#
+# Internal build + ops docs: LOCALCRAFT-REPO.md names the private GitHub repo,
+# the Vercel project and the operator identity; the *-LOG.md files are internal
+# build narration, audit scores and known defects.
+/*.md
+
+# Installed on Vercel from package.json; never upload the local tree.
+node_modules/
+
+# Local `npx serve` preview config; production routing comes from vercel.json.
+serve.json
+
+# llms.txt, robots.txt, sitemap.xml, site.webmanifest, favicon.ico and
+# og-default.png are deliberately NOT excluded - they are the public surface.
