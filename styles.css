@@ -3,6 +3,81 @@
    Heritage trade brand · slate + brick + warm paper · since 1937
    ============================================================ */
 
+/* ---------- Self-hosted fonts (BUILD-STANDARDS §6b) ----------
+   Latin-subset variable woff2, served from this origin. No Google Fonts
+   CDN request: it was a render-blocking third-party round trip on the
+   critical path, and §6b forbids hot-linking it.
+
+   Every weight the site uses is covered by the variable range, so nothing
+   relies on faux-bold (font-synthesis is off below).
+
+   The Fallback faces carry metrics measured off these exact files
+   (fontTools, unitsPerEm-normalized), so the swap does not move layout. */
+
+@font-face {
+  font-family: 'Fraunces';
+  src: url('/assets/fonts/fraunces-var.woff2') format('woff2-variations'),
+       url('/assets/fonts/fraunces-var.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: optional;
+}
+@font-face {
+  font-family: 'Fraunces';
+  src: url('/assets/fonts/fraunces-italic-var.woff2') format('woff2-variations'),
+       url('/assets/fonts/fraunces-italic-var.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: optional;
+}
+@font-face {
+  font-family: 'Inter';
+  src: url('/assets/fonts/inter-var.woff2') format('woff2-variations'),
+       url('/assets/fonts/inter-var.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Caveat';
+  src: url('/assets/fonts/caveat-var.woff2') format('woff2-variations'),
+       url('/assets/fonts/caveat-var.woff2') format('woff2');
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Metric-matched fallbacks. ascent/descent/line-gap are the real values from
+   each webfont; size-adjust matches x-height to the local face named in src. */
+@font-face {
+  font-family: 'Fraunces Fallback';
+  src: local('Georgia'), local('Times New Roman'), local('Times');
+  ascent-override: 97.80%;
+  descent-override: 25.50%;
+  line-gap-override: 0%;
+  size-adjust: 100.11%;
+}
+@font-face {
+  font-family: 'Inter Fallback';
+  src: local('Helvetica Neue'), local('Helvetica'), local('Arial');
+  ascent-override: 96.88%;
+  descent-override: 24.12%;
+  line-gap-override: 0%;
+  size-adjust: 105.27%;
+}
+@font-face {
+  font-family: 'Caveat Fallback';
+  src: local('Bradley Hand'), local('Snell Roundhand'), local('Arial');
+  ascent-override: 96.00%;
+  descent-override: 30.00%;
+  line-gap-override: 0%;
+  size-adjust: 77.14%;
+}
+
+/* Faux bold and faux italic are banned: every weight and both styles are
+   real faces above. */
+html { font-synthesis: none; }
+
 /* ---------- Tokens ---------- */
 :root {
   /* Primary brand — refined navy. Closer to the existing blue brand,
@@ -39,9 +114,9 @@
   --shadow:      rgba(26, 35, 50, 0.12);
   --shadow-lift: rgba(26, 35, 50, 0.22);
 
-  --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
-  --font-body:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-script:  'Caveat', 'Bradley Hand', cursive;
+  --font-display: 'Fraunces', 'Fraunces Fallback', Georgia, 'Times New Roman', serif;
+  --font-body:    'Inter', 'Inter Fallback', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-script:  'Caveat', 'Caveat Fallback', 'Bradley Hand', cursive;
 
   --space-1: 0.25rem;
   --space-2: 0.5rem;
@@ -419,7 +494,7 @@ p { margin: 0; }
 @media (hover: hover) {
   .info-card:hover { transform: translateY(-6px); border-color: var(--brick); box-shadow: 0 28px 60px -20px color-mix(in srgb, var(--brick-deep) 30%, var(--shadow)); }
 }
-.info-card h3 { font-size: 1.375rem; letter-spacing: -0.012em; }
+.info-card h3, .info-card h2 { font-size: 1.375rem; letter-spacing: -0.012em; }
 .info-card p { color: var(--text-muted); font-size: 0.9375rem; line-height: 1.55; }
 .info-card ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.5rem; }
 .info-card li { font-size: 0.9375rem; color: var(--text-muted); display: flex; gap: 0.625rem; }
@@ -619,15 +694,11 @@ p { margin: 0; }
 .hero__bg img { animation: kenBurns 8s cubic-bezier(0.16, 0.72, 0.28, 1) both; transform-origin: center 50%; will-change: transform; }
 @keyframes kenBurns { 0% { transform: scale(1.08); } 100% { transform: scale(1.00); } }
 .hero__inner > * { animation: heroFade 1300ms var(--ease) both; }
-/* Font-swap reflow guard (pairs with the inline head script): while
-   html.fonts-loading is set, the entrance clock is frozen at frame 0 —
-   text sits at opacity 0, so the fallback-serif -> Fraunces reflow
-   (the H1 "4 lines snapping to 3" flash) happens invisibly. The script
-   removes the class the moment Fraunces is available (1.8s cap), and
-   the cascade plays from the top with the real font already in place.
-   No JS = class never set = no pause. The photo + watermark keep
-   moving regardless, so a slow font never reads as a frozen page. */
-html.fonts-loading .hero__inner > * { animation-play-state: paused; }
+/* The old font-swap reflow guard lived here. It paused the hero entrance
+   until Fraunces was available, because the face came from the Google CDN
+   and landed late enough to reflow the H1. Fraunces is now same-origin,
+   preloaded, and font-display:optional, so there is no swap to hide and
+   nothing to wait for. Holding the hero at opacity 0 only delayed LCP. */
 .hero__inner > *:nth-child(1) { animation-delay: 200ms; }
 .hero__inner > *:nth-child(2) { animation-delay: 400ms; }
 .hero__inner > *:nth-child(3) { animation-delay: 600ms; }
@@ -1525,7 +1596,7 @@ html.fonts-loading .hero__inner > * { animation-play-state: paused; }
   .lead { font-size: 1rem; }
 
   .info-card { padding: var(--space-5); }
-  .info-card h3 { font-size: 1.25rem; }
+  .info-card h3, .info-card h2 { font-size: 1.25rem; }
 
   .pull-quote--editorial { padding-inline: 1.25rem; padding-block: 4rem 3.5rem; }
   .pull-quote--editorial .pull-quote__text { font-size: clamp(1.5rem, 1.1rem + 2.4vw, 2.25rem); }
@@ -1743,3 +1814,17 @@ body:has(.blog-post, .page-hero) .nav__menu-btn { display: none; }
    [data-reveal], so blog content is visible with or without JS; no reveal
    bridge is needed and none is added (adding an opacity:0 default would risk
    blank pages if the observer never fires). */
+
+/* ---------- Form spam mitigation (BUILD-STANDARDS §9c) ----------
+   Off-screen decoy fields. A human never sees or tabs into these; a naive
+   form-filling bot fills everything it finds. The central pixel reads the
+   field names in its HONEYPOT_NAMES list and scores a non-empty one at 100,
+   well past the reject threshold, so the submission is dropped silently
+   with a 200 rather than bounced with an error a bot could learn from. */
+.hp-field {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}

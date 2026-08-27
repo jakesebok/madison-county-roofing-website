@@ -6,10 +6,25 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Madison County Roofing &times; LocalCraft Digital &middot; Strategy &amp; Growth Plan</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/fraunces-var.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/fraunces-italic-var.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/inter-var.woff2">
 <style>
+  /* Self-hosted faces, same files the site serves. Root-relative on purpose:
+     <base href="/plan/"> does not rewrite a leading-slash URL. */
+  @font-face{font-family:'Fraunces';
+    src:url('/assets/fonts/fraunces-var.woff2') format('woff2-variations'),
+        url('/assets/fonts/fraunces-var.woff2') format('woff2');
+    font-weight:100 900;font-style:normal;font-display:swap}
+  @font-face{font-family:'Fraunces';
+    src:url('/assets/fonts/fraunces-italic-var.woff2') format('woff2-variations'),
+        url('/assets/fonts/fraunces-italic-var.woff2') format('woff2');
+    font-weight:100 900;font-style:italic;font-display:swap}
+  @font-face{font-family:'Inter';
+    src:url('/assets/fonts/inter-var.woff2') format('woff2-variations'),
+        url('/assets/fonts/inter-var.woff2') format('woff2');
+    font-weight:100 900;font-style:normal;font-display:swap}
+
   :root{
     --ink:#1A2D44; --ink-soft:#2C4366; --ink-deep:#0F1B2C;
     --paper:#F7F4ED; --paper-warm:#EFEAE0;
@@ -193,6 +208,13 @@
   .ai-copilot{left:15%;top:26%}
   @media(max-width:820px){.aicloud{display:flex;flex-wrap:wrap;gap:16px 22px;justify-content:center;align-items:center;min-height:0;padding-bottom:24px}
     .ai{position:static!important;transform:none!important;font-size:17px!important}}
+  .aeoL{min-width:0}
+  .aeoL .bullets{gap:clamp(8px,1.15vh,11px);margin-top:clamp(12px,1.9vh,20px)}
+  .aeoL .bullets li{font-size:.95rem;line-height:1.5}
+  .zcstat{border-left:3px solid var(--brick-bright);padding-left:clamp(12px,1.4vw,18px);margin:0}
+  .zcstat b{display:block;font-family:var(--fh);font-weight:700;font-size:clamp(34px,3.6vw,54px);line-height:1;color:#fff;letter-spacing:-.02em}
+  .zcstat span{display:block;margin-top:6px;font-size:.9rem;line-height:1.45;color:rgba(255,255,255,.82);max-width:36ch}
+  .s-dark .src,.s-brick .src{color:rgba(255,255,255,.58)}
   .bullets{margin:clamp(16px,2.4vh,26px) 0 0;padding:0;list-style:none;display:grid;gap:clamp(9px,1.5vh,13px);max-width:52ch}
   .bullets li{position:relative;padding-left:22px;font-size:1rem;line-height:1.55}
   .s-dark .bullets li{color:rgba(255,255,255,.86)}
@@ -356,12 +378,105 @@
   .perf-legend .leg .lt b{font-family:var(--fh);font-weight:600;font-size:12.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink)}
   .perf-legend .leg .lt i{font-family:var(--fh);font-style:normal;font-size:9.5px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 45%,transparent);border-radius:20px;padding:2px 7px}
   .perf-legend .leg p{margin:4px 0 0;font-size:11.5px;line-height:1.4;color:var(--ink-mute)}
-  .perf-cwv{position:absolute;left:0;right:0;bottom:clamp(46px,6.6vh,62px);display:flex;gap:16px;justify-content:center;font-family:var(--fh);font-size:11px;letter-spacing:.06em;color:var(--lh-green,#3FD08A);text-transform:uppercase;font-weight:500;padding:0 24px}
+  .perf-cwv{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:clamp(9px,1.4vh,14px);font-family:var(--fh);font-size:11px;letter-spacing:.06em;color:var(--lh-green,#3FD08A);text-transform:uppercase;font-weight:500}
   .perf-cwv b{color:var(--ink-soft);font-weight:600;font-variant-numeric:tabular-nums}
   .perf-cwv-note{color:var(--ink-mute)}
   @media (max-width:820px){.perf-decks{grid-template-columns:1fr}.perf-legend{grid-template-columns:1fr 1fr}.perf-cwv{position:static;margin-top:14px;flex-wrap:wrap}}
 
 
+
+  /* ===== AI IQ, before and after (slide 7) ===== */
+  .aiiq-body{display:grid;grid-template-columns:minmax(0,264px) minmax(0,1fr);gap:clamp(20px,3vw,46px);
+    margin-top:clamp(10px,1.6vh,18px);align-items:center}
+  @media(max-width:820px){.aiiq-body{grid-template-columns:1fr}}
+  .aiiq-grades{display:grid;gap:7px}
+  .gcard{border-radius:var(--radius);border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.05);
+    padding:clamp(10px,1.4vh,15px) clamp(13px,1.4vw,18px);display:flex;align-items:baseline;gap:9px}
+  .gcard--new{border-color:var(--brick-bright);background:rgba(215,143,98,.12);box-shadow:0 0 0 1px rgba(215,143,98,.38)}
+  .gcard .num{font-family:var(--fh);font-weight:700;font-size:clamp(32px,3.5vw,48px);line-height:.9;color:rgba(255,255,255,.6)}
+  .gcard--new .num{color:var(--brick-bright)}
+  .gcard .of{font-size:.7rem;color:rgba(255,255,255,.45)}
+  .gcard .meta{margin-left:auto;text-align:right}
+  .gcard .grade{font-family:var(--fh);font-weight:700;font-size:1.1rem;color:#fff;display:block}
+  .gcard .who{display:block;font-size:.63rem;letter-spacing:.05em;text-transform:uppercase;color:rgba(255,255,255,.58);margin-top:3px}
+  .aiiq-arrow{display:flex;align-items:center;justify-content:center;gap:9px;color:var(--brick-bright);font-size:15px;
+    letter-spacing:.1em;text-transform:uppercase;font-family:var(--fh);font-weight:600}
+  .aiiq-cats{display:grid;gap:clamp(5px,.85vh,9px)}
+  .catrow .cn{display:flex;align-items:baseline;gap:10px;font-size:.79rem;color:rgba(255,255,255,.82);margin-bottom:3px}
+  .catrow .cn span{margin-right:auto;min-width:0}
+  .catrow .cn i{font-style:normal;color:rgba(255,255,255,.44);font-size:.71rem;letter-spacing:.03em;flex:none}
+  .catrow .cn em{font-style:normal;color:var(--brick-bright);font-size:.71rem;letter-spacing:.03em;flex:none}
+  .cbars{display:grid;gap:3px}
+  .cb{height:6px;border-radius:4px;background:rgba(255,255,255,.09);position:relative}
+  .cb i{position:absolute;left:0;top:0;bottom:0;border-radius:4px;display:block;font-style:normal}
+  .cb--old i{background:rgba(255,255,255,.42)}
+  .cb--new i{background:linear-gradient(90deg,var(--brick),var(--brick-bright))}
+  .aiiq-key{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:clamp(9px,1.4vh,15px);font-size:.71rem;
+    color:rgba(255,255,255,.62);letter-spacing:.03em}
+  .aiiq-key span{display:flex;align-items:center;gap:7px}
+  .aiiq-key em{width:16px;height:6px;border-radius:4px;display:block;font-style:normal;flex:none}
+
+  /* ===== The field, graded (slide 8) ===== */
+  .fieldchart{margin-top:clamp(9px,1.4vh,16px);display:grid;gap:clamp(2px,.4vh,5px)}
+  .frow{display:grid;grid-template-columns:20px minmax(0,356px) minmax(0,1fr) 70px;align-items:center;gap:10px;height:22px}
+  .frow .fr{font-size:.7rem;color:var(--ink-soft);opacity:.65;text-align:right;font-variant-numeric:tabular-nums}
+  .frow .fn{display:flex;align-items:baseline;gap:7px;min-width:0}
+  .frow .fn b{font-size:.82rem;font-weight:600;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .frow .fn i{font-style:normal;font-size:.61rem;letter-spacing:.02em;color:var(--ink-soft);opacity:.7;white-space:nowrap;flex:none}
+  .frow .fb{height:10px;border-radius:3px;background:rgba(26,45,68,.07);position:relative}
+  .frow .fb span{position:absolute;left:0;top:0;bottom:0;border-radius:3px;background:#8FA0B8}
+  .frow .fs{font-family:var(--fh);font-weight:600;font-size:.85rem;color:var(--ink);text-align:right;font-variant-numeric:tabular-nums}
+  .frow--you .fn b{color:var(--brick-deep)}
+  .frow--you .fb span{background:linear-gradient(90deg,var(--brick),var(--brick-bright))}
+  .frow--you .fs{color:var(--brick-deep)}
+  .frow--rival .fb span{background:#5B7196}
+  .frow--old .fb span{background:repeating-linear-gradient(45deg,var(--heat) 0 3px,rgba(198,64,47,.26) 3px 7px)}
+  .frow--old .fn b,.frow--old .fs{color:var(--heat)}
+  .fstats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(8px,1.1vw,15px);margin-top:clamp(10px,1.6vh,17px)}
+  .fstat{border-radius:var(--radius);border:1px solid var(--line);background:rgba(255,255,255,.62);
+    padding:clamp(8px,1.2vh,13px) clamp(10px,1.1vw,14px)}
+  .fstat b{display:block;font-family:var(--fh);font-weight:700;font-size:clamp(1.05rem,1.8vw,1.42rem);color:var(--brick-deep);line-height:1}
+  .fstat span{display:block;margin-top:4px;font-size:.72rem;line-height:1.34;color:var(--ink-soft)}
+  @media(max-width:820px){.fstats{grid-template-columns:1fr 1fr}
+    .frow{grid-template-columns:18px minmax(0,1fr) 58px}.frow .fb{display:none}}
+
+  /* ===== The agency model (offer transition) ===== */
+  .agency-journey{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+    margin-top:clamp(16px,2.5vh,28px);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .agency-stage{position:relative;padding:clamp(13px,2vh,21px) clamp(15px,1.9vw,25px) clamp(13px,1.9vh,19px) 0;min-width:0}
+  .agency-stage + .agency-stage{border-left:1px solid var(--line);padding-left:clamp(15px,1.9vw,25px)}
+  .agency-stage__num{display:block;font-size:9px;font-weight:700;letter-spacing:.16em;color:var(--ink-soft);opacity:.6}
+  .agency-stage b{display:block;margin-top:6px;font:600 clamp(29px,min(3.3vw,4.8vh),44px)/.94 var(--fh);
+    color:var(--brick);letter-spacing:-.02em;white-space:nowrap}
+  .agency-stage__value{width:max-content;max-width:100%;text-decoration-line:line-through;
+    text-decoration-color:#B82430;text-decoration-thickness:3px;text-decoration-skip-ink:none}
+  .agency-stage strong{display:block;margin-top:8px;font-size:10px;letter-spacing:.105em;text-transform:uppercase;color:var(--ink)}
+  .agency-stage p{margin:5px 0 0;max-width:27ch;font-size:11.5px;line-height:1.42;color:var(--ink-soft)}
+  .agency-receipt{display:flex;align-items:center;gap:13px;margin-top:clamp(11px,1.7vh,18px);
+    font-size:9.5px;line-height:1.35;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-soft)}
+  .agency-receipt span{font-weight:700;color:var(--brick-deep)}
+  .agency-receipt b{font-weight:600;color:var(--ink-soft);white-space:nowrap}
+  .agency-receipt i{height:1px;flex:1 1 22px;max-width:54px;background:var(--line)}
+  .agency-pivot{display:flex;align-items:center;justify-content:space-between;gap:24px;
+    margin-top:clamp(11px,1.8vh,19px);padding:13px 18px;background:var(--ink);color:var(--paper);border-radius:var(--radius)}
+  .agency-pivot b{font:600 clamp(17px,2vw,24px)/1.05 var(--fh);letter-spacing:-.01em}
+  .agency-pivot span{font-size:10px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;text-align:right;color:var(--brick-bright)}
+  @media(max-width:820px){
+    .agency-journey{grid-template-columns:1fr 1fr}
+    .agency-stage:nth-child(3){border-left:0}
+    .agency-stage:nth-child(n+3){border-top:1px solid var(--line)}
+    .agency-receipt{flex-wrap:wrap}.agency-receipt i{display:none}
+    .agency-pivot{align-items:flex-start;flex-direction:column;gap:7px}.agency-pivot span{text-align:left}}
+
+  /* ===== old-site performance strip (slide 11) ===== */
+  .perf-old{margin:clamp(9px,1.4vh,15px) 0 0;padding:clamp(10px,1.4vh,14px) clamp(13px,1.4vw,18px);
+    border:1px solid rgba(224,87,78,.34);border-radius:var(--radius-lg,16px);background:rgba(224,87,78,.07)}
+  .perf-old__k{font-family:var(--fh);font-size:9.5px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--lh-red,#E0574E)}
+  .perf-old__chips{display:flex;flex-wrap:wrap;gap:7px 9px;margin-top:8px}
+  .perf-old__chips b{font-family:var(--fh);font-size:11.5px;font-weight:600;letter-spacing:.02em;color:#F6ECE2;
+    border:1px solid rgba(255,255,255,.2);border-radius:100px;padding:4px 11px;white-space:nowrap}
+  .perf-old__chips b i{font-style:normal;color:var(--lh-red,#E0574E)}
+  .perf-old p{margin:8px 0 0;font-size:11.5px;line-height:1.45;color:rgba(255,255,255,.74);max-width:none}
 
   /* §27.5 vertical budget for a 13in presentation viewport. */
   .slide{padding-top:clamp(48px,6vh,80px);padding-bottom:clamp(40px,5.2vh,68px);}
@@ -445,7 +560,7 @@
   <!-- 1 COVER -->
   <section class="slide s-dark cover-slide">
     <div class="cover-media" aria-hidden="true">
-      <img src="https://mcr.localcraftdigital.com/assets/images/hero-home-new-roof-1600w.jpg" alt="" fetchpriority="low" decoding="async" loading="lazy" width="1600" height="900">
+      <img src="/assets/images/hero-home-new-roof-1600w.webp" alt="" fetchpriority="low" decoding="async" loading="lazy" width="1600" height="900">
     </div>
     <div class="chrome chrome--top"><div class="brandmark"><span class="seal"></span>Madison County Roofing</div><div>Strategy &amp; Growth Plan</div></div>
     <div class="wrap"><div class="cover-inner">
@@ -463,25 +578,26 @@
     <div class="chrome chrome--top"><div class="brandmark"><span class="seal"></span>Madison County Roofing</div><div>Where you are today</div></div>
     <div class="wrap">
       <div class="eyebrow">The starting line</div>
-      <h2>You earned the trust. <span class="a">The old site can't carry it.</span></h2>
-      <p class="lede">You are a 5.0-star name that has been on Collinsville roofs since 1937, and you already rank #1 in Google's organic results for roof replacement. But the site holding all of that is a dated stack of thin, generic pages, and it catches only a sliver of what your name has earned.</p>
+      <h2>You earned the trust.<br><span class="a">The old site can't carry it.</span></h2>
+      <p class="lede">You are a 5.0-star name that has been on Collinsville roofs since 1937, and you already rank #1 in Google's organic results for roof replacement. The writing on your site is good and it is genuinely local. What is missing is the structure underneath it, and that is what decides how much of your name Google and AI ever see.</p>
       <div class="state">
         <div class="statecard statecard--good">
           <div class="sh">What you have already earned</div>
           <ul>
-            <li><b>5.0 stars on Google</b>, the top rating in the Collinsville pack</li>
-            <li><b>BBB A+ accredited since 2009</b>, plus CertainTeed and Owens Corning credentials</li>
-            <li><b>Owner Mark Eck answers the phone</b> and works every job himself</li>
-            <li><b>Family-owned in Collinsville since 1937</b>, and still in the same family</li>
-            <li><b>Already #1 in Google's organic results</b> for roof replacement in Collinsville</li>
+            <li><b>5.0 on Google</b>, and Mark Eck answers the phone and works every job himself</li>
+            <li><b>#1 in Google's organic results</b> for roof replacement in Collinsville</li>
+            <li><b>Real writing, not filler</b>: 792 to 1,074 words a page, with a unique local headline on every one</li>
+            <li><b>BBB A+ accredited since 2009</b>, plus CertainTeed and Owens Corning credentials, family-owned since 1937</li>
           </ul>
         </div>
         <div class="statecard statecard--gap">
           <div class="sh">What the old site does with it</div>
           <ul>
-            <li><b>A dated WordPress site of thin, generic template pages</b> that show only one dimension of the business</li>
-            <li><b>No pages built for Google or AI to read</b>, and no pages for the towns you serve</li>
-            <li><b>Only 7 Google reviews</b> against incumbents carrying 140 to 390</li>
+            <li><b>22 pages, 11 of them town pages</b>, and not one link on your own site points at any of them</li>
+            <li><b>Three duplicate town pairs</b> compete with each other, and Troy and Maryville have no roofing page at all</li>
+            <li><b>No structured data anywhere</b>: nothing marks up the business, the reviews, the services or the questions for Google or AI to read</li>
+            <li><b>Zero local map packs</b>, on every keyword we measured</li>
+            <li><b>7 Google reviews</b>, against 146, 445 and 250 in the Collinsville pack</li>
           </ul>
         </div>
       </div>
@@ -494,7 +610,7 @@
     <div class="chrome chrome--top"><div class="brandmark"><span class="seal"></span>Madison County Roofing</div><div>Who it's for</div></div>
     <div class="wrap">
       <div class="eyebrow">Target audience</div>
-      <h2>Four homeowners, <span class="a">one instinct</span>:<br>do it right, once, with a real local.</h2>
+      <h2>Four homeowners,<br><span class="a">one instinct: do it right, once.</span></h2>
       <p class="lede">Every one of them wants the same thing: a roofer who answers his own phone and shows up himself.</p>
       <div class="avatars">
         <div class="avatar"><h3>Referred forever-home homeowner</h3><div class="tag">The core buyer &middot; primary</div><p>45 to 70, an established Madison County home whose roof is at the end of its life. A neighbor said to call Mark. The K. Todd and Colleen Peters reviews, verbatim.</p><div class="win"><b>Wins on:</b> owner-accountable, done right the first time</div></div>
@@ -516,12 +632,28 @@
           <div class="eyebrow">We searched the way your buyers do</div>
           <h2>Real demand,<br><span class="a">sorted by intent</span>.</h2>
         </div>
-        <p class="lede">These are actual monthly Google searches across the St. Louis metro, the market you actually serve, grouped by intent and each mapped to the page that answers it. Your old site already ranks #1 for roof replacement, which is also the biggest term you can realistically own. Roof inspection is a 390-a-month opening no roofer owns, and the satellite towns show no map pack. We built for the lanes you can win and skipped the head terms the directories&nbsp;own.</p>
+        <p class="lede">These are real monthly Google searches in the St. Louis DMA, the market you actually serve, grouped by intent and each mapped to the page that answers it. Statewide numbers look three to five times larger because they fold in Chicago, so we ignored them. You already rank #1 for roof replacement. Roof inspection carries the priciest click on the board at $70.75, and roofing contractors is the softest competition we measured at&nbsp;0.06.</p>
       </div>
       <div class="vchart" id="vchart">
-        <noscript><p class="src">Ready to book: roofer near me 1,300 &middot; roofers 1,000 &middot; roofing contractors 1,000 &middot; roofing companies 1,000 &middot; roof repair 720 &middot; roof replacement 480. Comparing options: roof inspection 390 &middot; roof leak repair 260. Something's wrong: hail damage roof repair 20.</p></noscript>
+        <noscript><p class="src">Ready to book: roofer near me 1,300 &middot; roofers 1,000 &middot; roofing contractors 1,000 &middot; roofing companies 1,000 &middot; roof repair 720 &middot; roof replacement 390. Comparing options: roof inspection 390 &middot; roof leak repair 260. Something's wrong: hail damage roof repair 20.</p></noscript>
       </div>
-      <div class="src">Source: DataForSEO &middot; Google Ads &middot; St. Louis metro (DMA 200609) &middot; average monthly searches, pulled 2026-07-31. Head terms shown; town-qualified long-tail is additive.</div>
+      <div class="src">Source: DataForSEO &middot; Google Ads &middot; St. Louis DMA (200609) &middot; average monthly searches, pulled 2026-08-26. Head terms shown; town-qualified long-tail is additive.</div>
+    </div>
+    <div class="chrome chrome--bottom"><div>Madison County Roofing &times; LocalCraft Digital</div><div class="pagenum"></div></div>
+  </section>
+  <section class="slide s-light">
+    <div class="chrome chrome--top"><div class="brandmark"><span class="seal"></span>Madison County Roofing</div><div>How we chose</div></div>
+    <div class="wrap">
+      <div class="eyebrow">Volume is the easy part</div>
+      <h2>Big numbers are a trap.<br><span class="a">We built for winnable.</span></h2>
+      <p class="lede">Every keyword gets read three ways before it earns a page: how many people search it, whether you can realistically rank for it, and whether the person searching is ready to hire a roofer. A term has to clear all three.</p>
+      <div class="avatars">
+        <div class="avatar"><h3>Volume</h3><div class="tag">How many people ask</div><p>&ldquo;Roofer near me&rdquo; runs 1,300 searches a month in the St.&nbsp;Louis DMA, the highest in your set. It earns a place on the home page and in every town page title.</p><div class="win"><b>Reads:</b> 1,300 a month</div></div>
+        <div class="avatar"><h3>Winnability</h3><div class="tag">Whether you can actually rank</div><p>&ldquo;Roof replacement&rdquo; is 390 a month at 0.18 competition, and you already sit at #1 organically for it. That is the highest-ticket job on the list and a position to defend, not a hill to climb.</p><div class="win"><b>Reads:</b> 0.18 competition, you at #1</div></div>
+        <div class="avatar"><h3>Intent</h3><div class="tag">Whether they are ready to hire</div><p>&ldquo;Roof inspection&rdquo; is also 390 a month, but advertisers pay $70.75 a click for it, the most in your entire set. That price is the market telling you what the person behind the search is worth.</p><div class="win"><b>Reads:</b> $70.75 a click</div></div>
+        <div class="avatar avatar--flag"><h3>What we deliberately skipped</h3><div class="tag">One attitude</div><p>&ldquo;Metal roofing&rdquo; draws 880 searches a month here, more than roof replacement and roof inspection combined. Competition on it reads 1.00, the maximum on the scale, so we built you nothing for it. Volume you cannot rank for is not opportunity, it is a bill.</p><div class="win"><b>The discipline:</b> we would rather own a smaller room than lose a bigger one</div></div>
+      </div>
+      <p class="src">Source: DataForSEO &middot; Google Ads &middot; St. Louis DMA (200609) &middot; average monthly searches and competition index, pulled 2026-08-26.</p>
     </div>
     <div class="chrome chrome--bottom"><div>Madison County Roofing &times; LocalCraft Digital</div><div class="pagenum"></div></div>
   </section>
@@ -533,12 +665,12 @@
       <div class="k4head">
         <div>
           <div class="eyebrow">How you get found on Google</div>
-          <h2>A handful of thin pages can't catch <span class="a">what 18 can</span>.</h2>
+          <h2>Twenty-two pages,<br><span class="a">wired to nothing.</span></h2>
         </div>
-        <p class="lede">Your old site was a handful of disconnected, generic pages with no town pages and nothing structured for Google or AI. We built 18, wired together, so every service and every town is its own front door. A search from any corner of Madison County gets caught.</p>
+        <p class="lede">Your old site has 22 pages and 11 of them are town pages, which is more than most of your competitors run. The problem is that nothing on your own site links to any of them, three are duplicate pairs competing with each other, and Troy and Maryville have no roofing page at all. We rebuilt it as 18 pages wired together, so every service and every town is a front door with a path leading to it.</p>
       </div>
       <div class="mapwrap"><svg id="netmap" viewBox="0 0 1220 700" preserveAspectRatio="xMidYMid meet" role="img" aria-label="A brochure site versus an 18-page interlinked architecture"></svg>
-        <noscript><p class="nofallback">A handful of pages became 18, wired together: Roofing (Residential Roofing, Roof Inspection), Storm (Storm Damage), Commercial (Commercial Roofing), Exteriors (Siding &amp; Gutters), Service Area (the hub plus Granite City, Troy, Glen Carbon, Maryville, Edwardsville), and Company (About, Our Work, Testimonials, Contact, Privacy, Terms).</p></noscript>
+        <noscript><p class="nofallback">Twenty-two orphaned pages became 18, wired together: Roofing (Residential Roofing, Roof Inspection), Storm (Storm Damage), Commercial (Commercial Roofing), Exteriors (Siding &amp; Gutters), Service Area (the hub plus Granite City, Troy, Glen Carbon, Maryville, Edwardsville), and Company (About, Our Work, Testimonials, Contact, Privacy, Terms).</p></noscript>
       </div>
     </div>
     <div class="chrome chrome--bottom"><div>Madison County Roofing &times; LocalCraft Digital</div><div class="pagenum"></div></div>
@@ -550,13 +682,16 @@
     <div class="wrap">
       <div class="eyebrow">AEO</div>
       <h2>When Madison County asks AI,<br><span class="a">you're the answer</span>.</h2>
-      <p class="lede">More homeowners skip the results and just ask ChatGPT, Google's AI Overview, or Perplexity "who's a good roofer near Collinsville?" Those engines quote sites built to be read by machines. Yours is. None of the incumbents' are.</p>
+      <p class="lede">More homeowners skip the blue links and just ask ChatGPT, Google's AI Overview or Perplexity who to call. Those engines quote sites built to be read by machines. We graded every roofer in the corridor, and yours is the one built for it.</p>
       <div class="aeo2">
+        <div class="aeoL">
+          <blockquote class="zcstat"><b>68%</b><span>of US Google searches ended without a click in 2026. The answer came from the AI, not from a website.</span></blockquote>
         <ul class="bullets">
-          <li><b>An llms.txt brief on your site</b>, a plain-English map every AI crawler can read. None of the Metro East roofers have one.</li>
-          <li><b>Answer-first FAQ capsules on every page</b>, written to the exact questions homeowners ask: what a roof costs here, do I need a new roof, how a hail claim works. An engine can quote them word for word.</li>
-          <li><b>One consistent set of facts</b>, since 1937, BBB A+, CertainTeed ShingleMaster, the exact towns you serve. And AI Overviews already fire on "roofing Troy," "Glen Carbon," and "Maryville." The lane is live now, not a someday bet.</li>
+          <li><b>An llms.txt brief on your site</b>, a plain-English map every AI crawler reads. Three of the twelve roofers we fingerprinted publish one, and one of those serves an empty file.</li>
+          <li><b>Answer-first FAQ capsules on every page</b>, marked up so an engine can quote them word for word. Exactly one of the ten competitors we scored has that markup.</li>
+          <li><b>AI Overviews already fire here.</b> Roofing in Troy returned one on every read we took, with no map pack under it. That town gets decided by the answer engines.</li>
         </ul>
+        </div>
         <div class="aicloud" role="img" aria-label="AI answer engines your neighbors ask: ChatGPT, Google, Gemini, Claude, Perplexity, Grok, Copilot">
           <span class="ai ai-gemini"><svg viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gemg" x1="2" y1="4" x2="22" y2="20" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#4796E3"/><stop offset=".5" stop-color="#9177C7"/><stop offset="1" stop-color="#D96570"/></linearGradient></defs><path fill="url(#gemg)" d="M12 0c.42 6.34 5.66 11.58 12 12-6.34.42-11.58 5.66-12 12-.42-6.34-5.66-11.58-12-12C6.34 11.58 11.58 6.34 12 0z"/></svg>Gemini</span>
           <span class="ai ai-chatgpt"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="#fff" stroke-width="1.5" d="M12 3a4.4 4.4 0 0 1 4.35 3.62 4.4 4.4 0 0 1 1.55 8.2A4.4 4.4 0 0 1 12 21a4.4 4.4 0 0 1-5.9-4.98 4.4 4.4 0 0 1 1.55-8.2A4.4 4.4 0 0 1 12 3z"/></svg>ChatGPT</span>
@@ -568,26 +703,101 @@
           <span class="cap">Where your neighbors are starting to ask</span>
         </div>
       </div>
+      <div class="src">Zero-click: SparkToro analysis of Similarweb clickstream data, January to April 2026, published June 2026. llms.txt and FAQ-markup counts: LocalCraft AI IQ grader, 2026-08-26.</div>
     </div>
     <div class="chrome chrome--bottom"><div>Madison County Roofing &times; LocalCraft Digital</div><div class="pagenum"></div></div>
   </section>
 
-  <!-- 7 COMPETITOR GAP -->
+  <!-- 7 AI FINDABILITY · BEFORE AND AFTER (brief §4a, measured 2026-08-26) -->
+  <section class="slide s-dark aiiq-slide">
+    <div class="chrome chrome--top"><div class="brandmark"><span class="seal"></span>Madison County Roofing</div><div>AI findability</div></div>
+    <div class="wrap">
+      <div class="k4head">
+        <div>
+          <div class="eyebrow">AI findability, measured</div>
+          <h2>Graded 58 today.<br><span class="a">100 at launch.</span></h2>
+        </div>
+        <p class="lede">This scores one thing: how readable a site is to an answer engine. Your current site earns a 58, and it already takes <strong>full marks on page identity and on answer-sized paragraphs</strong>, which is the part most small-business sites fail. Everything it drops is structural, and structure is exactly what we rebuilt.</p>
+      </div>
+      <div class="aiiq-body">
+        <div class="aiiq-grades">
+          <div class="gcard"><span class="num">58</span><span class="of">/ 100</span><span class="meta"><b class="grade">C</b><span class="who">Your site today</span></span></div>
+          <div class="aiiq-arrow"><span>&darr;</span><span>Same scorer</span><span>&darr;</span></div>
+          <div class="gcard gcard--new"><span class="num">100</span><span class="of">/ 100</span><span class="meta"><b class="grade">A+</b><span class="who">The new build</span></span></div>
+        </div>
+        <div class="aiiq-cats">
+          <div class="catrow"><div class="cn"><span>AI systems can read the site</span><i>12 &rarr;</i><em>17 of 17</em></div><div class="cbars"><div class="cb cb--old"><i style="width:70.6%"></i></div><div class="cb cb--new"><i style="width:100%"></i></div></div></div>
+          <div class="catrow"><div class="cn"><span>llms.txt guide for AI</span><i>0 &rarr;</i><em>12 of 12</em></div><div class="cbars"><div class="cb cb--old"><i style="width:0%"></i></div><div class="cb cb--new"><i style="width:100%"></i></div></div></div>
+          <div class="catrow"><div class="cn"><span>AI agents can operate the page</span><i>6 &rarr;</i><em>6 of 6</em></div><div class="cbars"><div class="cb cb--old"><i style="width:100%"></i></div><div class="cb cb--new"><i style="width:100%"></i></div></div></div>
+          <div class="catrow"><div class="cn"><span>Structured data (schema.org)</span><i>15 &rarr;</i><em>25 of 25</em></div><div class="cbars"><div class="cb cb--old"><i style="width:60%"></i></div><div class="cb cb--new"><i style="width:100%"></i></div></div></div>
+          <div class="catrow"><div class="cn"><span>Page identity (title + description)</span><i>10 &rarr;</i><em>10 of 10</em></div><div class="cbars"><div class="cb cb--old"><i style="width:100%"></i></div><div class="cb cb--new"><i style="width:100%"></i></div></div></div>
+          <div class="catrow"><div class="cn"><span>Content asks customers' questions</span><i>0 &rarr;</i><em>10 of 10</em></div><div class="cbars"><div class="cb cb--old"><i style="width:0%"></i></div><div class="cb cb--new"><i style="width:100%"></i></div></div></div>
+          <div class="catrow"><div class="cn"><span>Answer-sized paragraphs</span><i>10 &rarr;</i><em>10 of 10</em></div><div class="cbars"><div class="cb cb--old"><i style="width:100%"></i></div><div class="cb cb--new"><i style="width:100%"></i></div></div></div>
+          <div class="catrow"><div class="cn"><span>Name, address, phone machine-readable</span><i>5 &rarr;</i><em>10 of 10</em></div><div class="cbars"><div class="cb cb--old"><i style="width:50%"></i></div><div class="cb cb--new"><i style="width:100%"></i></div></div></div>
+          <div class="aiiq-key">
+            <span><em style="background:rgba(255,255,255,.42)"></em>Your site today</span>
+            <span><em style="background:linear-gradient(90deg,#9D5B35,#D78F62)"></em>The new build</span>
+            <span>Each pair is scored against that category's own ceiling, shown on the right.</span>
+          </div>
+        </div>
+      </div>
+      <div class="src">Measured 2026-08-26 with the LocalCraft AI IQ grader, the same scorer used on every site in this deck. The new build's 100 is its launch-state reading, taken on a throwaway copy with the staging noindex neutralized; scorer, weights and evidence are identical to production. As currently served, with staging controls still on, it reads 81.</div>
+    </div>
+    <div class="chrome chrome--bottom"><div>Madison County Roofing &times; LocalCraft Digital</div><div class="pagenum"></div></div>
+  </section>
+
+  <!-- 8 THE FIELD, GRADED (brief §4b, measured 2026-08-26) -->
+  <section class="slide s-light slide--cards field-slide">
+    <div class="chrome chrome--top"><div class="brandmark"><span class="seal"></span>Madison County Roofing</div><div>The field, graded</div></div>
+    <div class="wrap">
+      <div class="eyebrow">Every roofer in the corridor, same scorer</div>
+      <h2>The name running the map<br><span class="a">is the one you still clear.</span></h2>
+      <p class="lede">Edwards and Sons holds Collinsville pack #1 on all four money terms and is the strongest local site we measured, at 81. It is the only competitor building anything for machines. Your new build clears it, and clears the other fourteen.</p>
+      <div class="fieldchart">
+        <div class="frow frow--you"><span class="fr">1</span><span class="fn"><b>Madison County Roofing</b><i>your new build &middot; static on Vercel</i></span><span class="fb"><span style="width:100%"></span></span><span class="fs">100 A+</span></div>
+        <div class="frow"><span class="fr">2</span><span class="fn"><b>Trill Roofing</b><i>WordPress / Divi</i></span><span class="fb"><span style="width:95%"></span></span><span class="fs">95 A+</span></div>
+        <div class="frow frow--rival"><span class="fr">3</span><span class="fn"><b>Edwards &amp; Sons Roofing</b><i>Collinsville pack #1 &middot; WordPress</i></span><span class="fb"><span style="width:81%"></span></span><span class="fs">81 B+</span></div>
+        <div class="frow frow--rival"><span class="fr">4</span><span class="fn"><b>Oasis Roofing</b><i>owns Troy &middot; hand-rolled, nginx</i></span><span class="fb"><span style="width:75%"></span></span><span class="fs">75 B</span></div>
+        <div class="frow"><span class="fr">5</span><span class="fn"><b>I&amp;E Roofing and Construction</b><i>Maryville pack #1 &middot; WordPress</i></span><span class="fb"><span style="width:71%"></span></span><span class="fs">71 B</span></div>
+        <div class="frow"><span class="fr">6</span><span class="fn"><b>Lakeside Roofing</b><i>WordPress / Spectra</i></span><span class="fb"><span style="width:69%"></span></span><span class="fs">69 C</span></div>
+        <div class="frow"><span class="fr">7</span><span class="fn"><b>Edwardsville Roofing &amp; Siding</b><i>WordPress / Beaver Builder</i></span><span class="fb"><span style="width:67%"></span></span><span class="fs">67 C</span></div>
+        <div class="frow"><span class="fr">8</span><span class="fn"><b>Accredited Roofing</b><i>Collinsville pack #2 &middot; WordPress</i></span><span class="fb"><span style="width:64%"></span></span><span class="fs">64 C</span></div>
+        <div class="frow"><span class="fr">9</span><span class="fn"><b>Collinsville Roofing and Siding</b><i>WordPress / Beaver Builder</i></span><span class="fb"><span style="width:61%"></span></span><span class="fs">61 C</span></div>
+        <div class="frow"><span class="fr">10</span><span class="fn"><b>Stormfront Roofing</b><i>Granite City pack #1 &middot; WordPress</i></span><span class="fb"><span style="width:59%"></span></span><span class="fs">59 C</span></div>
+        <div class="frow"><span class="fr">11</span><span class="fn"><b>Michael Ryan Exteriors</b><i>WordPress / Avada</i></span><span class="fb"><span style="width:58%"></span></span><span class="fs">58 C</span></div>
+        <div class="frow frow--old"><span class="fr">11</span><span class="fn"><b>Madison County Roofing</b><i>your site today &middot; WordPress</i></span><span class="fb"><span style="width:58%"></span></span><span class="fs">58 C</span></div>
+        <div class="frow"><span class="fr">13</span><span class="fn"><b>H&amp;F Exteriors</b><i>Glen Carbon pack #1 &middot; WordPress</i></span><span class="fb"><span style="width:57%"></span></span><span class="fs">57 C</span></div>
+        <div class="frow"><span class="fr">14</span><span class="fn"><b>Illinois Roof Authority</b><i>hand-rolled static</i></span><span class="fb"><span style="width:56%"></span></span><span class="fs">56 C</span></div>
+        <div class="frow"><span class="fr">15</span><span class="fn"><b>Riverside Restoration</b><i>Collinsville pack #3 &middot; GoHighLevel</i></span><span class="fb"><span style="width:49%"></span></span><span class="fs">49 D</span></div>
+        <div class="frow"><span class="fr">16</span><span class="fn"><b>LDL Roofing &amp; Construction</b><i>Astro / Netlify</i></span><span class="fb"><span style="width:44%"></span></span><span class="fs">44 D</span></div>
+      </div>
+      <div class="fstats">
+        <div class="fstat"><b>All 15</b><span>competitor sites we measured score below your new build.</span></div>
+        <div class="fstat"><b>13 of 15</b><span>score below even the 81 your build reads while it is still staged.</span></div>
+        <div class="fstat"><b>6 of 15</b><span>score at or below 58, which is where your current site sits.</span></div>
+        <div class="fstat"><b>1 of 10</b><span>scored competitors has FAQ markup an engine can quote.</span></div>
+      </div>
+      <div class="src">AI IQ measured with the LocalCraft grader, 2026-08-26. 17 sites scored: 15 competitor sites plus both of yours. Competitor median 61, mean 63.3, range 44 to 95. The hatched bar is your site as it is served today. Excluded and named: crownroofingandexteriors.com and rocketroofinganddevelopment.com returned a 403 edge challenge to our scanner. Both serve 200 to Chrome, GPTBot and ClaudeBot, and neither robots.txt disallows the homepage. That is a firewall rule aimed at scanners, not evidence they block AI.</div>
+    </div>
+    <div class="chrome chrome--bottom"><div>Madison County Roofing &times; LocalCraft Digital</div><div class="pagenum"></div></div>
+  </section>
+
+  <!-- 9 COMPETITOR GAP -->
   <section class="slide s-light slide--cards">
     <div class="chrome chrome--top"><div class="brandmark"><span class="seal"></span>Madison County Roofing</div><div>The opening</div></div>
     <div class="wrap">
       <div class="eyebrow">Competitor gap</div>
-      <h2>The map pack is a review race. <span class="a">The rest is wide open.</span></h2>
-      <p class="lede">Here is who leads the local pack, measured, and where the door is open for you.</p>
+      <h2>The map is a review race.<br><span class="a">The towns are a build problem.</span></h2>
+      <p class="lede">Here is who actually leads the local pack, measured this week, and where the door is open.</p>
       <div class="avatars">
-        <div class="avatar"><h3>Edwards and Sons Roofing</h3><div class="tag">Collinsville pack #1 &middot; 5.0 / 142 reviews</div><p>Does well: a huge review base, storm and restoration marketing, fast-response positioning.</p><div class="win"><b>Your opening:</b> a restoration brand with no local heritage. You already rank #1 organic for roof replacement while they lead only the map pack. Win on 1937 roots and the AEO lane.</div></div>
-        <div class="avatar"><h3>Accredited Roofing</h3><div class="tag">Collinsville pack #3 &middot; 4.9 / 392 reviews</div><p>Does well: the largest review base in the pack, and review volume is the lever the map pack turns on.</p><div class="win"><b>Your opening:</b> the pack is a review-count race you close with a Google review habit, while you take the organic and per-town lanes Accredited runs no pages for.</div></div>
-        <div class="avatar"><h3>Riverside Restoration</h3><div class="tag">Collinsville pack #2 &middot; 4.7 / 245 reviews</div><p>Does well: broad restoration presence across the Metro East.</p><div class="win"><b>Your opening:</b> a restoration generalist, not a roofing specialist. You are a dedicated roofer in the same county since 1937. Differentiate on specialization and longevity.</div></div>
-        <div class="avatar"><h3>H&amp;F Exteriors</h3><div class="tag">Edwardsville pack &middot; 4.9 / 837 reviews</div><p>Does well: a regional volume player dominating Edwardsville reviews.</p><div class="win"><b>Your opening:</b> you win the Madison County core on Collinsville roots and the towns where no competitor runs a dedicated page.</div></div>
-        <div class="avatar avatar--flag"><div class="flagtag">The opening</div><h3>The real gap</h3><div class="tag">Corridor-wide, uncontested</div><p>The map pack is a review-count race you can't win overnight (7 reviews vs 142 to 390), and a steady Google Business Profile review habit closes it over time. But the organic results, the AI answers, and the per-town lanes are wide open: you already rank #1 organic for roof replacement and #2 in Granite City, AI Overviews trigger on "roofing {town}" in Troy, Glen Carbon, and Maryville with no local pack, and not one competitor runs town pages.</p><div class="win"><b>Your lane:</b> the corridor-wide opening this site was built to take</div></div>
+        <div class="avatar"><h3>Edwards and Sons Roofing</h3><div class="tag">Collinsville pack #1 &middot; 5.0 / 146 reviews &middot; AI IQ 81</div><p>Does well: pack #1 on all four money terms, and the only local competitor whose site is genuinely built for machines.</p><div class="win"><b>Your opening:</b> they lead the map, but you already hold #1 organic on roof replacement, the most valuable term in the set. Your new build grades 100 against their 81.</div></div>
+        <div class="avatar"><h3>Accredited Roofing</h3><div class="tag">Collinsville pack #2 &middot; 4.9 / 445 reviews &middot; AI IQ 64</div><p>Does well: the largest review base in the Collinsville pack, and review volume is the lever the map pack turns on.</p><div class="win"><b>Your opening:</b> a review-count race you close with a steady Google review habit, while their site scores 64 and runs no answer-engine structure at all.</div></div>
+        <div class="avatar"><h3>Riverside Restoration</h3><div class="tag">Collinsville pack #3 &middot; 4.7 / 250 reviews &middot; AI IQ 49</div><p>Does well: broad restoration presence across the Metro East, and a pack seat in Collinsville.</p><div class="win"><b>Your opening:</b> a restoration generalist, not a roofing specialist, on the lowest-graded site in the pack. You differentiate on specialization and on being findable.</div></div>
+        <div class="avatar"><h3>H&amp;F Exteriors</h3><div class="tag">Glen Carbon pack leader &middot; 4.9 / 884 reviews &middot; AI IQ 57</div><p>Does well: the biggest review base we measured anywhere in the corridor, and it leads the Glen Carbon pack.</p><div class="win"><b>Your opening:</b> reviews are their whole moat. The site under them grades 57, so the organic and AI lanes into Glen Carbon are still there for the taking.</div></div>
+        <div class="avatar avatar--flag"><div class="flagtag">The opening</div><h3>The real gap</h3><div class="tag">Not an empty field, a fixable one</div><p>You already run 11 town pages, more than most of them. Nothing on your own site links to any of them, three are duplicate pairs, and Troy and Maryville have no roofing page at all, so you rank in only 2 of the 5 towns: #3 organically in Granite City and #19 in Edwardsville. Town pages are not an empty field either. Every town has at least two competitor town pages in the top 10, and Maryville has seven. Troy is the one worth taking first: an AI Overview fires on every read we took and there is no map pack under it at all.</p><div class="win"><b>Your lane:</b> pages you already have, finally wired, plus the town the answer engines decide</div></div>
       </div>
     </div>
-    <div class="chrome chrome--bottom"><div>Measured via DataForSEO &middot; Collinsville, IL &middot; 2026-07-12</div><div class="pagenum"></div></div>
+    <div class="chrome chrome--bottom"><div>Measured via DataForSEO &middot; Collinsville + 5 towns, IL &middot; 2026-08-26</div><div class="pagenum"></div></div>
   </section>
 
   <!-- 8 MEASURE, ITERATE, GROW -->
@@ -595,12 +805,12 @@
     <div class="chrome chrome--top"><div class="brandmark"><span class="seal"></span>Madison County Roofing</div><div>Measure &amp; grow</div></div>
     <div class="wrap">
       <div class="eyebrow">Ongoing</div>
-      <h2>A pixel sees every call, so we <span class="a">tune it and grow it</span>.</h2>
+      <h2>A pixel sees every call.<br><span class="a">So we tune it, and grow it.</span></h2>
       <p class="lede">A tracking pixel on every one of your 18 pages counts every call and every form, so we never guess. We see exactly what is working, sharpen it every quarter, and keep growing your share of Madison County.</p>
       <div class="steps">
         <div class="step"><div class="n">01</div><h3>Set it</h3><p>Launch a site built on real Madison County search data, live and ranking across the county.</p></div>
         <div class="step"><div class="n">02</div><h3>See it</h3><p>The LocalCraft pixel counts every call and form. A live portal shows which pages and towns convert.</p></div>
-        <div class="step"><div class="n">03</div><h3>Iterate it</h3><p>Quarterly conversion and SEO tune-ups, no new project fee. Fix what lags, double the winners.</p></div>
+        <div class="step"><div class="n">03</div><h3>Iterate it</h3><p>Monthly conversion and SEO tune-ups, no new project fee. Fix what lags, double the winners.</p></div>
         <div class="step"><div class="n">04</div><h3>Grow it</h3><p>Compounding rankings, more calls, a bigger share of Madison County, month over month.</p></div>
       </div>
     </div>
@@ -612,27 +822,39 @@
     <div class="chrome chrome--top"><div class="brandmark"><span class="seal"></span>Madison County Roofing</div><div>Under the hood</div></div>
     <div class="wrap perf-inner">
       <div class="eyebrow">Under the hood</div>
-      <h2>Your site is a <span class="a">Ferrari</span> under the hood.</h2>
-      <p class="lede">Not our opinion. These are <strong>real Google Lighthouse scores</strong> pulled from your live site, <strong>measured July 2026</strong>. Every bar is scored 0&ndash;100; <strong>90+ is green, 100 is perfect</strong>.</p>
+      <h2>Under the hood,<br><span class="a">your site is a Ferrari.</span></h2>
+      <p class="lede">Not our opinion. These are <strong>real Google Lighthouse scores</strong>, the same test anyone can run on any site. Every ring is scored 0&ndash;100; <strong>90+ is green, 100 is perfect</strong>. Measured 2026-08-26 on the homepage, the same page we measured on your current site. Across all eighteen pages of the new build, desktop performance runs 95 to 100, and accessibility, best practices and SEO are 100 on every single one.</p>
       <div class="perf-decks">
         <div class="perf-card">
           <div class="perf-card-top">
-            <span class="perf-dev"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg><b>Desktop</b></span>
-            <span class="perf-url">madison-county-roofing-website.vercel.app</span>
+            <span class="perf-dev"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg><b>New build &middot; desktop</b></span>
+            <span class="perf-url">madison-county-roofing-website.vercel.app &middot; homepage</span>
           </div>
           <div class="gauges" data-labels="Performance,Accessibility,Best Practices,SEO">
-            <span class="g" data-score="98"></span><span class="g" data-score="100"></span><span class="g" data-score="100"></span><span class="g" data-score="100"></span>
+            <span class="g" data-score="95"></span><span class="g" data-score="100"></span><span class="g" data-score="100"></span><span class="g" data-score="100"></span>
           </div>
         </div>
         <div class="perf-card">
           <div class="perf-card-top">
-            <span class="perf-dev"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg><b>Mobile</b></span>
-            <span class="perf-url">madison-county-roofing-website.vercel.app</span>
+            <span class="perf-dev"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg><b>New build &middot; mobile</b></span>
+            <span class="perf-url">madison-county-roofing-website.vercel.app &middot; homepage</span>
           </div>
           <div class="gauges" data-labels="Performance,Accessibility,Best Practices,SEO">
-            <span class="g" data-score="90"></span><span class="g" data-score="100"></span><span class="g" data-score="100"></span><span class="g" data-score="100"></span>
+            <span class="g" data-score="83"></span><span class="g" data-score="100"></span><span class="g" data-score="100"></span><span class="g" data-score="100"></span>
           </div>
         </div>
+      </div>
+      <div class="perf-old">
+        <div class="perf-old__k">Your site today, measured 2026-08-26</div>
+        <div class="perf-old__chips">
+          <b>Performance on a phone <i>48</i></b>
+          <b>Load time on a phone <i>11.4s</i></b>
+          <b>Accessibility <i>82</i></b>
+          <b>Best practices <i>79</i></b>
+          <b>161 KB of HTML, 41 stylesheets, 27 external scripts</b>
+          <b>1,740 KiB over 110 requests</b>
+        </div>
+        <p>Straight, because you will check it: on a desktop your current site performs well, 94 to 97. The 11.4-second load is what a phone gets, and a phone is where roof emergencies get searched. Accessibility 82 and best practices 79 are weak on both, and those two are the ones nobody can argue with.</p>
       </div>
       <div class="perf-legend">
         <div class="leg"><span class="lt"><b>Performance</b><i>Speed</i></span><p>How fast the page loads and becomes usable. Slow sites lose visitors before they ever see you.</p></div>
@@ -640,27 +862,75 @@
         <div class="leg"><span class="lt"><b>Best&nbsp;Practices</b><i>Foundation</i></span><p>Built to modern web standards: secure (HTTPS), no broken code, no console errors.</p></div>
         <div class="leg"><span class="lt"><b>SEO</b><i>Findability</i></span><p>Structured so Google can read, index, and rank you: clean tags, valid schema, mobile-ready.</p></div>
       </div>
+      <div class="perf-cwv"><span><b>LCP 1.5s</b> &#10003;</span><span><b>CLS 0</b> &#10003;</span><span><b>Blocking 0ms</b> &#10003;</span><span class="perf-cwv-note">&middot; Core Web Vitals, desktop &middot; new build</span></div>
     </div>
-    <div class="perf-cwv"><span><b>LCP 1.0s</b> &#10003;</span><span><b>CLS 0</b> &#10003;</span><span><b>Blocking 0ms</b> &#10003;</span><span class="perf-cwv-note">&middot; Core Web Vitals, desktop</span></div>
     <div class="chrome chrome--bottom"><div>Madison County Roofing &times; LocalCraft Digital</div><div class="pagenum"></div></div>
   </section>
 
-  <!-- 10 TWO DOORWAYS -->
+  <!-- 12 THE AGENCY MODEL · offer transition, value anchor -->
+  <section class="slide s-light agency-model-slide" aria-labelledby="agency-model-h">
+    <div class="chrome chrome--top"><div class="brandmark"><span class="seal"></span>Madison County Roofing</div><div>The traditional agency model</div></div>
+    <div class="wrap">
+      <div class="eyebrow">Before the price</div>
+      <h2 id="agency-model-h">The agency model starts at $3,000.<br><span class="a">It lands around $35,000 months later.</span></h2>
+      <p class="lede">First the paid discovery. Then the strategy. Then the build quote. Then months of meetings, revisions, and handoffs before anything goes live.</p>
+      <div class="agency-journey" aria-label="A conventional agency engagement">
+        <div class="agency-stage">
+          <span class="agency-stage__num">01</span>
+          <b class="agency-stage__value">$3,000</b>
+          <strong>Discovery retainer</strong>
+          <p>Goals, market research, and scope.</p>
+        </div>
+        <div class="agency-stage">
+          <span class="agency-stage__num">02</span>
+          <b class="agency-stage__value">8 weeks</b>
+          <strong>Strategy + direction</strong>
+          <p>The plan arrives before build pricing.</p>
+        </div>
+        <div class="agency-stage">
+          <span class="agency-stage__num">03</span>
+          <b class="agency-stage__value">$25K&ndash;$50K</b>
+          <strong>Custom build</strong>
+          <p>Often quoted around $1,500 per page.</p>
+        </div>
+        <div class="agency-stage">
+          <span class="agency-stage__num">04</span>
+          <b class="agency-stage__value">3&ndash;6 months</b>
+          <strong>Review + launch</strong>
+          <p>Meetings, revisions, and handoffs.</p>
+        </div>
+      </div>
+      <div class="agency-receipt">
+        <span>Clutch market benchmark</span>
+        <b>$38,105 average project</b><i></i>
+        <b>7-month average timeline</b><i></i>
+        <b>$100&ndash;$149/hour in the U.S.</b>
+      </div>
+      <div class="agency-pivot">
+        <b>LocalCraft breaks the agency mold.</b>
+        <span>Agency-grade marketing without agency overhead.</span>
+      </div>
+      <div class="src">Market benchmark: Clutch Web Design Company Pricing Guide, retrieved 2026-08-26. Process milestones reflect LocalCraft's firsthand agency experience.</div>
+    </div>
+    <div class="chrome chrome--bottom"><div>Madison County Roofing &times; LocalCraft Digital</div><div class="pagenum"></div></div>
+  </section>
+
+  <!-- 13 TWO DOORWAYS -->
     <section class="slide s-light offer-revamp offer-light">
-    <div class="chrome chrome--top"><div class="brandmark"><img src="https://madison-county-roofing-website.vercel.app/assets/brand/logo-dark.svg" alt="Madison County Roofing"></div><div class="right">Two doorways</div></div>
+    <div class="chrome chrome--top"><div class="brandmark"><img src="/assets/brand/logo-dark.svg" alt="Madison County Roofing"></div><div class="right">Two doorways</div></div>
     <div class="offer-inner">
       <div class="offer-eyebrow">Your options</div>
       <h2 class="offer-head">Two doorways.<br><span class="accent">Walk through whichever fits.</span></h2>
       <div class="offer-doors">
-        <div class="offer-card offer-door"><div class="offer-k">Doorway A &middot; Own it outright</div><div class="offer-price">$5,997 <small>once</small></div><p>A $25,000 website, built and yours to keep. No subscription, no strings. Take it, or leave it.</p></div>
-        <div class="offer-card offer-door offer-door--pick"><div class="offer-pill">The one I would pick</div><div class="offer-k">Doorway B &middot; Build + Craft</div><div class="offer-price">$2,997 <small>+ $497/mo</small></div><p>The build at half the flat price, plus hosting, reporting, monthly SEO, AEO, GEO and performance optimization, and unlimited page and content work. Month to month, cancel anytime, the site is always yours.</p></div>
+        <div class="offer-card offer-door"><div class="offer-k">Doorway A &middot; Own it outright</div><div class="offer-price">$7,997 <small>once</small></div><p>A $35,000 website, built and yours to keep. No subscription, no strings. Take it, or leave it.</p></div>
+        <div class="offer-card offer-door offer-door--pick"><div class="offer-pill">The one I would pick</div><div class="offer-k">Doorway B &middot; Build + Craft</div><div class="offer-price">$3,997 <small>+ $497/mo</small></div><p>The build at half price, and I never stop working on it: hosting, monthly SEO, AEO, GEO and performance optimization, reporting, and unlimited page and content work. Month to month, cancel anytime, the site and the domain are yours either way.</p></div>
       </div>
     </div>
     <div class="chrome chrome--bottom"><div class="left">Madison County Roofing &times; LocalCraft Digital</div><div class="pagenum"></div></div>
   </section>
 
   <section class="slide s-dark offer-revamp offer-dark value-slide">
-    <div class="chrome chrome--top"><div class="brandmark"><img src="https://madison-county-roofing-website.vercel.app/assets/brand/logo-dark.svg" alt="Madison County Roofing"></div><div class="right">What is included</div></div>
+    <div class="chrome chrome--top"><div class="brandmark"><img src="/assets/brand/logo-dark.svg" alt="Madison County Roofing"></div><div class="right">What is included</div></div>
     <div class="offer-inner">
       <div class="offer-eyebrow">The Craft plan</div>
       <h2 class="offer-head">A lot goes into<br><span class="accent">keeping a site working.</span></h2>
@@ -680,13 +950,13 @@
   </section>
 
   <section class="slide s-light offer-revamp offer-light">
-    <div class="chrome chrome--top"><div class="brandmark"><img src="https://madison-county-roofing-website.vercel.app/assets/brand/logo-dark.svg" alt="Madison County Roofing"></div><div class="right">Your offer today</div></div>
+    <div class="chrome chrome--top"><div class="brandmark"><img src="/assets/brand/logo-dark.svg" alt="Madison County Roofing"></div><div class="right">Your offer today</div></div>
     <div class="offer-inner">
       <div class="offer-eyebrow">Your offer today</div>
-      <h2 class="offer-head">A $25,000 site, yours for $2,997.<br><span class="accent">And it gets better.</span></h2>
+      <h2 class="offer-head">A $35,000 site, yours for $3,997.<br><span class="accent">And it gets better.</span></h2>
       <div class="offer-price-grid">
         <div class="offer-anchors">
-          <div class="offer-card offer-anchor"><span class="was">$25,000</span><div class="now">$2,997</div><small>to build, once</small></div>
+          <div class="offer-card offer-anchor"><span class="was">$35,000</span><div class="now">$3,997</div><small>to build, once</small></div>
           <div class="offer-card offer-anchor"><span class="was">$3,173/mo</span><div class="now">$497<small>/mo</small></div><small>everything, handled</small></div>
         </div>
         <div class="offer-bonuses">
@@ -699,18 +969,18 @@
   </section>
 
   <section class="slide s-dark offer-revamp offer-dark">
-    <div class="chrome chrome--top"><div class="brandmark"><img src="https://madison-county-roofing-website.vercel.app/assets/brand/logo-dark.svg" alt="Madison County Roofing"></div><div class="right">Make it yours</div></div>
+    <div class="chrome chrome--top"><div class="brandmark"><img src="/assets/brand/logo-dark.svg" alt="Madison County Roofing"></div><div class="right">Make it yours</div></div>
     <div class="offer-inner">
       <div class="offer-close">
         <div><div class="offer-eyebrow">The start</div><h2 class="offer-head">It is built. It is ready.<br><span class="accent">Let us make it yours.</span></h2><p class="offer-lede">A site engineered around real Madison County demand, with a clear answer-ready path from search to phone call. Claim it below, Mark, and we start improving it together.</p><a class="offer-btn" href="https://localcraftdigital.com/get-started?client=madison-county-roofing&amp;proposal=2026-08&amp;plan=craft" target="_blank" rel="noopener">Go live today &rarr;</a></div>
-        <div class="offer-lockup"><img src="https://madison-county-roofing-website.vercel.app/assets/brand/logo-light.svg" alt="Madison County Roofing"><span class="x">&times;</span><img class="lcd" src="lcd-wordmark.svg" alt="LocalCraft Digital"></div>
+        <div class="offer-lockup"><img src="/assets/brand/logo-light.svg" alt="Madison County Roofing"><span class="x">&times;</span><img class="lcd" src="lcd-wordmark.svg" alt="LocalCraft Digital"></div>
       </div>
     </div>
     <div class="chrome chrome--bottom"><div class="left">Madison County Roofing &times; LocalCraft Digital</div><div class="pagenum"></div></div>
   </section>
 
   <section class="slide s-dark offer-revamp offer-dark">
-    <div class="chrome chrome--top"><div class="brandmark"><img src="https://madison-county-roofing-website.vercel.app/assets/brand/logo-dark.svg" alt="Madison County Roofing"></div><div class="right">The Grow Plan</div></div>
+    <div class="chrome chrome--top"><div class="brandmark"><img src="/assets/brand/logo-dark.svg" alt="Madison County Roofing"></div><div class="right">The Grow Plan</div></div>
     <div class="offer-inner">
       <div class="offer-eyebrow">Go further</div>
       <h2 class="offer-head">Ready to grow faster?<br><span class="accent">Here is the engine.</span></h2>
@@ -722,23 +992,23 @@
           <div class="offer-card offer-add"><b>Ongoing AEO maintenance</b><span>Answers stay current as AI search changes.</span></div>
           <div class="offer-card offer-add"><b>ZIP and category exclusivity</b><span>Direct local competitors are locked out of the same growth engine.</span></div>
         </div>
-        <div><div class="offer-card offer-proof"><img src="shasta-power.webp" alt="The Shasta Power website built by LocalCraft Digital"><b>$15M+ raised</b><p>The same content and SEO engine, adapted for Madison County Roofing.</p></div><div class="offer-grow-price"><strong>$997/mo</strong><span>plus the $2,997 setup</span></div><a class="offer-btn" href="https://localcraftdigital.com/get-started?client=madison-county-roofing&amp;proposal=2026-08&amp;plan=growth" target="_blank" rel="noopener">Choose Grow &rarr;</a></div>
+        <div><div class="offer-card offer-proof"><img src="shasta-power.webp" alt="The Shasta Power website built by LocalCraft Digital"><b>$15M+ raised</b><p>The same content and SEO engine, adapted for Madison County Roofing.</p></div><div class="offer-grow-price"><strong>$997/mo</strong><span>plus the $3,997 setup</span></div><a class="offer-btn" href="https://localcraftdigital.com/get-started?client=madison-county-roofing&amp;proposal=2026-08&amp;plan=growth" target="_blank" rel="noopener">Choose Grow &rarr;</a></div>
       </div>
     </div>
     <div class="chrome chrome--bottom"><div class="left">Madison County Roofing &times; LocalCraft Digital</div><div class="pagenum"></div></div>
   </section>
 
   <section class="slide s-light offer-revamp offer-light">
-    <div class="chrome chrome--top"><div class="brandmark"><img src="https://madison-county-roofing-website.vercel.app/assets/brand/logo-dark.svg" alt="Madison County Roofing"></div><div class="right">Every doorway</div></div>
+    <div class="chrome chrome--top"><div class="brandmark"><img src="/assets/brand/logo-dark.svg" alt="Madison County Roofing"></div><div class="right">Every doorway</div></div>
     <div class="offer-inner">
       <div class="offer-eyebrow">Choose your fit</div>
       <h2 class="offer-head">One site.<br><span class="accent">Four ways to move forward.</span></h2>
       <p class="offer-lede">Choose the level that fits today. Every path keeps the site yours.</p>
       <div class="checkout-grid">
-        <div class="offer-card checkout-card"><div class="offer-k">Flat Build</div><div class="offer-price">$5,997</div><div class="checkout-term">one time</div><h3>Own it outright</h3><p>The finished site, transferred to you in full for one payment.</p><a class="checkout-btn" href="https://localcraftdigital.com/get-started?client=madison-county-roofing&amp;proposal=2026-08&amp;plan=flat-build" target="_blank" rel="noopener"><span>Choose Flat Build</span><span>&rarr;</span></a></div>
-        <div class="offer-card checkout-card"><div class="offer-k">Care</div><div class="offer-price">$2,997</div><div class="checkout-term">+ $197 per month</div><h3>Quarterly care</h3><p>Quarterly optimization, hosting, reporting, and two update hours each month.</p><a class="checkout-btn" href="https://localcraftdigital.com/get-started?client=madison-county-roofing&amp;proposal=2026-08&amp;plan=care" target="_blank" rel="noopener"><span>Choose Care</span><span>&rarr;</span></a></div>
-        <div class="offer-card checkout-card checkout-card--pick"><div class="offer-k">Craft &middot; Best value</div><div class="offer-price">$2,997</div><div class="checkout-term">+ $497 per month</div><h3>Monthly craft</h3><p>Monthly optimization with unlimited page, section, and content work.</p><a class="checkout-btn" href="https://localcraftdigital.com/get-started?client=madison-county-roofing&amp;proposal=2026-08&amp;plan=craft" target="_blank" rel="noopener"><span>Choose Craft</span><span>&rarr;</span></a></div>
-        <div class="offer-card checkout-card"><div class="offer-k">Grow</div><div class="offer-price">$2,997</div><div class="checkout-term">+ $997 per month</div><h3>Weekly growth</h3><p>Craft plus weekly content, lead intelligence, and category exclusivity.</p><a class="checkout-btn" href="https://localcraftdigital.com/get-started?client=madison-county-roofing&amp;proposal=2026-08&amp;plan=growth" target="_blank" rel="noopener"><span>Choose Grow</span><span>&rarr;</span></a></div>
+        <div class="offer-card checkout-card"><div class="offer-k">Flat Build</div><div class="offer-price">$7,997</div><div class="checkout-term">one time</div><h3>Own it outright</h3><p>The finished site, transferred to you in full for one payment.</p><a class="checkout-btn" href="https://localcraftdigital.com/get-started?client=madison-county-roofing&amp;proposal=2026-08&amp;plan=flat-build" target="_blank" rel="noopener"><span>Choose Flat Build</span><span>&rarr;</span></a></div>
+        <div class="offer-card checkout-card"><div class="offer-k">Care</div><div class="offer-price">$3,997</div><div class="checkout-term">+ $197 per month</div><h3>Quarterly care</h3><p>Quarterly optimization, hosting, reporting, and monthly update work.</p><a class="checkout-btn" href="https://localcraftdigital.com/get-started?client=madison-county-roofing&amp;proposal=2026-08&amp;plan=care" target="_blank" rel="noopener"><span>Choose Care</span><span>&rarr;</span></a></div>
+        <div class="offer-card checkout-card checkout-card--pick"><div class="offer-pill">Best fit</div><div class="offer-k">Craft</div><div class="offer-price">$3,997</div><div class="checkout-term">+ $497 per month</div><h3>Monthly craft</h3><p>Monthly optimization with unlimited page, section, and content work.</p><a class="checkout-btn" href="https://localcraftdigital.com/get-started?client=madison-county-roofing&amp;proposal=2026-08&amp;plan=craft" target="_blank" rel="noopener"><span>Choose Craft</span><span>&rarr;</span></a></div>
+        <div class="offer-card checkout-card"><div class="offer-k">Grow</div><div class="offer-price">$3,997</div><div class="checkout-term">+ $997 per month</div><h3>Weekly growth</h3><p>Craft plus weekly content, lead intelligence, and category exclusivity.</p><a class="checkout-btn" href="https://localcraftdigital.com/get-started?client=madison-county-roofing&amp;proposal=2026-08&amp;plan=growth" target="_blank" rel="noopener"><span>Choose Grow</span><span>&rarr;</span></a></div>
       </div>
     </div>
     <div class="chrome chrome--bottom"><div class="left">Madison County Roofing &times; LocalCraft Digital</div><div class="pagenum"></div></div>
@@ -776,7 +1046,7 @@
   }, {passive:true});
 })();
 
-/* ---- volume chart (real DataForSEO, St. Louis DMA 200609 monthly, pulled 2026-07-31) ---- */
+/* ---- volume chart (real DataForSEO, St. Louis DMA 200609 monthly, pulled 2026-08-26) ---- */
 (function(){
   var MAX=1300, bands=[
     {cls:'vt',color:'#C57A4E',name:'Ready to book',note:'transactional, home + service pages',rows:[
@@ -785,9 +1055,9 @@
       ['roofing contractors',1000,'Home + near-me'],
       ['roofing companies',1000,'Home'],
       ['roof repair',720,'Residential + Storm'],
-      ['roof replacement',480,'Residential Roofing, ranks #1']]},
+      ['roof replacement',390,'Residential Roofing, ranks #1']]},
     {cls:'vg',color:'#C79A3E',name:'Comparing options',note:'solution-aware, answer-first pages',rows:[
-      ['roof inspection',390,'Roof Inspection, new + free'],
+      ['roof inspection',390,'Roof Inspection, $70.75 a click'],
       ['roof leak repair',260,'Residential + Storm']]},
     {cls:'vpp',color:'#5B7196',name:'Something’s wrong',note:'problem-aware, storm + insurance',rows:[
       ['hail damage roof repair',20,'Storm Damage + claims']]}
@@ -817,14 +1087,23 @@
   function curve(a,b,o){o=o||{};var x1=a.x+a.w/2,y1=a.y,x2=b.x-b.w/2,y2=b.y,mx=(x1+x2)/2;
     var p=el('path',{d:'M'+x1+','+y1+' C'+mx+','+y1+' '+mx+','+y2+' '+x2+','+y2,fill:'none',stroke:o.stroke||BRICK,'stroke-width':o.sw||1.1,opacity:o.op||.4});svg.insertBefore(p,svg.firstChild);return p;}
 
-  // BEFORE
+  // BEFORE: the REAL old site, 22 pages, 11 of them town pages with zero inbound links
   text(44,60,'BEFORE',{fh:1,size:22,w:700,fill:RED,anchor:'start'});
-  text(44,90,'The old brochure site',{size:15,fill:MUTE,anchor:'start'});
-  node(120,238,120,46,'Home',{stroke:'#6b7789',color:'#d6dbe4',size:15,fh:1,w:600});
-  node(120,350,120,46,'Services',{stroke:'#6b7789',color:'#d6dbe4',size:15,fh:1,w:600});
-  node(120,462,120,46,'Contact',{stroke:'#6b7789',color:'#d6dbe4',size:15,fh:1,w:600});
-  text(44,600,'A few disconnected pages.',{size:15,fill:MUTE,anchor:'start'});
-  text(44,626,'Most searches slip past.',{size:15,fill:MUTE,anchor:'start'});
+  text(44,90,'22 pages, and no spine',{size:15,fill:MUTE,anchor:'start'});
+  node(120,166,124,42,'Home',{stroke:'#6b7789',color:'#d6dbe4',size:15,fh:1,w:600});
+  node(120,232,124,42,'Services',{stroke:'#6b7789',color:'#d6dbe4',size:15,fh:1,w:600});
+  node(120,298,124,42,'Contact',{stroke:'#6b7789',color:'#d6dbe4',size:15,fh:1,w:600});
+  add(el('path',{d:'M120,187 L120,211 M120,253 L120,277',stroke:'#6b7789','stroke-width':1.2,fill:'none',opacity:.55}));
+  text(44,340,'11 town pages, orphaned',{size:13.5,fill:RED,anchor:'start'});
+  for(var oi=0;oi<11;oi++){
+    var ocol=oi%2, orow=(oi-ocol)/2;
+    add(el('rect',{x:(ocol?133:51),y:358+orow*24,width:74,height:18,rx:4,fill:'#141d2d',
+      stroke:'rgba(198,64,47,.42)','stroke-width':1,'stroke-dasharray':'3 3'}));
+  }
+  text(44,526,'Nothing on the site links to them.',{size:14,fill:MUTE,anchor:'start'});
+  text(44,552,'Three are duplicate pairs.',{size:14,fill:MUTE,anchor:'start'});
+  text(44,578,'Troy and Maryville have no',{size:14,fill:MUTE,anchor:'start'});
+  text(44,600,'roofing page at all.',{size:14,fill:MUTE,anchor:'start'});
 
   // arrow
   add(el('path',{d:'M212,350 L286,350 M266,334 L286,350 L266,366',stroke:BRICK,'stroke-width':2.8,fill:'none',opacity:.9,'stroke-linecap':'round','stroke-linejoin':'round'}));
@@ -867,7 +1146,7 @@
     });
     yCur+=bandH;
   });
-  text(340,672,'A handful of pages became 18, wired together. Every service and town, a way in.',{size:15,fill:MUTE,anchor:'start'});
+  text(340,672,'22 orphaned pages became 18, wired together. Every service and town, a way in.',{size:15,fill:MUTE,anchor:'start'});
 })();
 
 /* ---- keyboard nav + progress bar ---- */

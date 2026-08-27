@@ -84,9 +84,21 @@
     }
   }
 
+  /* Time-trap (BUILD-STANDARDS §9c). Stamp when the form became available.
+     The pixel forwards this as page_loaded_at and the server-side classifier
+     scores a submission made under two seconds at 70, because a human cannot
+     read the fields and type an answer that fast. Stamped from JS rather than
+     rendered into the HTML so a cached page cannot ship a stale timestamp
+     that makes every real visitor look instant. */
+  function stampLoadTime(form) {
+    var input = form.querySelector('input[name="form_loaded_at"]');
+    if (input && !input.value) input.value = String(Date.now());
+  }
+
   function init() {
     var forms = document.querySelectorAll('form[data-lc-source]');
     for (var i = 0; i < forms.length; i++) {
+      stampLoadTime(forms[i]);
       // Bubble phase (default) so the pixel's capture-phase listener
       // sees the submit event first.
       forms[i].addEventListener("submit", handleSubmit);

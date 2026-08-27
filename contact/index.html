@@ -30,21 +30,10 @@
 <meta name="twitter:title" content="Free Estimate & Contact · Madison County Roofing · Collinsville, IL">
 <meta name="twitter:description" content="Request a free estimate from Madison County Roofing. Call (618) 876-4309 or use the form. Mark Eck comes out himself. Mon-Fri 8a-4:30p. Family-owned in Collinsville, IL since 1937.">
 <meta name="twitter:image" content="https://madison-county-roofing-website.vercel.app/assets/work/job-25-2025.webp">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/fraunces/v38/6NU78FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0KxC9TeP2Xz5c.woff2">
-<link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/fraunces/v38/6NU58FyLNQOQZAnv9ZwNjucMHVn85Ni7emAe9lKqZTnbB-gzTK0K1ChjeveQ7ZXk8g.woff2">
-<link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2">
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,700&family=Inter:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,700&family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all';this.onload=null">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,700&family=Inter:wght@400;500;600;700&display=swap"></noscript>
-<script>
-/* Font-swap reflow guard: hold the hero entrance (see styles.css
-   html.fonts-loading rule) until Fraunces is actually available, so the
-   fallback-serif reflow happens while the text is still at opacity 0.
-   Hard 1.8s cap: if fonts are slow, play the entrance anyway. */
-(function(){var d=document.documentElement;if(!(document.fonts&&document.fonts.check))return;d.classList.add("fonts-loading");var done=false;function go(){if(done)return;done=true;d.classList.remove("fonts-loading");}function poll(){if(done)return;if(document.fonts.check("700 1em Fraunces")&&document.fonts.check("italic 500 1em Fraunces")){go();return;}setTimeout(poll,40);}poll();setTimeout(go,1800);})();
-</script>
+<link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/fraunces-var.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/fraunces-italic-var.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/inter-var.woff2">
+<link rel="preload" as="image" href="/assets/work/job-25-2025.webp" imagesrcset="/assets/work/job-25-2025-640w.webp 640w, /assets/work/job-25-2025.webp 750w" imagesizes="100vw" fetchpriority="high">
 <link rel="stylesheet" href="/styles.css">
 <script type="application/ld+json">
 {
@@ -64,7 +53,7 @@
       "isPartOf": {
         "@id": "https://madison-county-roofing-website.vercel.app/#website"
       },
-      "dateModified": "2026-07-12T08:00:00-06:00",
+      "dateModified": "2026-08-26T09:00:00-05:00",
       "breadcrumb": {
         "@id": "https://madison-county-roofing-website.vercel.app/contact#breadcrumb"
       }
@@ -308,7 +297,7 @@
 <main id="main">
 
   <section class="hero hero--page">
-    <div class="hero__bg"><img src="/assets/work/job-25-2025.webp" width="750" height="1000" alt="Madison County Roofing on the job" loading="eager" fetchpriority="high"></div>
+    <div class="hero__bg"><img src="/assets/work/job-25-2025.webp" width="750" height="1000" alt="Madison County Roofing on the job" loading="eager" fetchpriority="high" srcset="/assets/work/job-25-2025-640w.webp 640w, /assets/work/job-25-2025.webp 750w" sizes="100vw"></div>
     <div class="container hero__inner">
       <span class="eyebrow">Contact</span>
       <h1 class="hero__page-title">Tell Mark<br><span class="italic-display">what’s going on.</span></h1>
@@ -325,17 +314,17 @@
             <span class="status-pill__dot" aria-hidden="true"></span>
             <span data-hours-label>Checking the shop&hellip;</span>
           </span>
-          <h3>Call us</h3>
+          <h2>Call us</h2>
           <p style="margin-top: 0;"><a href="tel:+16188764309" style="font-family: var(--font-display); font-style: italic; font-weight: 700; font-size: 1.875rem; color: var(--ink); letter-spacing: -0.02em;">(618) 876-4309</a></p>
           <p>Jan answers most days. Mark answers the rest. Real human. Real shop. Real fast.</p>
         </div>
         <div class="info-card">
-          <h3>Find us</h3>
+          <h2>Find us</h2>
           <address style="font-style: normal; color: var(--text); font-size: 1rem; line-height: 1.55;">5 Harmin Ln<br>Collinsville, IL 62234</address>
           <a href="https://www.google.com/maps/dir/?api=1&destination=5+Harmin+Ln%2C+Collinsville%2C+IL+62234" target="_blank" rel="noopener" class="btn btn--ghost">Get directions</a>
         </div>
         <div class="info-card">
-          <h3>Hours</h3>
+          <h2>Hours</h2>
           <ul style="list-style: none; padding: 0; margin: 0;">
             <li data-day="1,2,3,4,5"><span style="color: var(--text);">Monday – Friday</span> <span style="color: var(--text-muted); margin-left: auto;">8:00a – 4:30p</span></li>
             <li data-day="6"><span style="color: var(--text);">Saturday</span> <span style="color: var(--text-muted); margin-left: auto;">Closed</span></li>
@@ -357,6 +346,9 @@
       </div>
 
       <form id="contact-form" data-lc-source="contact_form" class="form" method="POST" style="background: var(--paper-card); border: 1px solid var(--divider); padding: clamp(2rem, 4vw, 2.5rem); position: relative; margin-top: var(--space-6);">
+        <div class="hp-field" aria-hidden="true"><label for="homepage">Leave this field empty</label><input id="homepage" name="homepage" type="text" tabindex="-1" autocomplete="off"><label for="phone_secondary">Leave this field empty too</label><input id="phone_secondary" name="phone_secondary" type="text" tabindex="-1" autocomplete="off"></div>
+        <input type="hidden" name="form_loaded_at" value="">
+        
         <div style="position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: var(--brick);"></div>
 
         <div class="form-row">
@@ -372,7 +364,7 @@
         <div class="form-field">
           <label for="service">What do you need?</label>
           <select id="service" name="service">
-            <option>Free estimate — general</option>
+            <option>Free estimate, not sure which service</option>
             <option>Residential roof replacement</option>
             <option>Residential roof repair</option>
             <option>Commercial flat roof</option>
@@ -433,7 +425,7 @@
   <!-- CTA -->
   <section class="section section--brick">
     <div class="container container--narrow" style="text-align: center;">
-      <span class="eyebrow" style="color: var(--paper);">Eighty-seven years on Main Street, basically</span>
+      <span class="eyebrow" style="color: var(--paper);">On the same streets since 1937</span>
       <h2 style="color: var(--paper);">The roof your<br><span class="italic-display" style="color: var(--paper);">grandparents called us about.</span></h2>
       <p style="color: var(--paper); font-size: var(--fs-lead); max-width: 56ch; margin: var(--space-4) auto;">Mark is on every job. Jan is in the office. The work is warrantied. The call is free.</p>
       <a href="tel:+16188764309" class="btn btn--ink btn--lg">Call (618) 876-4309</a>
@@ -515,7 +507,7 @@
     var mins=now.getHours()*60+now.getMinutes();
     var open=(day>=1 && day<=5 && mins>=480 && mins<990);
     if(open){
-      label.textContent="The shop is open today — closes at 4:30pm";
+      label.textContent="The shop is open today until 4:30pm";
     } else {
       status.classList.add("shop-status--closed");
       var word="tomorrow at 8am";
@@ -523,7 +515,7 @@
       else if(day===6) word="Monday at 8am";
       else if(day===5 && mins>=990) word="Monday at 8am";
       else if(mins<480) word="today at 8am";
-      label.textContent="Closed now — opens "+word;
+      label.textContent="Closed now. Opens "+word;
     }
     requestAnimationFrame(function(){requestAnimationFrame(function(){status.classList.add("is-visible");});});
   })();
@@ -544,7 +536,7 @@
 </aside>
 
 <script>
-  // Sticky mobile CTA — hidden until user scrolls past ~half a viewport
+  // Sticky mobile CTA: hidden until user scrolls past ~half a viewport
   (function(){var c=document.querySelector(".sticky-cta");if(!c)return;var u=function(){if(window.scrollY>window.innerHeight*0.5)c.classList.add("is-visible");else c.classList.remove("is-visible");};u();window.addEventListener("scroll",u,{passive:true});window.addEventListener("resize",u,{passive:true});})();
 </script>
 

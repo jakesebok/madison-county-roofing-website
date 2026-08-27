@@ -30,21 +30,10 @@
 <meta name="twitter:title" content="Service Area · Madison County Roofing · Metro East Illinois">
 <meta name="twitter:description" content="Madison County Roofing serves Collinsville, Edwardsville, Glen Carbon, Granite City, Bethalto, Highland, Maryville, Troy, Staunton, Marine, Saint Jacob, and the entire Metro East.">
 <meta name="twitter:image" content="https://madison-county-roofing-website.vercel.app/assets/images/feature-02.webp">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/fraunces/v38/6NU78FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0KxC9TeP2Xz5c.woff2">
-<link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/fraunces/v38/6NU58FyLNQOQZAnv9ZwNjucMHVn85Ni7emAe9lKqZTnbB-gzTK0K1ChjeveQ7ZXk8g.woff2">
-<link rel="preload" as="font" type="font/woff2" crossorigin href="https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2">
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,700&family=Inter:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,700&family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all';this.onload=null">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,700&family=Inter:wght@400;500;600;700&display=swap"></noscript>
-<script>
-/* Font-swap reflow guard: hold the hero entrance (see styles.css
-   html.fonts-loading rule) until Fraunces is actually available, so the
-   fallback-serif reflow happens while the text is still at opacity 0.
-   Hard 1.8s cap: if fonts are slow, play the entrance anyway. */
-(function(){var d=document.documentElement;if(!(document.fonts&&document.fonts.check))return;d.classList.add("fonts-loading");var done=false;function go(){if(done)return;done=true;d.classList.remove("fonts-loading");}function poll(){if(done)return;if(document.fonts.check("700 1em Fraunces")&&document.fonts.check("italic 500 1em Fraunces")){go();return;}setTimeout(poll,40);}poll();setTimeout(go,1800);})();
-</script>
+<link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/fraunces-var.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/fraunces-italic-var.woff2">
+<link rel="preload" as="font" type="font/woff2" crossorigin href="/assets/fonts/inter-var.woff2">
+<link rel="preload" as="image" href="/assets/images/feature-02.webp" imagesrcset="/assets/images/feature-02-640w.webp 640w, /assets/images/feature-02.webp 900w" imagesizes="100vw" fetchpriority="high">
 <link rel="stylesheet" href="/styles.css">
 <style>
   .town-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-3); margin-top: var(--space-6); }
@@ -60,6 +49,19 @@
 {
   "@context": "https://schema.org",
   "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://madison-county-roofing-website.vercel.app/service-area#webpage",
+      "url": "https://madison-county-roofing-website.vercel.app/service-area",
+      "name": "Service Area · Madison County Roofing · Metro East Illinois",
+      "isPartOf": {
+        "@id": "https://madison-county-roofing-website.vercel.app/#website"
+      },
+      "breadcrumb": {
+        "@id": "https://madison-county-roofing-website.vercel.app/service-area#breadcrumb"
+      },
+      "dateModified": "2026-08-26T09:00:00-05:00"
+    },
     {
       "@type": "Place",
       "@id": "https://madison-county-roofing-website.vercel.app/service-area#serviceArea",
@@ -87,7 +89,46 @@
           "name": "Service Area",
           "item": "https://madison-county-roofing-website.vercel.app/service-area"
         }
-      ]
+      ],
+      "@id": "https://madison-county-roofing-website.vercel.app/service-area#breadcrumb"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is there a trip charge if I live outside Collinsville?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Madison County Roofing charges no out-of-area trip fee anywhere in its Madison County service area, and the in-person estimate is always free. Most jobs sit within about twenty miles of the Collinsville shop on Harmin Lane, so a roof in Granite City or Highland costs no more to look at."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How far is Madison County Roofing from my town?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Madison County Roofing works out of 5 Harmin Lane in Collinsville, and most of Madison County sits inside a twenty-mile radius of that shop. Maryville is under ten minutes away, Troy and Glen Carbon about fifteen, Edwardsville fifteen to twenty, and Granite City roughly twenty minutes by interstate."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if my town is not listed on your service area page?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Madison County Roofing covers more of the Metro East than one list can hold, so call (618) 876-4309 and ask about your address. If the job sits too far out, Mark Eck says so directly and points you to someone in the trade he would trust with your own house."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How quickly can you get out after a Metro East hailstorm?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Madison County Roofing runs its whole service area from one parking lot in Collinsville, so the truck is usually already in your zip code when a Metro East hailstorm hits. Mark Eck comes out himself, documents the damage with photos, and meets your insurance adjuster at the house."
+          }
+        }
+      ],
+      "@id": "https://madison-county-roofing-website.vercel.app/service-area#faq"
     }
   ]
 }
@@ -132,7 +173,7 @@
 <main id="main">
 
   <section class="hero hero--page">
-    <div class="hero__bg"><img src="/assets/images/feature-02.webp" width="900" height="600" alt="Madison County roofing service area" loading="eager" fetchpriority="high"></div>
+    <div class="hero__bg"><img src="/assets/images/feature-02.webp" width="900" height="600" alt="Madison County roofing service area" loading="eager" fetchpriority="high" srcset="/assets/images/feature-02-640w.webp 640w, /assets/images/feature-02.webp 900w" sizes="100vw"></div>
     <div class="container hero__inner">
       <span class="eyebrow">Service area</span>
       <h1 class="hero__page-title">Madison County,<br><span class="italic-display">corner to corner.</span></h1>
@@ -148,7 +189,7 @@
         <h2>What areas does Madison County Roofing serve?</h2>
       </div>
       <p class="lead">Madison County Roofing serves Collinsville and the surrounding Metro East from its shop at 5 Harmin Lane, covering Granite City, Troy, Glen Carbon, Maryville, Edwardsville, and the rest of Madison County. Most jobs land within about twenty miles, so a Collinsville-based crew reaches your roof the same day.</p>
-      <p class="last-updated" style="margin-top: var(--space-4); color: var(--text-muted); font-size: 0.875rem;">Last updated July 12, 2026</p>
+      <p class="last-updated" style="margin-top: var(--space-4); color: var(--text-muted); font-size: 0.875rem;">Last updated August 26, 2026</p>
     </div>
   </section>
 
@@ -201,6 +242,34 @@
           <img src="/assets/work/job-08.webp" width="331" height="237" alt="Madison County Roofing trucks on the job" loading="lazy">
           <div class="split__media-cap">On the job, nearby</div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ (verbatim to schema) -->
+  <section class="section">
+    <div class="container container--narrow">
+      <div class="section-head section-head--center reveal">
+        <span class="eyebrow">Common questions</span>
+        <h2>Where we work,<br><span class="italic-display">answered straight.</span></h2>
+      </div>
+      <div class="faq reveal" data-stagger>
+        <article class="faq__item">
+          <h3 class="faq__q">Is there a trip charge if I live outside Collinsville?</h3>
+          <p class="faq__a">Madison County Roofing charges no out-of-area trip fee anywhere in its Madison County service area, and the in-person estimate is always free. Most jobs sit within about twenty miles of the Collinsville shop on Harmin Lane, so a roof in Granite City or Highland costs no more to look at.</p>
+        </article>
+        <article class="faq__item">
+          <h3 class="faq__q">How far is Madison County Roofing from my town?</h3>
+          <p class="faq__a">Madison County Roofing works out of 5 Harmin Lane in Collinsville, and most of Madison County sits inside a twenty-mile radius of that shop. Maryville is under ten minutes away, Troy and Glen Carbon about fifteen, Edwardsville fifteen to twenty, and Granite City roughly twenty minutes by interstate.</p>
+        </article>
+        <article class="faq__item">
+          <h3 class="faq__q">What if my town is not listed on your service area page?</h3>
+          <p class="faq__a">Madison County Roofing covers more of the Metro East than one list can hold, so call (618) 876-4309 and ask about your address. If the job sits too far out, Mark Eck says so directly and points you to someone in the trade he would trust with your own house.</p>
+        </article>
+        <article class="faq__item">
+          <h3 class="faq__q">How quickly can you get out after a Metro East hailstorm?</h3>
+          <p class="faq__a">Madison County Roofing runs its whole service area from one parking lot in Collinsville, so the truck is usually already in your zip code when a Metro East hailstorm hits. Mark Eck comes out himself, documents the damage with photos, and meets your insurance adjuster at the house.</p>
+        </article>
       </div>
     </div>
   </section>
@@ -261,7 +330,7 @@
     var mins=now.getHours()*60+now.getMinutes();
     var open=(day>=1 && day<=5 && mins>=480 && mins<990);
     if(open){
-      label.textContent="The shop is open today — closes at 4:30pm";
+      label.textContent="The shop is open today until 4:30pm";
     } else {
       status.classList.add("shop-status--closed");
       var word="tomorrow at 8am";
@@ -269,7 +338,7 @@
       else if(day===6) word="Monday at 8am";
       else if(day===5 && mins>=990) word="Monday at 8am";
       else if(mins<480) word="today at 8am";
-      label.textContent="Closed now — opens "+word;
+      label.textContent="Closed now. Opens "+word;
     }
     requestAnimationFrame(function(){requestAnimationFrame(function(){status.classList.add("is-visible");});});
   })();
@@ -290,7 +359,7 @@
 </aside>
 
 <script>
-  // Sticky mobile CTA — hidden until user scrolls past ~half a viewport
+  // Sticky mobile CTA: hidden until user scrolls past ~half a viewport
   (function(){var c=document.querySelector(".sticky-cta");if(!c)return;var u=function(){if(window.scrollY>window.innerHeight*0.5)c.classList.add("is-visible");else c.classList.remove("is-visible");};u();window.addEventListener("scroll",u,{passive:true});window.addEventListener("resize",u,{passive:true});})();
 </script>
 
